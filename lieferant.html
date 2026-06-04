@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lieferant werden bei BERGHOFF – QLTC-Prinzip, Anforderungen und Bewerbungsprozess für Zulieferer der Halbleiter-, Aerospace- und Medizintechnik-Industrie.">
+  <title>Lieferant werden - BERGHOFF GmbH</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/Berghoff_Icon.png">
+
+  <style>
+  /* ==============================================
+     BERGHOFF — LIEFERANT WERDEN
+     Gleiches Design-System wie index.html
+     ============================================== */
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  img { display: block; max-width: 100%; }
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+  button { font-family: inherit; cursor: pointer; background: none; border: none; }
+
+  :root {
+    --blue:   #009FE3;
+    --blue-d: #0080c0;
+    --black:  #080808;
+    --off:    #f5f5f5;
+    --border: #e4e4e4;
+    --text:   #1a1a1a;
+    --muted:  #6b6b6b;
+    --white:  #fff;
+    --nav-h:  64px;
+    --r:      2px;
+    --pad:    clamp(1.5rem, 7vw, 8rem);
+    --sec:    6rem;
+    --trans:  220ms ease;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text); background: var(--white);
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+
+  .label {
+    font-family: 'Sora', sans-serif;
+    font-size: .66rem; font-weight: 700;
+    letter-spacing: .18em; text-transform: uppercase;
+    color: var(--blue);
+  }
+  .rule { width: 36px; height: 2px; background: var(--blue); }
+  .btn {
+    display: inline-flex; align-items: center; gap: .4rem;
+    font-family: 'Sora', sans-serif; font-size: .8rem; font-weight: 700;
+    padding: .875rem 1.75rem; border-radius: var(--r);
+    transition: all var(--trans); white-space: nowrap;
+  }
+  .btn-primary { background: var(--blue); color: var(--white); border: 2px solid var(--blue); }
+  .btn-primary:hover { background: var(--blue-d); border-color: var(--blue-d); }
+  .btn-outline { color: var(--text); border: 2px solid var(--border); }
+  .btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+  .btn-ghost-dark { color: var(--white); border: 2px solid rgba(255,255,255,.35); }
+  .btn-ghost-dark:hover { border-color: var(--white); }
+
+  /* ── NAV ────────────────────────────────────── */
+  .nav {
+    position: fixed; inset: 0 0 auto;
+    height: var(--nav-h); z-index: 300;
+    background: rgba(255,255,255,.97);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center;
+    padding: 0 var(--pad); justify-content: space-between;
+    transition: box-shadow var(--trans);
+  }
+  .nav.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,.07); }
+  .nav-logo .logo-light { display: none; }
+  .nav-logo .logo-dark  { display: block; }
+  .nav-logo img { height: 26px; width: auto; }
+  .nav-links { display: flex; align-items: center; gap: .25rem; }
+  .nav-links a {
+    font-size: .82rem; color: var(--muted);
+    padding: .4rem .9rem; border-radius: var(--r);
+    transition: color var(--trans);
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+  .nav-right { display: flex; align-items: center; gap: 1.25rem; }
+  .lang { display: flex; gap: 2px; align-items: center; }
+  .lang-btn {
+    font-family: 'Sora', sans-serif; font-size: .7rem; font-weight: 700;
+    letter-spacing: .08em; color: var(--muted);
+    padding: .3rem .45rem; border-radius: 2px; transition: color var(--trans);
+  }
+  .lang-btn.on { color: var(--blue); }
+  .lang-btn:hover:not(.on) { color: var(--text); }
+  .lang-sep { font-size: .7rem; color: var(--border); }
+  .hamburger {
+    display: none; flex-direction: column;
+    justify-content: space-between; width: 22px; height: 16px;
+  }
+  .hamburger span { display: block; height: 1.5px; background: var(--text); border-radius: 2px; transition: all .3s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-nav {
+    display: none; position: fixed;
+    top: var(--nav-h); inset: var(--nav-h) 0 0;
+    background: var(--white); z-index: 299;
+    flex-direction: column; padding: 2rem var(--pad);
+    border-top: 1px solid var(--border);
+  }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a {
+    font-family: 'Sora', sans-serif; font-size: 1.3rem; font-weight: 700;
+    color: var(--text); padding: 1rem 0;
+    border-bottom: 1px solid var(--border); transition: color var(--trans);
+  }
+  .mobile-nav a:hover { color: var(--blue); }
+
+  /* ── HERO ───────────────────────────────────── */
+  .hero {
+    position: relative; overflow: hidden;
+    min-height: 0;
+    display: flex; align-items: flex-end;
+    padding: calc(var(--nav-h) + 2.5rem) var(--pad) 2.5rem;
+    background: linear-gradient(135deg, #030d1f 0%, #041833 40%, #062448 70%, #0a3060 100%);
+  }
+  /* Geometrisches Dekor-Muster */
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(0,159,227,.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,159,227,.06) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
+  }
+  /* Blauer Glow oben rechts */
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -120px; right: -80px;
+    width: 520px; height: 520px;
+    background: radial-gradient(circle, rgba(0,159,227,.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-bg { display: none; }
+  .hero-body { position: relative; z-index: 1; max-width: 760px; }
+  .hero-body .label { display: block; margin-bottom: .75rem; }
+  .hero-body h1 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 800; line-height: 1.0; letter-spacing: -.03em;
+    color: var(--white); margin-bottom: 1.5rem;
+  }
+  .hero-body h1 span { color: var(--blue); }
+  .hero-body .rule { margin-bottom: 1.5rem; }
+  .hero-body p {
+    font-size: 1.05rem; color: rgba(255,255,255,.6);
+    line-height: 1.8; max-width: 600px; margin-bottom: 2.5rem;
+  }
+  .hero-body .ctas { display: flex; gap: .875rem; flex-wrap: wrap; }
+
+  /* ── SEKTIONEN ──────────────────────────────── */
+  section {
+    padding: var(--sec) var(--pad);
+    border-bottom: 1px solid var(--border);
+  }
+  section.off  { background: var(--off); }
+  section.dark { background: var(--black); border-color: transparent; }
+
+  .sec-head { margin-bottom: 3.5rem; }
+  .sec-head .label { display: block; margin-bottom: .6rem; }
+  .sec-head h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(1.75rem, 2.8vw, 2.4rem);
+    font-weight: 700; line-height: 1.1; letter-spacing: -.03em;
+    color: var(--text);
+  }
+  section.dark .sec-head h2 { color: var(--white); }
+  .sec-head .rule { margin-top: 1.1rem; }
+  .sec-head p {
+    margin-top: 1.1rem; font-size: .95rem; color: var(--muted);
+    line-height: 1.8; max-width: 580px;
+  }
+
+  /* ── USP-STREIFEN (3 Spalten) ───────────────── */
+  .usp-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--border);
+  }
+  .usp-item {
+    padding: 2.5rem 2rem;
+    border-right: 1px solid var(--border);
+    position: relative;
+  }
+  .usp-item:last-child { border-right: none; }
+  .usp-item::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: var(--blue);
+  }
+  .usp-nr {
+    font-family: 'Sora', sans-serif;
+    font-size: .62rem; font-weight: 700; letter-spacing: .16em;
+    color: var(--blue); margin-bottom: 1.25rem;
+  }
+  .usp-item h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.05rem; font-weight: 700;
+    color: var(--text); margin-bottom: .6rem; line-height: 1.2;
+  }
+  .usp-item p { font-size: .85rem; color: var(--muted); line-height: 1.75; }
+
+  /* ── ANFORDERUNGEN ──────────────────────────── */
+  .anf-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .anf-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1.5rem;
+    border: 1px solid var(--border); border-radius: var(--r);
+    border-left: 3px solid var(--blue);
+    transition: box-shadow var(--trans);
+  }
+  .anf-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,.06); }
+  .anf-icon {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(0,159,227,.08); border: 1px solid rgba(0,159,227,.2);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; color: var(--blue);
+  }
+  .anf-icon svg { width: 16px; height: 16px; }
+  .anf-text h4 {
+    font-family: 'Sora', sans-serif; font-size: .9rem; font-weight: 700;
+    color: var(--text); margin-bottom: .3rem;
+  }
+  .anf-text p { font-size: .82rem; color: var(--muted); line-height: 1.65; }
+
+  /* ── QLTC ───────────────────────────────────── */
+  .qltc-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border: 1px solid rgba(255,255,255,.07);
+  }
+  .qltc-item {
+    padding: 3rem 2rem;
+    border-right: 1px solid rgba(255,255,255,.07);
+    position: relative;
+  }
+  .qltc-item:last-child { border-right: none; }
+  .qltc-item::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: var(--blue);
+  }
+  .qltc-letter {
+    font-family: 'Sora', sans-serif;
+    font-size: 3.5rem; font-weight: 800; line-height: 1;
+    color: var(--blue); margin-bottom: .25rem;
+  }
+  .qltc-word {
+    font-family: 'Sora', sans-serif;
+    font-size: .62rem; font-weight: 700; letter-spacing: .16em;
+    color: rgba(255,255,255,.35); text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+  .qltc-item h3 {
+    font-family: 'Sora', sans-serif; font-size: .9rem; font-weight: 700;
+    color: var(--white); margin-bottom: .5rem;
+  }
+  .qltc-item p { font-size: .82rem; color: rgba(255,255,255,.4); line-height: 1.7; }
+
+  /* ── PROZESS-SCHRITTE ───────────────────────── */
+  .prozess-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0; position: relative;
+  }
+  /* Verbindungslinie zwischen Steps */
+  .prozess-grid::before {
+    content: ''; position: absolute;
+    top: 1.4rem; left: calc(12.5% + .5rem); right: calc(12.5% + .5rem);
+    height: 1px; background: var(--border); z-index: 0;
+  }
+  .prozess-schritt {
+    text-align: center; padding: 0 1.5rem;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .schritt-kreis {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--blue); color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Sora', sans-serif; font-size: .9rem; font-weight: 700;
+    margin-bottom: 1.5rem; position: relative; z-index: 1;
+    flex-shrink: 0;
+  }
+  .prozess-schritt h4 {
+    font-family: 'Sora', sans-serif; font-size: .9rem; font-weight: 700;
+    color: var(--text); margin-bottom: .6rem; line-height: 1.2;
+  }
+  .prozess-schritt p { font-size: .8rem; color: var(--muted); line-height: 1.65; }
+
+  /* ── KONTAKT-FORMULAR + INFO ────────────────── */
+  .kontakt-layout {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: start;
+  }
+  .kontakt-info .sec-head { margin-bottom: 2rem; }
+  .kontakt-info > p { font-size: .9rem; color: var(--muted); line-height: 1.8; margin-bottom: 2rem; }
+  .info-detail {
+    display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem;
+  }
+  .info-icon {
+    width: 38px; height: 38px; border-radius: var(--r);
+    background: rgba(0,159,227,.08); border: 1px solid rgba(0,159,227,.2);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; color: var(--blue);
+  }
+  .info-icon svg { width: 16px; height: 16px; }
+  .info-label {
+    font-family: 'Sora', sans-serif; font-size: .65rem; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
+    margin-bottom: .25rem;
+  }
+  .info-val { font-size: .9rem; color: var(--text); }
+  .info-val a { color: var(--blue); transition: opacity var(--trans); }
+  .info-val a:hover { opacity: .75; }
+
+  /* Hinweis-Box */
+  .hinweis {
+    background: rgba(0,159,227,.05);
+    border: 1px solid rgba(0,159,227,.18);
+    border-left: 3px solid var(--blue);
+    border-radius: var(--r);
+    padding: 1.1rem 1.25rem;
+    margin-top: 2rem;
+  }
+  .hinweis p { font-size: .82rem; color: var(--text); line-height: 1.65; }
+  .hinweis p strong { color: var(--text); font-weight: 600; }
+
+  /* Formular */
+  .formular { display: flex; flex-direction: column; gap: 1rem; }
+  .fg label {
+    display: block; font-family: 'Sora', sans-serif;
+    font-size: .66rem; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: .45rem;
+  }
+  .fg input, .fg select, .fg textarea {
+    width: 100%; padding: .8rem 1rem;
+    border: 1px solid var(--border); border-radius: var(--r);
+    font-family: 'Inter', sans-serif; font-size: .9rem;
+    color: var(--text); background: var(--white);
+    outline: none; transition: border-color var(--trans);
+    -webkit-appearance: none;
+  }
+  .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--blue); }
+  .fg textarea { min-height: 100px; resize: vertical; }
+  .fg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .ds { font-size: .72rem; color: var(--muted); line-height: 1.6; }
+  .ds a { color: var(--blue); }
+  .btn-submit {
+    font-family: 'Sora', sans-serif; font-size: .82rem; font-weight: 700;
+    background: var(--blue); color: var(--white); border: none;
+    padding: 1rem 2rem; width: 100%; border-radius: var(--r);
+    transition: background var(--trans); cursor: pointer;
+  }
+  .btn-submit:hover { background: var(--blue-d); }
+
+  /* ── FOOTER ─────────────────────────────────── */
+  footer {
+    background: var(--black); color: rgba(255,255,255,.45);
+    padding: 5rem var(--pad) 0;
+  }
+  .ft-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 3rem; padding-bottom: 4rem;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+  }
+  .ft-logo img { height: 22px; width: auto; margin-bottom: 1.25rem; }
+  .ft-about { font-size: .82rem; line-height: 1.8; max-width: 230px; margin-bottom: 1.5rem; }
+  .ft-adresse {
+    font-size: .8rem; line-height: 2; color: rgba(255,255,255,.4);
+  }
+  .ft-adresse strong {
+    display: block; font-family: 'Sora', sans-serif; font-size: .62rem;
+    font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+    color: rgba(255,255,255,.55); margin-bottom: .2rem;
+  }
+  .ft-adresse a { color: var(--blue); transition: color var(--trans); }
+  .ft-adresse a:hover { color: #fff; }
+  .ft-social { display: flex; gap: .6rem; }
+  .ft-social a {
+    width: 32px; height: 32px; border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.1);
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,.35);
+    transition: all var(--trans);
+  }
+  .ft-social a svg { width: 14px; height: 14px; fill: currentColor; display: block; }
+  .ft-social a:hover { border-color: var(--blue); color: var(--blue); }
+  footer h4 {
+    font-family: 'Sora', sans-serif; font-size: .66rem; font-weight: 700;
+    letter-spacing: .12em; text-transform: uppercase;
+    color: rgba(255,255,255,.85); margin-bottom: 1.1rem;
+  }
+  .ft-links { display: flex; flex-direction: column; gap: .6rem; }
+  .ft-links a { font-size: .82rem; transition: color var(--trans); }
+  .ft-links a:hover { color: var(--blue); }
+  .ft-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 0; gap: 1rem; flex-wrap: wrap;
+    font-size: .75rem; color: rgba(255,255,255,.22);
+  }
+  .ft-legal { display: flex; gap: 1.5rem; }
+  .ft-legal a { color: rgba(255,255,255,.22); transition: color var(--trans); }
+  .ft-legal a:hover { color: rgba(255,255,255,.5); }
+
+  /* ── RESPONSIVE ─────────────────────────────── */
+  @media (max-width: 1100px) {
+    .usp-grid     { grid-template-columns: 1fr; }
+    .usp-item     { border-right: none; border-bottom: 1px solid var(--border); }
+    .usp-item:last-child { border-bottom: none; }
+    .qltc-grid    { grid-template-columns: repeat(2, 1fr); }
+    .qltc-item:nth-child(2) { border-right: none; }
+    .qltc-item:nth-child(3),
+    .qltc-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,.07); }
+    .prozess-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .prozess-grid::before { display: none; }
+    .anf-grid     { grid-template-columns: 1fr; }
+    .kontakt-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .ft-grid      { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  }
+  @media (max-width: 768px) {
+    :root { --pad: 1.5rem; --sec: 4rem; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .qltc-grid    { grid-template-columns: 1fr; }
+    .qltc-item    { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); }
+    .qltc-item:last-child { border-bottom: none; }
+    .prozess-grid { grid-template-columns: 1fr; }
+    .fg-row       { grid-template-columns: 1fr; }
+    .ft-grid      { grid-template-columns: 1fr; }
+  }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────── -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">
+    <img class="logo-light" src="images/Start/berghoff_logo-weiss-gross-1024x145.png" alt="BERGHOFF GmbH">
+    <img class="logo-dark"  src="images/Start/berghoff_logo-schwarz-gross.png" alt="BERGHOFF GmbH">
+  </a>
+  <div class="nav-links">
+    <a href="index.html"    data-de="Startseite"       data-en="Home">Startseite</a>
+    <a href="https://karriere.berghoff.eu" target="_blank" rel="noopener"
+                            data-de="Karriere ↗"       data-en="Careers ↗">Karriere ↗</a>
+    <a href="lieferant.html" class="active" data-de="Lieferant werden" data-en="Become a Supplier">Lieferant werden</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang">
+      <button class="lang-btn on" data-l="de">DE</button>
+      <span class="lang-sep">/</span>
+      <button class="lang-btn" data-l="en">EN</button>
+    </div>
+    <a href="index.html#kontakt" class="btn btn-primary"
+       style="padding:.5rem 1.1rem;font-size:.76rem;"
+       data-de="Kontakt" data-en="Contact">Kontakt</a>
+    <button class="hamburger" id="hb" aria-label="Menü">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<nav class="mobile-nav" id="mob">
+  <a href="index.html"    data-de="Startseite"       data-en="Home">Startseite</a>
+  <a href="https://karriere.berghoff.eu" target="_blank" rel="noopener"
+                          data-de="Karriere ↗"       data-en="Careers ↗">Karriere ↗</a>
+  <a href="lieferant.html" data-de="Lieferant werden" data-en="Become a Supplier">Lieferant werden</a>
+  <a href="index.html#kontakt" data-de="Kontakt"     data-en="Contact">Kontakt</a>
+  <div class="lang" style="margin-top:1.5rem;">
+    <button class="lang-btn on" data-l="de">DE</button>
+    <span class="lang-sep">/</span>
+    <button class="lang-btn" data-l="en">EN</button>
+  </div>
+</nav>
+
+
+<main>
+
+<!-- ── HERO ─────────────────────────────────────── -->
+<section class="hero" style="padding-bottom:5rem; border:none;">
+  <div class="hero-bg"></div>
+  <div class="hero-body">
+    <span class="label" data-de="Supplier Relations" data-en="Supplier Relations">Supplier Relations</span>
+    <h1>
+      <span data-de="Wachsen Sie" data-en="Grow with us">Wachsen Sie</span><br>
+      <span data-de="mit uns." data-en="in the markets">mit uns.</span>
+    </h1>
+    <div class="rule"></div>
+    <p data-de="BERGHOFF liefert an Halbleiter-, Luft- und Raumfahrt- und Medizintechnikunternehmen. Wer mit uns wächst, wächst in den anspruchsvollsten Märkten der Welt."
+       data-en="BERGHOFF supplies semiconductor, aerospace and medical technology companies. Those who grow with us grow in the world's most demanding markets.">
+      BERGHOFF liefert an Halbleiter-, Luft- und Raumfahrt- und Medizintechnikunternehmen. Wer mit uns wächst, wächst in den anspruchsvollsten Märkten der Welt.
+    </p>
+    <div class="ctas">
+      <a href="#bewerbung"     class="btn btn-primary"    data-de="Jetzt bewerben"       data-en="Apply now">Jetzt bewerben</a>
+      <a href="#anforderungen" class="btn btn-ghost-dark" data-de="Anforderungen prüfen" data-en="Check requirements">Anforderungen prüfen</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── WARUM BERGHOFF ────────────────────────────── -->
+<section>
+  <div class="sec-head">
+    <span class="label" data-de="Ihre Vorteile" data-en="Your Benefits">Ihre Vorteile</span>
+    <h2 data-de="Was Sie als Berghoff-Lieferant gewinnen." data-en="What you gain as a BERGHOFF supplier.">
+      Was Sie als Berghoff-Lieferant gewinnen.
+    </h2>
+    <div class="rule"></div>
+    <p data-de="Stabile Abrufmengen, langfristige Rahmenverträge und direkter Zugang zu den anspruchsvollsten Industriesegmenten der Welt."
+       data-en="Stable call-off quantities, long-term framework agreements and direct access to the world's most demanding industrial segments.">
+      Stabile Abrufmengen, langfristige Rahmenverträge und direkter Zugang zu den anspruchsvollsten Industriesegmenten der Welt.
+    </p>
+  </div>
+
+  <div class="usp-grid">
+    <div class="usp-item">
+      <div class="usp-nr">01</div>
+      <h3 data-de="Zugang zu Wachstumsmärkten" data-en="Access to growth markets">Zugang zu Wachstumsmärkten</h3>
+      <p data-de="Halbleiter, Aerospace, Medizintechnik. Märkte mit langfristig wachsender Nachfrage und stabilen Preisstrukturen. Als Berghoff-Lieferant sind Sie direkt dabei."
+         data-en="Semiconductor, aerospace, medical technology. Markets with long-term growing demand and stable price structures. As a BERGHOFF supplier, you are directly involved.">
+        Halbleiter, Aerospace, Medizintechnik. Märkte mit langfristig wachsender Nachfrage und stabilen Preisstrukturen. Als Berghoff-Lieferant sind Sie direkt dabei.
+      </p>
+    </div>
+    <div class="usp-item">
+      <div class="usp-nr">02</div>
+      <h3 data-de="Planbare Abrufmengen" data-en="Predictable call-off volumes">Planbare Abrufmengen</h3>
+      <p data-de="Rahmenverträge mit definierten Jahresmengen ermöglichen zuverlässige Kapazitätsplanung. Sie optimieren Ihre Auslastung, wir sichern die Versorgung unserer Kunden."
+         data-en="Framework agreements with defined annual volumes enable reliable capacity planning. You optimise your utilisation, we secure supply to our customers.">
+        Rahmenverträge mit definierten Jahresmengen ermöglichen zuverlässige Kapazitätsplanung. Sie optimieren Ihre Auslastung, wir sichern die Versorgung unserer Kunden.
+      </p>
+    </div>
+    <div class="usp-item">
+      <div class="usp-nr">03</div>
+      <h3 data-de="Partnerschaft auf Augenhöhe" data-en="Partnership at eye level">Partnerschaft auf Augenhöhe</h3>
+      <p data-de="Technische Unterstützung, gemeinsame Prozessoptimierung und transparente Kommunikation. Wir investieren in unsere Lieferanten, nicht nur in deren Leistung."
+         data-en="Technical support, joint process optimisation and transparent communication. We invest in our suppliers, not just in their output.">
+        Technische Unterstützung, gemeinsame Prozessoptimierung und transparente Kommunikation. Wir investieren in unsere Lieferanten, nicht nur in deren Leistung.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── ANFORDERUNGEN ─────────────────────────────── -->
+<section class="off" id="anforderungen">
+  <div class="sec-head">
+    <span class="label" data-de="Voraussetzungen" data-en="Prerequisites">Voraussetzungen</span>
+    <h2 data-de="Was wir von Lieferanten erwarten." data-en="What we expect from suppliers.">
+      Was wir von Lieferanten erwarten.
+    </h2>
+    <div class="rule"></div>
+    <p data-de="Unsere Kunden haben keine Toleranz für Ausfälle. Das beginnt bei unseren Lieferanten. Die folgenden Standards sind keine Wunschliste, sondern Mindestanforderung."
+       data-en="Our customers have no tolerance for failures. That starts with our suppliers. The following standards are not a wish list, but minimum requirements.">
+      Unsere Kunden haben keine Toleranz für Ausfälle. Das beginnt bei unseren Lieferanten. Die folgenden Standards sind keine Wunschliste, sondern Mindestanforderung.
+    </p>
+  </div>
+
+  <div class="anf-grid">
+
+    <div class="anf-item">
+      <div class="anf-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+          <path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+      </div>
+      <div class="anf-text">
+        <h4 data-de="Qualitätsmanagementsystem" data-en="Quality Management System">Qualitätsmanagementsystem</h4>
+        <p data-de="ISO 9001 als Mindestvoraussetzung. EN 9100 oder ISO 13485 sind je nach Branche von Vorteil und werden bevorzugt."
+           data-en="ISO 9001 as a minimum requirement. EN 9100 or ISO 13485 are advantageous and preferred depending on the industry.">
+          ISO 9001 als Mindestvoraussetzung. EN 9100 oder ISO 13485 sind je nach Branche von Vorteil und werden bevorzugt.
+        </p>
+      </div>
+    </div>
+
+    <div class="anf-item">
+      <div class="anf-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+          <path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/>
+        </svg>
+      </div>
+      <div class="anf-text">
+        <h4 data-de="Nachgewiesene Fachkompetenz" data-en="Proven expertise">Nachgewiesene Fachkompetenz</h4>
+        <p data-de="Erfahrung im relevanten Leistungsbereich: Oberflächenbehandlung, Wärmebehandlung, Beschaffung oder Sonderprozesse mit Referenzen."
+           data-en="Experience in the relevant service area: surface treatment, heat treatment, procurement or special processes with references.">
+          Erfahrung im relevanten Leistungsbereich: Oberflächenbehandlung, Wärmebehandlung, Beschaffung oder Sonderprozesse mit Referenzen.
+        </p>
+      </div>
+    </div>
+
+    <div class="anf-item">
+      <div class="anf-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+          <path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+      </div>
+      <div class="anf-text">
+        <h4 data-de="Liefer- und Termintreue" data-en="Delivery reliability">Liefer- und Termintreue</h4>
+        <p data-de="Mindestens 95% nachweisbare Lieferperformance. Unsere Kunden produzieren ohne Puffer. Verzögerungen haben direkte Konsequenzen."
+           data-en="At least 95% demonstrable delivery performance. Our customers produce without buffer. Delays have direct consequences.">
+          Mindestens 95% nachweisbare Lieferperformance. Unsere Kunden produzieren ohne Puffer. Verzögerungen haben direkte Konsequenzen.
+        </p>
+      </div>
+    </div>
+
+    <div class="anf-item">
+      <div class="anf-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+          <path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+        </svg>
+      </div>
+      <div class="anf-text">
+        <h4 data-de="Rückverfolgbarkeit & Dokumentation" data-en="Traceability & documentation">Rückverfolgbarkeit & Dokumentation</h4>
+        <p data-de="Vollständige Chargenverfolgung, Materialzertifikate (3.1 nach EN 10204) und lückenlose Prüfprotokolle für alle gelieferten Positionen."
+           data-en="Full batch traceability, material certificates (3.1 per EN 10204) and comprehensive test records for all delivered items.">
+          Vollständige Chargenverfolgung, Materialzertifikate (3.1 nach EN 10204) und lückenlose Prüfprotokolle für alle gelieferten Positionen.
+        </p>
+      </div>
+    </div>
+
+    <div class="anf-item">
+      <div class="anf-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+          <path d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.068.157 2.148.279 3.238.364.466.037.893.281 1.153.671L12 21l2.652-3.978c.26-.39.687-.634 1.153-.67 1.09-.086 2.17-.208 3.238-.365 1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"/>
+        </svg>
+      </div>
+      <div class="anf-text">
+        <h4 data-de="Reaktionszeit & Kommunikation" data-en="Response time & communication">Reaktionszeit & Kommunikation</h4>
+        <p data-de="Feste Ansprechpartner, max. 24 Stunden Reaktionszeit auf Anfragen und Reklamationen. Klare Eskalationspfade bei Abweichungen."
+           data-en="Dedicated contact persons, max. 24-hour response time to enquiries and complaints. Clear escalation paths for deviations.">
+          Feste Ansprechpartner, max. 24 Stunden Reaktionszeit auf Anfragen und Reklamationen. Klare Eskalationspfade bei Abweichungen.
+        </p>
+      </div>
+    </div>
+
+    <div class="anf-item">
+      <div class="anf-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+          <path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/>
+        </svg>
+      </div>
+      <div class="anf-text">
+        <h4 data-de="Compliance & Nachhaltigkeit" data-en="Compliance & sustainability">Compliance & Nachhaltigkeit</h4>
+        <p data-de="Einhaltung aller gesetzlichen Vorschriften, Anerkennung unserer Lieferantenbedingungen und Bekenntnis zu nachhaltigen Geschäftspraktiken."
+           data-en="Compliance with all statutory requirements, acceptance of our supplier conditions and commitment to sustainable business practices.">
+          Einhaltung aller gesetzlichen Vorschriften, Anerkennung unserer Lieferantenbedingungen und Bekenntnis zu nachhaltigen Geschäftspraktiken.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ── QLTC ──────────────────────────────────────── -->
+<section class="dark">
+  <div class="sec-head">
+    <span class="label">QLTC</span>
+    <h2 data-de="Vier Dimensionen. Ein Standard." data-en="Four dimensions. One standard.">
+      Vier Dimensionen. Ein Standard.
+    </h2>
+    <div class="rule"></div>
+    <p data-de="Wir bewerten und entwickeln alle Lieferantenbeziehungen entlang vier gleichgewichteter Dimensionen. QLTC ist die Sprache unserer Partnerschaft."
+       data-en="We assess and develop all supplier relationships along four equally weighted dimensions. QLTC is the language of our partnership.">
+      Wir bewerten und entwickeln alle Lieferantenbeziehungen entlang vier gleichgewichteter Dimensionen. QLTC ist die Sprache unserer Partnerschaft.
+    </p>
+  </div>
+
+  <div class="qltc-grid">
+    <div class="qltc-item">
+      <div class="qltc-letter">Q</div>
+      <div class="qltc-word" data-de="Quality" data-en="Quality">Quality</div>
+      <h3 data-de="Qualität" data-en="Quality">Qualität</h3>
+      <p data-de="Null-Fehler-Kultur, zertifizierte Prüfprozesse, dokumentierte Ergebnisse. Qualität ist Grundvoraussetzung jeder Lieferung."
+         data-en="Zero-defect culture, certified inspection processes, documented results. Quality is a prerequisite of every delivery.">
+        Null-Fehler-Kultur, zertifizierte Prüfprozesse, dokumentierte Ergebnisse. Qualität ist Grundvoraussetzung jeder Lieferung.
+      </p>
+    </div>
+    <div class="qltc-item">
+      <div class="qltc-letter">L</div>
+      <div class="qltc-word" data-de="Logistics" data-en="Logistics">Logistics</div>
+      <h3 data-de="Logistik" data-en="Logistics">Logistik</h3>
+      <p data-de="Termintreue, Verpackungskonformität, transparente Lieferstatus-Kommunikation. Wir planen auf Basis verlässlicher Zusagen."
+         data-en="On-time delivery, packaging compliance, transparent delivery status communication. We plan based on reliable commitments.">
+        Termintreue, Verpackungskonformität, transparente Lieferstatus-Kommunikation. Wir planen auf Basis verlässlicher Zusagen.
+      </p>
+    </div>
+    <div class="qltc-item">
+      <div class="qltc-letter">T</div>
+      <div class="qltc-word" data-de="Technology" data-en="Technology">Technology</div>
+      <h3 data-de="Technologie" data-en="Technology">Technologie</h3>
+      <p data-de="Innovationsbereitschaft, Investition in moderne Anlagen, Bereitschaft zur gemeinsamen Prozessentwicklung."
+         data-en="Willingness to innovate, investment in modern equipment, readiness for joint process development.">
+        Innovationsbereitschaft, Investition in moderne Anlagen, Bereitschaft zur gemeinsamen Prozessentwicklung.
+      </p>
+    </div>
+    <div class="qltc-item">
+      <div class="qltc-letter">C</div>
+      <div class="qltc-word" data-de="Cost" data-en="Cost">Cost</div>
+      <h3 data-de="Kosten" data-en="Cost">Kosten</h3>
+      <p data-de="Wettbewerbsfähige Preise, transparente Kalkulation, gemeinsame Optimierungspotenziale. Kosteneffizienz sichert die Wettbewerbsfähigkeit beider Seiten."
+         data-en="Competitive pricing, transparent costing, shared optimisation potential. Cost efficiency secures the competitiveness of both sides.">
+        Wettbewerbsfähige Preise, transparente Kalkulation, gemeinsame Optimierungspotenziale. Kosteneffizienz sichert die Wettbewerbsfähigkeit beider Seiten.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── PROZESS ───────────────────────────────────── -->
+<section class="off">
+  <div class="sec-head">
+    <span class="label" data-de="Bewerbungsprozess" data-en="Application process">Bewerbungsprozess</span>
+    <h2 data-de="So werden Sie Berghoff-Lieferant." data-en="How to become a BERGHOFF supplier.">
+      So werden Sie Berghoff-Lieferant.
+    </h2>
+    <div class="rule"></div>
+    <p data-de="Strukturiert, transparent, zügig. Vom ersten Kontakt bis zur Freigabe durchlaufen Sie vier klar definierte Schritte."
+       data-en="Structured, transparent, swift. From first contact to approval you pass through four clearly defined steps.">
+      Strukturiert, transparent, zügig. Vom ersten Kontakt bis zur Freigabe durchlaufen Sie vier klar definierte Schritte.
+    </p>
+  </div>
+
+  <div class="prozess-grid">
+    <div class="prozess-schritt">
+      <div class="schritt-kreis">1</div>
+      <h4 data-de="Erstanfrage" data-en="Initial enquiry">Erstanfrage</h4>
+      <p data-de="Füllen Sie das Formular aus und beschreiben Sie Ihre Kernkompetenzen, Zertifizierungen und verfügbaren Referenzen."
+         data-en="Complete the form and describe your core competencies, certifications and available references.">
+        Füllen Sie das Formular aus und beschreiben Sie Ihre Kernkompetenzen, Zertifizierungen und verfügbaren Referenzen.
+      </p>
+    </div>
+    <div class="prozess-schritt">
+      <div class="schritt-kreis">2</div>
+      <h4 data-de="Vorprüfung" data-en="Pre-assessment">Vorprüfung</h4>
+      <p data-de="Unser Einkaufsteam prüft Ihre Unterlagen innerhalb von 5 Werktagen und gibt ein erstes Feedback zu Ihrem Profil."
+         data-en="Our procurement team reviews your documents within 5 working days and provides initial feedback on your profile.">
+        Unser Einkaufsteam prüft Ihre Unterlagen innerhalb von 5 Werktagen und gibt ein erstes Feedback zu Ihrem Profil.
+      </p>
+    </div>
+    <div class="prozess-schritt">
+      <div class="schritt-kreis">3</div>
+      <h4 data-de="Lieferanten-Audit" data-en="Supplier audit">Lieferanten-Audit</h4>
+      <p data-de="Strukturiertes Audit nach unserem QLTC-Rahmen, remote oder vor Ort. Transparent und mit klarem Ergebnisbericht."
+         data-en="Structured audit per our QLTC framework, remote or on-site. Transparent and with a clear results report.">
+        Strukturiertes Audit nach unserem QLTC-Rahmen, remote oder vor Ort. Transparent und mit klarem Ergebnisbericht.
+      </p>
+    </div>
+    <div class="prozess-schritt">
+      <div class="schritt-kreis">4</div>
+      <h4 data-de="Freigabe & Rahmenvertrag" data-en="Approval & framework agreement">Freigabe & Rahmenvertrag</h4>
+      <p data-de="Aufnahme in unsere qualifizierte Lieferantenliste (AVL) und Abschluss eines Rahmenvertrags mit definierten Abrufmengen."
+         data-en="Inclusion in our qualified approved vendor list (AVL) and conclusion of a framework agreement with defined call-off quantities.">
+        Aufnahme in unsere qualifizierte Lieferantenliste (AVL) und Abschluss eines Rahmenvertrags mit definierten Abrufmengen.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── BEWERBUNGSFORMULAR ────────────────────────── -->
+<section id="bewerbung">
+  <div class="kontakt-layout">
+
+    <!-- Info-Seite -->
+    <div>
+      <div class="sec-head" style="margin-bottom:2rem;">
+        <span class="label" data-de="Direktkontakt Einkauf" data-en="Direct procurement contact">Direktkontakt Einkauf</span>
+        <h2 data-de="Bereit für den ersten Schritt?" data-en="Ready for the first step?">
+          Bereit für den ersten Schritt?
+        </h2>
+        <div class="rule"></div>
+      </div>
+      <p data-de="Senden Sie uns Ihr Lieferantenprofil oder kontaktieren Sie unseren Einkauf direkt. Wir melden uns innerhalb von 2 Werktagen."
+         data-en="Send us your supplier profile or contact our procurement team directly. We will respond within 2 working days.">
+        Senden Sie uns Ihr Lieferantenprofil oder kontaktieren Sie unseren Einkauf direkt. Wir melden uns innerhalb von 2 Werktagen.
+      </p>
+
+      <div style="margin-top:2rem;">
+        <div class="info-detail">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+          </div>
+          <div>
+            <div class="info-label" data-de="E-Mail Einkauf" data-en="Procurement e-mail">E-Mail Einkauf</div>
+            <div class="info-val"><a href="mailto:einkauf@berghoff.eu">einkauf@berghoff.eu</a></div>
+          </div>
+        </div>
+        <div class="info-detail">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+          </div>
+          <div>
+            <div class="info-label" data-de="Telefon Einkauf" data-en="Procurement phone">Telefon Einkauf</div>
+            <div class="info-val"><a href="tel:+492763212790">+49 2763 21279-0</a></div>
+          </div>
+        </div>
+        <div class="info-detail">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <div class="info-label" data-de="Antwortzeit" data-en="Response time">Antwortzeit</div>
+            <div class="info-val" data-de="Innerhalb von 2 Werktagen" data-en="Within 2 working days">Innerhalb von 2 Werktagen</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hinweis">
+        <p data-de="<strong>Für die Bewerbung benötigen wir:</strong> Aktuelles ISO-Zertifikat, Kurzpräsentation Ihrer Kernkompetenzen, Referenzliste. Optional: Maschinenparkliste."
+           data-en="<strong>For your application we need:</strong> Current ISO certificate, brief presentation of your core competencies, reference list. Optional: machine list.">
+          <strong>Für die Bewerbung benötigen wir:</strong> Aktuelles ISO-Zertifikat, Kurzpräsentation Ihrer Kernkompetenzen, Referenzliste. Optional: Maschinenparkliste.
+        </p>
+      </div>
+    </div>
+
+    <!-- Formular -->
+    <form class="formular" novalidate>
+      <div class="fg-row">
+        <div class="fg">
+          <label data-de="Ansprechpartner *" data-en="Contact person *">Ansprechpartner *</label>
+          <input type="text" placeholder="Max Mustermann" autocomplete="name">
+        </div>
+        <div class="fg">
+          <label data-de="Unternehmen *" data-en="Company *">Unternehmen *</label>
+          <input type="text" placeholder="Mustermann GmbH" autocomplete="organization">
+        </div>
+      </div>
+      <div class="fg-row">
+        <div class="fg">
+          <label data-de="E-Mail *" data-en="E-Mail *">E-Mail *</label>
+          <input type="email" placeholder="max@mustermann.de" autocomplete="email">
+        </div>
+        <div class="fg">
+          <label data-de="Land" data-en="Country">Land</label>
+          <input type="text" placeholder="Deutschland" autocomplete="country-name">
+        </div>
+      </div>
+      <div class="fg">
+        <label data-de="Kernkompetenz *" data-en="Core competency *">Kernkompetenz *</label>
+        <select>
+          <option value="" data-de="Bitte wählen ..." data-en="Please select ...">Bitte wählen ...</option>
+          <option data-de="Oberflächenbehandlung"   data-en="Surface treatment">Oberflächenbehandlung</option>
+          <option data-de="Wärmebehandlung"         data-en="Heat treatment">Wärmebehandlung</option>
+          <option data-de="Rohstoffbeschaffung"     data-en="Raw material procurement">Rohstoffbeschaffung</option>
+          <option data-de="Normteile & Verbindungselemente" data-en="Standard parts & fasteners">Normteile & Verbindungselemente</option>
+          <option data-de="Logistik & Transport"    data-en="Logistics & transport">Logistik & Transport</option>
+          <option data-de="Sonderprozesse"          data-en="Special processes">Sonderprozesse</option>
+          <option data-de="Sonstiges"               data-en="Other">Sonstiges</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label data-de="Vorhandene Zertifizierungen" data-en="Existing certifications">Vorhandene Zertifizierungen</label>
+        <input type="text" placeholder="ISO 9001, EN 9100, ISO 14001 ...">
+      </div>
+      <div class="fg">
+        <label data-de="Kurzbeschreibung" data-en="Brief description">Kurzbeschreibung</label>
+        <textarea data-de="Beschreiben Sie Ihre Kernkompetenz, Kapazitäten und relevante Referenzen ..."
+                  data-en="Describe your core competency, capacities and relevant references ..."
+                  placeholder="Beschreiben Sie Ihre Kernkompetenz, Kapazitäten und relevante Referenzen ..."></textarea>
+      </div>
+      <p class="ds" data-de="Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß unserer <a href='datenschutz.html'>Datenschutzerklärung</a> zu."
+                    data-en="By submitting you agree to the processing of your data per our <a href='datenschutz.html'>Privacy Policy</a>.">
+        Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß unserer <a href="datenschutz.html">Datenschutzerklärung</a> zu.
+      </p>
+      <button type="submit" class="btn-submit"
+              data-de="Bewerbung absenden" data-en="Submit application">Bewerbung absenden</button>
+    </form>
+
+  </div>
+</section>
+
+</main>
+
+
+<!-- ── FOOTER ────────────────────────────────────── -->
+<footer>
+  <div class="ft-grid">
+
+    <!-- Branding -->
+    <div>
+      <div class="ft-logo">
+        <img src="images/Start/berghoff_logo-weiss-gross-1024x145.png" alt="BERGHOFF GmbH">
+      </div>
+      <p class="ft-about"
+         data-de="Pure Performance. Absolute Precision. Inhabergeführtes Familienunternehmen seit 1984."
+         data-en="Pure Performance. Absolute Precision. Owner-managed family business since 1984.">
+        Pure Performance. Absolute Precision. Inhabergeführtes Familienunternehmen seit 1984.
+      </p>
+      <div class="ft-social">
+        <a href="https://www.linkedin.com/company/berghoff-gmbh-pure-performance-absolute-precision" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/berghoff_team/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/berghoff.team/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div>
+      <h4 data-de="Navigation" data-en="Navigation">Navigation</h4>
+      <ul class="ft-links">
+        <li><a href="index.html"          data-de="Startseite"       data-en="Home">Startseite</a></li>
+        <li><a href="ueber-berghoff.html" data-de="Über BERGHOFF"    data-en="About BERGHOFF">Über BERGHOFF</a></li>
+        <li><a href="branchen.html"       data-de="Branchen"         data-en="Industries">Branchen</a></li>
+        <li><a href="maschinenpark.html"  data-de="Maschinenpark"    data-en="Machinery">Maschinenpark</a></li>
+        <li><a href="lieferant.html"      data-de="Lieferant werden" data-en="Become a Supplier">Lieferant werden</a></li>
+        <li><a href="https://karriere.berghoff.eu" target="_blank" rel="noopener"
+               data-de="Karriere ↗" data-en="Careers ↗">Karriere ↗</a></li>
+      </ul>
+    </div>
+
+    <!-- Branchen -->
+    <div>
+      <h4 data-de="Branchen" data-en="Industries">Branchen</h4>
+      <ul class="ft-links">
+        <li><a href="branchen.html#halbleiter" data-de="Halbleiter"      data-en="Semiconductor">Halbleiter</a></li>
+        <li><a href="branchen.html#aerospace"  data-de="Aerospace"       data-en="Aerospace">Aerospace</a></li>
+        <li><a href="branchen.html#medizin"    data-de="Medizintechnik"  data-en="Medical">Medizintechnik</a></li>
+        <li><a href="branchen.html#energie"    data-de="Energie"         data-en="Energy">Energie</a></li>
+        <li><a href="branchen.html#pumpen"     data-de="Pumpen & Extruder" data-en="Pumps & Extruders">Pumpen &amp; Extruder</a></li>
+        <li><a href="branchen.html#oel-gas"    data-de="Öl & Gas"        data-en="Oil & Gas">Öl &amp; Gas</a></li>
+      </ul>
+    </div>
+
+    <!-- Hauptstandort -->
+    <div>
+      <h4 data-de="Hauptstandort" data-en="Main Site">Hauptstandort</h4>
+      <div class="ft-adresse">
+        <strong>BERGHOFF GmbH</strong>
+        Langenheid 1<br>
+        57489 Drolshagen<br>
+        <a href="tel:+4927632127900">+49 2763 21279-0</a><br>
+        <a href="mailto:info@berghoff.eu">info@berghoff.eu</a>
+      </div>
+    </div>
+
+    <!-- Zweiter Standort + Rechtliches -->
+    <div>
+      <h4 data-de="Zweiter Standort" data-en="Second Location">Zweiter Standort</h4>
+      <div class="ft-adresse">
+        <strong>BERGHOFF GmbH</strong>
+        Im Ruttenberge 6<br>
+        57482 Wenden<br>
+        <a href="tel:+4927629874 0">+49 2762 98740</a>
+      </div>
+      <h4 style="margin-top:1.75rem;" data-de="Rechtliches" data-en="Legal">Rechtliches</h4>
+      <ul class="ft-links">
+        <li><a href="impressum.html"   data-de="Impressum"   data-en="Imprint">Impressum</a></li>
+        <li><a href="datenschutz.html" data-de="Datenschutz" data-en="Privacy Policy">Datenschutz</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="ft-bottom">
+    <span data-de="© 2026 BERGHOFF GmbH & Co. KG. Alle Rechte vorbehalten."
+          data-en="© 2026 BERGHOFF GmbH & Co. KG. All rights reserved.">
+      © 2026 BERGHOFF GmbH & Co. KG. Alle Rechte vorbehalten.
+    </span>
+    <div class="ft-legal">
+      <a href="impressum.html"   data-de="Impressum"  data-en="Legal Notice">Impressum</a>
+      <a href="datenschutz.html" data-de="Datenschutz" data-en="Privacy Policy">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+'use strict';
+
+/* ── Sprache ──────────────────────────────────────── */
+function setLang(lang) {
+  document.querySelectorAll('[data-de]').forEach(el => {
+    if (el.children.length === 0) el.textContent = el.dataset[lang] || el.textContent;
+  });
+  localStorage.setItem('bg_lang', lang);
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('on', b.dataset.l === lang));
+  document.documentElement.lang = lang === 'en' ? 'en' : 'de';
+}
+setLang(localStorage.getItem('bg_lang') || 'de');
+document.querySelectorAll('.lang-btn').forEach(b => b.addEventListener('click', () => setLang(b.dataset.l)));
+
+/* ── Nav Scroll-Shadow ────────────────────────────── */
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', scrollY > 16);
+}, { passive: true });
+
+/* ── Hamburger ────────────────────────────────────── */
+const hb = document.getElementById('hb'), mob = document.getElementById('mob');
+hb.addEventListener('click', () => {
+  const o = hb.classList.toggle('open');
+  mob.classList.toggle('open', o);
+  document.body.style.overflow = o ? 'hidden' : '';
+});
+mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  hb.classList.remove('open'); mob.classList.remove('open');
+  document.body.style.overflow = '';
+}));
+
+/* ── Smooth Scroll ────────────────────────────────── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (!t) return; e.preventDefault();
+    window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 80, behavior: 'smooth' });
+  });
+});
+
+/* ── Formular ─────────────────────────────────────── */
+document.querySelector('form')?.addEventListener('submit', e => {
+  e.preventDefault();
+  const btn = e.target.querySelector('.btn-submit');
+  const lang = localStorage.getItem('bg_lang') || 'de';
+  btn.textContent = lang === 'en' ? 'Sending ...' : 'Wird gesendet ...';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = lang === 'en' ? 'Application sent ✓' : 'Bewerbung gesendet ✓';
+    btn.style.background = '#22c55e';
+    e.target.reset();
+    setTimeout(() => {
+      btn.textContent = lang === 'en' ? 'Submit application' : 'Bewerbung absenden';
+      btn.style.background = ''; btn.disabled = false;
+    }, 3000);
+  }, 1200);
+});
+</script>
+
+</body>
+</html>
