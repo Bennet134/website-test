@@ -403,35 +403,10 @@
 
   /* ── 3SVIP ─────────────────────────────────────── */
   .svip-layout {
-    display: grid; grid-template-columns: auto 1fr;
+    display: grid; grid-template-columns: 1fr 1fr;
     gap: 5rem; align-items: center;
   }
-  .svip-svg-wrap {
-    display: flex; flex-direction: column; align-items: center;
-    gap: 0; flex-shrink: 0;
-  }
-  .svip-svg-step {
-    display: flex; flex-direction: column; align-items: center; gap: .5rem;
-  }
-  .svip-svg-circle {
-    width: 64px; height: 64px; border-radius: 50%;
-    background: var(--blue); display: flex; align-items: center; justify-content: center;
-    font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 800; color: #fff;
-    box-shadow: 0 0 0 6px rgba(0,159,227,.15);
-  }
-  .svip-svg-label {
-    font-family: 'Sora', sans-serif; font-size: .62rem; font-weight: 700;
-    letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
-  }
-  .svip-svg-arrow {
-    width: 2px; height: 40px; background: linear-gradient(to bottom, var(--blue), rgba(0,159,227,.2));
-    position: relative; margin: .25rem 0;
-  }
-  .svip-svg-arrow::after {
-    content: ''; position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%);
-    border-left: 5px solid transparent; border-right: 5px solid transparent;
-    border-top: 7px solid var(--blue);
-  }
+  .svip-img img { width: 100%; max-width: 440px; }
   .svip-text .label { display: block; margin-bottom: .6rem; }
   .svip-text h2 {
     font-family: 'Sora', sans-serif;
@@ -605,12 +580,7 @@
     .hs-item:nth-child(2) { border-right: none; }
     .hs-item:nth-child(3),
     .hs-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,.08); }
-    .who-layout { grid-template-columns: 1fr; gap: 3rem; }
-    .svip-layout { grid-template-columns: 1fr; gap: 3rem; }
-    .svip-svg-wrap { flex-direction: row; gap: 0; }
-    .svip-svg-step { flex-direction: column; }
-    .svip-svg-arrow { width: 40px; height: 2px; background: linear-gradient(to right, var(--blue), rgba(0,159,227,.2)); margin: 0 .25rem; align-self: center; }
-    .svip-svg-arrow::after { bottom: auto; left: auto; right: -6px; top: 50%; transform: translateY(-50%); border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 7px solid var(--blue); border-right: none; }
+    .who-layout, .svip-layout { grid-template-columns: 1fr; gap: 3rem; }
     .explore-grid  { grid-template-columns: 1fr; }
     .ft-grid       { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
   }
@@ -639,7 +609,8 @@
   </a>
 
   <div class="nav-links">
-    <a href="index.html"   class="active" data-de="Startseite"       data-en="Home">Startseite</a>
+    <a href="index.html"    class="active" data-de="Startseite"       data-en="Home">Startseite</a>
+    <a href="branchen.html"                data-de="Branchen"         data-en="Industries">Branchen</a>
     <a href="https://karriere.berghoff.eu" target="_blank" rel="noopener"
                                            data-de="Karriere ↗"       data-en="Careers ↗">Karriere ↗</a>
     <a href="lieferant.html"               data-de="Lieferant werden" data-en="Become a Supplier">Lieferant werden</a>
@@ -660,11 +631,12 @@
 </nav>
 
 <nav class="mobile-nav" id="mob">
-  <a href="index.html"   data-de="Startseite"       data-en="Home">Startseite</a>
+  <a href="index.html"    data-de="Startseite"       data-en="Home">Startseite</a>
+  <a href="branchen.html" data-de="Branchen"         data-en="Industries">Branchen</a>
   <a href="https://karriere.berghoff.eu" target="_blank" rel="noopener"
-                         data-de="Karriere ↗"       data-en="Careers ↗">Karriere ↗</a>
+                          data-de="Karriere ↗"       data-en="Careers ↗">Karriere ↗</a>
   <a href="lieferant.html" data-de="Lieferant werden" data-en="Become a Supplier">Lieferant werden</a>
-  <a href="#kontakt"     data-de="Kontakt"          data-en="Contact">Kontakt</a>
+  <a href="#kontakt"      data-de="Kontakt"          data-en="Contact">Kontakt</a>
   <div class="lang" style="margin-top:1.5rem;">
     <button class="lang-btn on" data-l="de">DE</button>
     <span class="lang-sep">/</span>
@@ -979,21 +951,10 @@
 <section class="off" id="svip">
   <div class="svip-layout">
 
-    <div class="svip-svg-wrap">
-      <div class="svip-svg-step">
-        <div class="svip-svg-circle">1</div>
-        <div class="svip-svg-label" data-de="Analyse" data-en="Analysis">Analyse</div>
-      </div>
-      <div class="svip-svg-arrow"></div>
-      <div class="svip-svg-step">
-        <div class="svip-svg-circle">2</div>
-        <div class="svip-svg-label" data-de="Fertigung" data-en="Manufacturing">Fertigung</div>
-      </div>
-      <div class="svip-svg-arrow"></div>
-      <div class="svip-svg-step">
-        <div class="svip-svg-circle">3</div>
-        <div class="svip-svg-label" data-de="Lieferung" data-en="Delivery">Lieferung</div>
-      </div>
+    <div class="svip-img">
+      <img src="images/Start/3-step-vertical-integration-process-berghoff-768x764.jpg.jpeg"
+           alt="3-Step Vertical Integration Process BERGHOFF" loading="lazy"
+           style="mix-blend-mode:multiply;">
     </div>
 
     <div class="svip-text">
