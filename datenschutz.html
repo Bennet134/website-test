@@ -3,322 +3,334 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
-  <title>Datenschutzerklärung – Berghoff GmbH</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Datenschutzerklärung der BERGHOFF GmbH & Co. KG gemäß DSGVO.">
+  <title>Datenschutz - BERGHOFF GmbH</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/Berghoff_Icon.png">
+  <link rel="canonical" href="https://berghoff.eu/datenschutz.html">
+  <meta name="robots" content="noindex, follow">
+
+  <style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  img { display: block; max-width: 100%; }
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+  button { font-family: inherit; cursor: pointer; background: none; border: none; }
+
+  :root {
+    --blue:   #009FE3;
+    --blue-d: #0080c0;
+    --black:  #080808;
+    --off:    #f5f5f5;
+    --border: #e4e4e4;
+    --text:   #1a1a1a;
+    --muted:  #6b6b6b;
+    --white:  #fff;
+    --nav-h:  64px;
+    --r:      2px;
+    --pad:    clamp(1.5rem, 7vw, 8rem);
+    --sec:    6rem;
+    --trans:  220ms ease;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+  .label { font-family: 'Sora', sans-serif; font-size: .66rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--blue); }
+  .rule  { width: 36px; height: 2px; background: var(--blue); }
+  .btn { display: inline-flex; align-items: center; gap: .4rem; font-family: 'Sora', sans-serif; font-size: .8rem; font-weight: 700; padding: .875rem 1.75rem; border-radius: var(--r); transition: all var(--trans); white-space: nowrap; }
+  .btn-primary { background: var(--blue); color: var(--white); border: 2px solid var(--blue); }
+  .btn-primary:hover { background: var(--blue-d); border-color: var(--blue-d); }
+
+  /* NAV */
+  .nav { position: fixed; inset: 0 0 auto; height: var(--nav-h); z-index: 300; background: rgba(255,255,255,.97); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); display: flex; align-items: center; padding: 0 var(--pad); justify-content: space-between; transition: box-shadow var(--trans); }
+  .nav.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,.07); }
+  .nav-logo .logo-light { display: none; }
+  .nav-logo .logo-dark  { display: block; }
+  .nav-logo img { height: 26px; width: auto; }
+  .nav-links { display: flex; align-items: center; gap: .25rem; }
+  .nav-links a { font-size: .82rem; color: var(--muted); padding: .4rem .9rem; border-radius: var(--r); transition: color var(--trans); }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+  .nav-right { display: flex; align-items: center; gap: 1.25rem; }
+  .lang { display: flex; gap: 2px; align-items: center; }
+  .lang-btn { font-family: 'Sora', sans-serif; font-size: .7rem; font-weight: 700; letter-spacing: .08em; color: var(--muted); padding: .3rem .45rem; border-radius: 2px; transition: color var(--trans); }
+  .lang-btn.on { color: var(--blue); }
+  .lang-btn:hover:not(.on) { color: var(--text); }
+  .lang-sep { font-size: .7rem; color: var(--border); }
+  .hamburger { display: none; flex-direction: column; justify-content: space-between; width: 22px; height: 16px; }
+  .hamburger span { display: block; height: 1.5px; background: var(--text); border-radius: 2px; transition: all .3s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-nav { display: none; position: fixed; top: var(--nav-h); inset: var(--nav-h) 0 0; background: var(--white); z-index: 299; flex-direction: column; padding: 2rem var(--pad); border-top: 1px solid var(--border); }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a { font-family: 'Sora', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--text); padding: 1rem 0; border-bottom: 1px solid var(--border); transition: color var(--trans); }
+  .mobile-nav a:hover { color: var(--blue); }
+
+  /* HERO */
+  .hero { position: relative; overflow: hidden; padding: calc(var(--nav-h) + 3rem) var(--pad) 3rem; background: linear-gradient(135deg, #030d1f 0%, #041833 40%, #062448 70%, #0a3060 100%); }
+  .hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(0,159,227,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,159,227,.06) 1px, transparent 1px); background-size: 64px 64px; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%); }
+  .hero::after { content: ''; position: absolute; top: -120px; right: -80px; width: 520px; height: 520px; background: radial-gradient(circle, rgba(0,159,227,.18) 0%, transparent 70%); pointer-events: none; }
+  .hero-body { position: relative; z-index: 1; max-width: 760px; }
+  .hero-body .label { display: block; margin-bottom: .75rem; }
+  .hero-body h1 { font-family: 'Sora', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.05; letter-spacing: -.03em; color: var(--white); margin-bottom: 1rem; }
+  .hero-body p { font-size: 1rem; color: rgba(255,255,255,.6); line-height: 1.8; margin-top: 1rem; max-width: 600px; }
+  .hero-body .rule { margin-top: .75rem; }
+
+  /* CONTENT */
+  .content { padding: var(--sec) var(--pad); max-width: 900px; }
+  .dsg-block { margin-bottom: 3rem; }
+  .dsg-block h2 { font-family: 'Sora', sans-serif; font-size: .85rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); margin-bottom: 1rem; padding-bottom: .5rem; border-bottom: 1px solid var(--border); }
+  .dsg-block h3 { font-family: 'Sora', sans-serif; font-size: .9rem; font-weight: 700; color: var(--text); margin: 1.5rem 0 .5rem; }
+  .dsg-block p { font-size: .95rem; color: var(--text); line-height: 1.85; margin-bottom: .75rem; }
+  .dsg-block address { font-style: normal; font-size: .95rem; color: var(--text); line-height: 1.85; }
+  .dsg-block a { color: var(--blue); }
+  .dsg-block a:hover { text-decoration: underline; }
+  .dsg-block ul { padding-left: 1.25rem; margin-bottom: .75rem; }
+  .dsg-block ul li { font-size: .95rem; color: var(--text); line-height: 1.85; list-style: disc; }
+
+  /* FOOTER */
+  footer { background: var(--black); color: rgba(255,255,255,.55); padding: 4rem var(--pad) 2rem; }
+  .ft-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 2.5rem; margin-bottom: 3rem; }
+  .ft-brand p { font-size: .82rem; line-height: 1.75; margin: 1rem 0; max-width: 240px; }
+  .ft-brand img { height: 24px; filter: brightness(0) invert(1); }
+  .ft-socials { display: flex; gap: .75rem; margin-top: 1.25rem; }
+  .ft-socials a { display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(255,255,255,.12); transition: border-color var(--trans), background var(--trans); }
+  .ft-socials a:hover { border-color: var(--blue); background: rgba(0,159,227,.1); }
+  .ft-socials svg { width: 15px; height: 15px; fill: rgba(255,255,255,.6); }
+  .ft-col h4 { font-family: 'Sora', sans-serif; font-size: .66rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.25); margin-bottom: 1.1rem; }
+  .ft-col a, .ft-col p, .ft-col span { display: block; font-size: .82rem; color: rgba(255,255,255,.5); line-height: 1.7; transition: color var(--trans); }
+  .ft-col a:hover { color: var(--white); }
+  .ft-bottom { border-top: 1px solid rgba(255,255,255,.06); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: .78rem; }
+  .ft-bottom-links { display: flex; gap: 1.5rem; }
+  .ft-bottom-links a { color: rgba(255,255,255,.35); transition: color var(--trans); }
+  .ft-bottom-links a:hover { color: var(--white); }
+
+  @media (max-width: 900px) {
+    .ft-grid { grid-template-columns: 1fr 1fr; }
+    .nav-links, .nav-right .btn { display: none; }
+    .hamburger { display: flex; }
+  }
+  @media (max-width: 560px) {
+    .ft-grid { grid-template-columns: 1fr; }
+  }
+  </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header class="site-header" role="banner">
-  <div class="container header-innen">
-    <a href="index.html" class="logo" aria-label="Berghoff GmbH – Startseite">
-      <div class="logo-mark" aria-hidden="true"><svg viewBox="0 0 22 22" fill="none"><rect x="2" y="2" width="8" height="8" fill="white"/><rect x="12" y="2" width="8" height="8" fill="white" opacity="0.5"/><rect x="2" y="12" width="8" height="8" fill="white" opacity="0.5"/><rect x="12" y="12" width="8" height="8" fill="white"/></svg></div>
-      <span class="logo-text">BERG<span>HOFF</span></span>
-    </a>
-    <nav class="haupt-nav" role="navigation">
-      <a href="index.html" class="nav-link" data-lang="de">Startseite</a><a href="index.html" class="nav-link" data-lang="en">Home</a>
-      <a href="branchen.html" class="nav-link" data-lang="de">Branchen</a><a href="branchen.html" class="nav-link" data-lang="en">Industries</a>
-      <a href="maschinenpark.html" class="nav-link" data-lang="de">Maschinenpark</a><a href="maschinenpark.html" class="nav-link" data-lang="en">Equipment</a>
-      <a href="lieferant.html" class="nav-link nav-link--blau" data-lang="de">Lieferant werden</a><a href="lieferant.html" class="nav-link nav-link--blau" data-lang="en">Become a Supplier</a>
-    </nav>
-    <div class="header-rechts">
-      <div class="sprachumschalter"><button class="sprach-btn aktiv" data-lang="de">DE</button><button class="sprach-btn" data-lang="en">EN</button></div>
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">
+    <img class="logo-dark"  src="images/Berghoff_Logo.png" alt="BERGHOFF">
+    <img class="logo-light" src="images/Berghoff_Logo_white.png" alt="BERGHOFF">
+  </a>
+  <div class="nav-links">
+    <a href="index.html"     data-de="Startseite"       data-en="Home">Startseite</a>
+    <a href="branchen.html"  data-de="Branchen"          data-en="Industries">Branchen</a>
+    <a href="https://karriere.berghoff.eu" target="_blank" rel="noopener" data-de="Karriere ↗" data-en="Careers ↗">Karriere ↗</a>
+    <a href="lieferant.html" data-de="Lieferant werden"  data-en="Become a Supplier">Lieferant werden</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang">
+      <button class="lang-btn on" onclick="setLang('de')">DE</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
-    <button class="hamburger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+    <a href="index.html#kontakt" class="btn btn-primary" data-de="Kontakt" data-en="Contact">Kontakt</a>
+    <button class="hamburger" id="ham" onclick="toggleMobile()" aria-label="Menü">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-</header>
-<nav class="mobile-menu">
-  <a href="index.html" class="mobile-nav-link"><span data-lang="de">Startseite</span><span data-lang="en">Home</span></a>
-  <a href="branchen.html" class="mobile-nav-link"><span data-lang="de">Branchen</span><span data-lang="en">Industries</span></a>
-  <a href="maschinenpark.html" class="mobile-nav-link"><span data-lang="de">Maschinenpark</span><span data-lang="en">Equipment</span></a>
-  <a href="lieferant.html" class="mobile-nav-link"><span data-lang="de">Lieferant werden</span><span data-lang="en">Become a Supplier</span></a>
-  <div class="sprachumschalter"><button class="sprach-btn" data-lang="de">DE</button><button class="sprach-btn" data-lang="en">EN</button></div>
 </nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html"     data-de="Startseite"       data-en="Home">Startseite</a>
+  <a href="branchen.html"  data-de="Branchen"          data-en="Industries">Branchen</a>
+  <a href="https://karriere.berghoff.eu" target="_blank" rel="noopener" data-de="Karriere ↗" data-en="Careers ↗">Karriere ↗</a>
+  <a href="lieferant.html" data-de="Lieferant werden"  data-en="Become a Supplier">Lieferant werden</a>
+  <a href="index.html#kontakt" data-de="Kontakt" data-en="Contact">Kontakt</a>
+</div>
 
-<main>
-<div class="container inhaltsseite">
-
-  <!-- Deutsche Version -->
-  <div data-lang="de">
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-body">
+    <span class="label">Rechtliches</span>
     <h1>Datenschutzerklärung</h1>
-    <p class="lead">Informationen zur Verarbeitung Ihrer personenbezogenen Daten gemäß DSGVO</p>
-    <div class="inhalts-trenner"></div>
+    <div class="rule"></div>
+    <p>Informationen zur Verarbeitung Ihrer personenbezogenen Daten gemäß DSGVO.</p>
+  </div>
+</section>
 
+<!-- CONTENT -->
+<div class="content">
+
+  <div class="dsg-block">
     <h2>1. Verantwortlicher</h2>
-    <p>
-      Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:<br><br>
-      Berghoff GmbH<br>
-      Musterstraße 1<br>
-      12345 Musterstadt<br>
-      Deutschland<br><br>
-      Telefon: +49 (0) 000 000 000<br>
-      E-Mail: <a href="mailto:datenschutz@berghoff.de" style="color:var(--blau);">datenschutz@berghoff.de</a>
-    </p>
-
-    <h2>2. Datenschutzbeauftragter</h2>
-    <p>
-      Sie können unseren Datenschutzbeauftragten wie folgt erreichen:<br><br>
-      Datenschutzbeauftragter Berghoff GmbH<br>
-      E-Mail: <a href="mailto:datenschutz@berghoff.de" style="color:var(--blau);">datenschutz@berghoff.de</a>
-    </p>
-
-    <h2>3. Erhebung und Speicherung personenbezogener Daten</h2>
-
-    <h3>3.1 Beim Besuch der Website</h3>
-    <p>
-      Beim Aufrufen unserer Website werden durch den auf Ihrem Endgerät zum Einsatz kommenden Browser
-      automatisch Informationen an den Server unserer Website gesendet. Diese Informationen werden
-      temporär in einem sogenannten Logfile gespeichert. Folgende Informationen werden dabei ohne Ihr
-      Zutun erfasst und bis zur automatisierten Löschung gespeichert:
-    </p>
-    <ul>
-      <li>IP-Adresse des anfragenden Rechners</li>
-      <li>Datum und Uhrzeit des Zugriffs</li>
-      <li>Name und URL der abgerufenen Datei</li>
-      <li>Website, von der aus der Zugriff erfolgt (Referrer-URL)</li>
-      <li>Verwendeter Browser und ggf. das Betriebssystem Ihres Rechners sowie der Name Ihres Access-Providers</li>
-    </ul>
-    <p>
-      Die genannten Daten werden durch uns zu folgenden Zwecken verarbeitet: Gewährleistung eines
-      reibungslosen Verbindungsaufbaus der Website, Gewährleistung einer komfortablen Nutzung unserer
-      Website, Auswertung der Systemsicherheit und -stabilität sowie zu weiteren administrativen Zwecken.
-    </p>
-    <p>
-      Die Rechtsgrundlage für die Datenverarbeitung ist Art. 6 Abs. 1 S. 1 lit. f DSGVO. Unser
-      berechtigtes Interesse folgt aus den oben aufgelisteten Zwecken zur Datenerhebung.
-    </p>
-
-    <h3>3.2 Bei Nutzung unseres Kontaktformulars</h3>
-    <p>
-      Bei Fragen jeglicher Art bieten wir Ihnen die Möglichkeit, mit uns über ein auf der Website
-      bereitgestelltes Formular Kontakt aufzunehmen. Dabei ist die Angabe einer gültigen E-Mail-Adresse
-      sowie Ihres Namens erforderlich, damit wir wissen, von wem die Anfrage stammt und um diese
-      beantworten zu können. Weitere Angaben können freiwillig getätigt werden.
-    </p>
-    <p>
-      Die Datenverarbeitung zum Zwecke der Kontaktaufnahme mit uns erfolgt nach Art. 6 Abs. 1 S. 1 lit. a
-      DSGVO auf Grundlage Ihrer freiwillig erteilten Einwilligung. Die für die Benutzung des
-      Kontaktformulars von uns erhobenen personenbezogenen Daten werden nach Erledigung der von Ihnen
-      gestellten Anfrage automatisch gelöscht.
-    </p>
-
-    <h2>4. Cookies</h2>
-    <p>
-      Diese Website verwendet ausschließlich technisch notwendige Cookies. Diese Cookies sind für den
-      Betrieb der Website erforderlich und können in unseren Systemen nicht abgeschaltet werden.
-      Sie speichern keine personenbezogenen Daten, sondern nur funktionale Einstellungen wie
-      Ihre Sprachpräferenz und die Cookie-Einwilligungsentscheidung.
-    </p>
-    <p>
-      Wir setzen keine Analyse-, Marketing- oder Tracking-Cookies ein. Es werden keine Daten
-      an Drittanbieter wie Google Analytics, Facebook Pixel oder ähnliche Dienste übertragen.
-    </p>
-    <p>
-      Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse
-      am technischen Betrieb der Website).
-    </p>
-
-    <h2>5. Weitergabe von Daten an Dritte</h2>
-    <p>
-      Eine Übermittlung Ihrer persönlichen Daten an Dritte zu anderen als den im Folgenden aufgeführten
-      Zwecken findet nicht statt. Wir geben Ihre persönlichen Daten nur an Dritte weiter, wenn:
-    </p>
-    <ul>
-      <li>Sie Ihre nach Art. 6 Abs. 1 S. 1 lit. a DSGVO ausdrückliche Einwilligung dazu erteilt haben,</li>
-      <li>die Weitergabe nach Art. 6 Abs. 1 S. 1 lit. f DSGVO zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen erforderlich ist,</li>
-      <li>für den Fall, dass für die Weitergabe nach Art. 6 Abs. 1 S. 1 lit. c DSGVO eine gesetzliche Verpflichtung besteht, sowie</li>
-      <li>dies gesetzlich zulässig und nach Art. 6 Abs. 1 S. 1 lit. b DSGVO für die Abwicklung von Vertragsverhältnissen mit Ihnen erforderlich ist.</li>
-    </ul>
-
-    <h2>6. Externe Schriftarten (Google Fonts)</h2>
-    <p>
-      Diese Website lädt Schriftarten (Sora, Inter) über den Google Fonts-Dienst. Bei jedem Seitenaufruf
-      wird eine Verbindung zu Googles Servern hergestellt, wobei Ihre IP-Adresse übertragen wird.
-      Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Falls Sie dies vermeiden möchten, können Sie
-      in Ihrem Browser Google Fonts blockieren oder einen anderen DNS-Resolver verwenden.
-    </p>
-    <p>
-      Informationen zur Datenverarbeitung durch Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style="color:var(--blau);">https://policies.google.com/privacy</a>
-    </p>
-
-    <h2>7. Betroffenenrechte</h2>
-    <p>Sie haben das Recht:</p>
-    <ul>
-      <li>gemäß Art. 15 DSGVO Auskunft über Ihre von uns verarbeiteten personenbezogenen Daten zu verlangen;</li>
-      <li>gemäß Art. 16 DSGVO unverzüglich die Berichtigung unrichtiger oder Vervollständigung Ihrer bei uns gespeicherten personenbezogenen Daten zu verlangen;</li>
-      <li>gemäß Art. 17 DSGVO die Löschung Ihrer bei uns gespeicherten personenbezogenen Daten zu verlangen;</li>
-      <li>gemäß Art. 18 DSGVO die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen;</li>
-      <li>gemäß Art. 20 DSGVO Ihre personenbezogenen Daten, die Sie uns bereitgestellt haben, in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten;</li>
-      <li>gemäß Art. 7 Abs. 3 DSGVO Ihre einmal erteilte Einwilligung jederzeit gegenüber uns zu widerrufen.</li>
-    </ul>
-
-    <h2>8. Beschwerderecht bei der Aufsichtsbehörde</h2>
-    <p>
-      Sie haben gemäß Art. 77 DSGVO das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.
-      In der Regel können Sie sich hierfür an die Aufsichtsbehörde Ihres üblichen Aufenthaltsortes oder
-      Arbeitsplatzes oder unseres Unternehmenssitzes wenden.
-    </p>
-
-    <h2>9. Aktualität und Änderung dieser Datenschutzerklärung</h2>
-    <p>
-      Diese Datenschutzerklärung ist aktuell gültig und hat den Stand Juni 2025.
-      Durch die Weiterentwicklung unserer Website und Angebote darüber oder aufgrund geänderter gesetzlicher
-      beziehungsweise behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern.
-      Die jeweils aktuelle Datenschutzerklärung kann jederzeit auf der Website unter
-      <a href="datenschutz.html" style="color:var(--blau);">datenschutz.html</a> von Ihnen abgerufen und ausgedruckt werden.
-    </p>
+    <address>
+      <strong>BERGHOFF GmbH &amp; Co. KG</strong><br>
+      Langenheid 1<br>
+      57489 Drolshagen<br>
+      Telefon: <a href="tel:+4927632127900">+49 (0) 2763 / 21279-0</a><br>
+      E-Mail: <a href="mailto:info@berghoff.eu">info@berghoff.eu</a>
+    </address>
   </div>
 
-  <!-- Englische Version -->
-  <div data-lang="en">
-    <h1>Privacy Policy</h1>
-    <p class="lead">Information on the processing of your personal data in accordance with the GDPR</p>
-    <div class="inhalts-trenner"></div>
+  <div class="dsg-block">
+    <h2>2. Datenschutzbeauftragter</h2>
+    <address>
+      André Korte<br>
+      Jurando GmbH<br>
+      E-Mail: <a href="mailto:datenschutzbeauftragter@jurando.de">datenschutzbeauftragter@jurando.de</a>
+    </address>
+  </div>
 
-    <h2>1. Controller</h2>
-    <p>
-      The controller within the meaning of the General Data Protection Regulation (GDPR) is:<br><br>
-      Berghoff GmbH<br>
-      Musterstraße 1<br>
-      12345 Musterstadt<br>
-      Germany<br><br>
-      Phone: +49 (0) 000 000 000<br>
-      E-Mail: <a href="mailto:datenschutz@berghoff.de" style="color:var(--blau);">datenschutz@berghoff.de</a>
-    </p>
+  <div class="dsg-block">
+    <h2>3. Hosting &amp; Bereitstellung der Website</h2>
+    <p>Diese Website wird als statische HTML-Website bereitgestellt. Es werden keine Tracking-Tools, Analyse-Dienste (wie Google Analytics) oder externe Werbedienste eingesetzt. Es werden keine Cookies gesetzt, die einer Einwilligung bedürfen.</p>
+    <p>Beim Abruf unserer Website werden durch den Hosting-Anbieter automatisch technische Zugriffsdaten in Server-Logfiles gespeichert. Hierzu gehören: IP-Adresse (anonymisiert), Datum und Uhrzeit des Abrufs, aufgerufene URL, Referrer-URL, verwendeter Browser und Betriebssystem. Diese Daten werden ausschließlich zur Gewährleistung der technischen Sicherheit und Stabilität des Betriebs gespeichert und nach spätestens 7 Tagen gelöscht.</p>
+    <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der technischen Bereitstellung und Absicherung der Website).</p>
+  </div>
 
-    <h2>2. Data Protection Officer</h2>
-    <p>
-      You can reach our Data Protection Officer as follows:<br><br>
-      Data Protection Officer, Berghoff GmbH<br>
-      E-Mail: <a href="mailto:datenschutz@berghoff.de" style="color:var(--blau);">datenschutz@berghoff.de</a>
-    </p>
+  <div class="dsg-block">
+    <h2>4. Kontaktaufnahme per E-Mail oder Formular</h2>
+    <p>Wenn Sie über das Kontaktformular auf dieser Website eine Anfrage stellen, werden Ihre Angaben (Name, E-Mail-Adresse, Betreff, Nachricht) per <code>mailto:</code>-Link direkt in Ihr lokales E-Mail-Programm übertragen. Die Daten werden <strong>nicht</strong> auf unseren Servern zwischengespeichert und nicht durch uns verarbeitet, bevor Sie die E-Mail selbst absenden.</p>
+    <p>Sobald Sie die E-Mail an uns absenden, verarbeiten wir die übermittelten Daten ausschließlich zur Bearbeitung Ihrer Anfrage.</p>
+    <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung Ihrer Anfrage).</p>
+    <p><strong>Speicherdauer:</strong> Ihre Anfrage wird nach abschließender Bearbeitung gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
+  </div>
 
-    <h2>3. Collection and Storage of Personal Data</h2>
+  <div class="dsg-block">
+    <h2>5. Karten (OpenStreetMap)</h2>
+    <p>Auf unserer „Über uns"-Seite binden wir Karten des Dienstes OpenStreetMap (OSM) über Iframes ein. OpenStreetMap wird betrieben von der OpenStreetMap Foundation (OSMF), St John's Innovation Centre, Cowley Road, Cambridge, CB4 0WS, Vereinigtes Königreich.</p>
+    <p>Beim Laden der Karte stellt Ihr Browser eine direkte Verbindung zu den Servern von OpenStreetMap her. Dabei kann Ihre IP-Adresse übermittelt werden. Wir haben keinen Einfluss auf diese Datenübermittlung.</p>
+    <p>Weitere Informationen finden Sie in der Datenschutzerklärung von OpenStreetMap: <a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener">https://wiki.osmfoundation.org/wiki/Privacy_Policy</a></p>
+    <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der geografischen Darstellung unserer Unternehmensstandorte).</p>
+  </div>
 
-    <h3>3.1 When visiting the website</h3>
-    <p>
-      When you access our website, the browser used on your device automatically sends information to
-      our web server. This information is temporarily stored in a log file. The following data is
-      collected without any action on your part and stored until automated deletion:
-    </p>
+  <div class="dsg-block">
+    <h2>6. Google Fonts</h2>
+    <p>Diese Website lädt Schriftarten über die Google Fonts API (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Beim Laden der Seite stellt Ihr Browser eine Verbindung zu Googles Servern her, wodurch Ihre IP-Adresse übertragen werden kann.</p>
+    <p>Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></p>
+    <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der einheitlichen Darstellung der Website).</p>
+  </div>
+
+  <div class="dsg-block">
+    <h2>7. Cookies &amp; lokaler Speicher</h2>
+    <p>Diese Website verwendet ausschließlich technisch notwendigen lokalen Speicher (<code>localStorage</code>) zur Speicherung Ihrer Sprachpräferenz (Deutsch/Englisch). Es werden keine Tracking-Cookies, Werbe-Cookies oder Analyse-Cookies gesetzt. Eine Einwilligung nach § 25 TTDSG ist daher nicht erforderlich.</p>
+  </div>
+
+  <div class="dsg-block">
+    <h2>8. Ihre Rechte</h2>
+    <p>Sie haben gemäß DSGVO folgende Rechte gegenüber uns als Verantwortlichem:</p>
     <ul>
-      <li>IP address of the requesting computer</li>
-      <li>Date and time of access</li>
-      <li>Name and URL of the file retrieved</li>
-      <li>Website from which access is made (referrer URL)</li>
-      <li>Browser used and, if applicable, the operating system of your computer and the name of your access provider</li>
+      <li><strong>Auskunftsrecht</strong> (Art. 15 DSGVO): Auskunft über die zu Ihrer Person gespeicherten Daten</li>
+      <li><strong>Berichtigungsrecht</strong> (Art. 16 DSGVO): Berichtigung unrichtiger Daten</li>
+      <li><strong>Löschungsrecht</strong> (Art. 17 DSGVO): Löschung Ihrer Daten, sofern keine Aufbewahrungspflichten bestehen</li>
+      <li><strong>Einschränkung der Verarbeitung</strong> (Art. 18 DSGVO)</li>
+      <li><strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li>
+      <li><strong>Widerspruchsrecht</strong> (Art. 21 DSGVO): Widerspruch gegen die Verarbeitung Ihrer Daten auf Basis berechtigter Interessen</li>
+      <li><strong>Beschwerderecht</strong> bei der zuständigen Datenschutz-Aufsichtsbehörde</li>
     </ul>
-    <p>
-      The legal basis for data processing is Art. 6 Para. 1 Sent. 1 lit. f GDPR. Our legitimate
-      interest follows from the purposes for data collection listed above.
-    </p>
+    <p>Für die Ausübung Ihrer Rechte wenden Sie sich bitte an: <a href="mailto:info@berghoff.eu">info@berghoff.eu</a></p>
+  </div>
 
-    <h3>3.2 When using our contact form</h3>
-    <p>
-      For any questions, we offer you the opportunity to contact us via a form provided on the website.
-      A valid e-mail address and your name are required so that we know who the enquiry is from and
-      can respond to it. Further information may be provided voluntarily.
-    </p>
-    <p>
-      The data processing for the purpose of contacting us is carried out pursuant to Art. 6 Para. 1
-      Sent. 1 lit. a GDPR on the basis of your voluntarily given consent. The personal data collected
-      by us for use of the contact form will be automatically deleted after the enquiry submitted by
-      you has been dealt with.
-    </p>
+  <div class="dsg-block">
+    <h2>9. Beschwerderecht bei der Aufsichtsbehörde</h2>
+    <p>Sie haben das Recht, sich bei der zuständigen Datenschutz-Aufsichtsbehörde zu beschweren. Die für uns zuständige Aufsichtsbehörde ist:</p>
+    <address>
+      Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW)<br>
+      Kavalleriestr. 2–4<br>
+      40213 Düsseldorf<br>
+      <a href="https://www.ldi.nrw.de" target="_blank" rel="noopener">www.ldi.nrw.de</a>
+    </address>
+  </div>
 
-    <h2>4. Cookies</h2>
-    <p>
-      This website uses only technically necessary cookies. These cookies are required for the
-      operation of the website and cannot be switched off in our systems. They store no personal data,
-      only functional settings such as your language preference and your cookie consent decision.
-    </p>
-    <p>
-      We do not use analytics, marketing or tracking cookies. No data is transferred to third-party
-      providers such as Google Analytics, Facebook Pixel or similar services.
-    </p>
-    <p>
-      The legal basis for processing is Art. 6 Para. 1 lit. f GDPR (legitimate interest in the
-      technical operation of the website).
-    </p>
-
-    <h2>5. Transfer of Data to Third Parties</h2>
-    <p>
-      Your personal data will not be transferred to third parties for purposes other than those listed
-      below. We only pass on your personal data to third parties if:
-    </p>
-    <ul>
-      <li>you have given your express consent pursuant to Art. 6 Para. 1 Sent. 1 lit. a GDPR,</li>
-      <li>the transfer is necessary pursuant to Art. 6 Para. 1 Sent. 1 lit. f GDPR for the assertion, exercise or defence of legal claims,</li>
-      <li>there is a legal obligation for the transfer pursuant to Art. 6 Para. 1 Sent. 1 lit. c GDPR, and</li>
-      <li>this is legally permissible and required pursuant to Art. 6 Para. 1 Sent. 1 lit. b GDPR for the processing of contractual relationships with you.</li>
-    </ul>
-
-    <h2>6. External Fonts (Google Fonts)</h2>
-    <p>
-      This website loads fonts (Sora, Inter) via the Google Fonts service. Each time a page is
-      accessed, a connection is established to Google's servers, whereby your IP address is transmitted.
-      The legal basis is Art. 6 Para. 1 lit. f GDPR. If you wish to avoid this, you can block
-      Google Fonts in your browser or use a different DNS resolver.
-    </p>
-    <p>
-      Information on data processing by Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style="color:var(--blau);">https://policies.google.com/privacy</a>
-    </p>
-
-    <h2>7. Rights of Data Subjects</h2>
-    <p>You have the right:</p>
-    <ul>
-      <li>pursuant to Art. 15 GDPR, to request information about your personal data processed by us;</li>
-      <li>pursuant to Art. 16 GDPR, to demand the immediate correction of incorrect or completion of your personal data stored with us;</li>
-      <li>pursuant to Art. 17 GDPR, to demand the deletion of your personal data stored with us;</li>
-      <li>pursuant to Art. 18 GDPR, to demand the restriction of the processing of your personal data;</li>
-      <li>pursuant to Art. 20 GDPR, to receive your personal data that you have provided to us in a structured, commonly used and machine-readable format;</li>
-      <li>pursuant to Art. 7 Para. 3 GDPR, to revoke your consent once given at any time.</li>
-    </ul>
-
-    <h2>8. Right to Lodge a Complaint</h2>
-    <p>
-      Pursuant to Art. 77 GDPR, you have the right to lodge a complaint with a data protection
-      supervisory authority. As a rule, you can contact the supervisory authority of your usual place
-      of residence or workplace or our company headquarters.
-    </p>
-
-    <h2>9. Currentness and Amendment of this Privacy Policy</h2>
-    <p>
-      This privacy policy is currently valid and dated June 2025.
-      Due to the further development of our website and services, or due to changed legal or
-      regulatory requirements, it may become necessary to amend this privacy policy.
-      The current privacy policy can be accessed and printed at any time on the website at
-      <a href="datenschutz.html" style="color:var(--blau);">datenschutz.html</a>.
-    </p>
+  <div class="dsg-block">
+    <h2>10. Aktualität &amp; Änderungen</h2>
+    <p>Diese Datenschutzerklärung hat den Stand: Juni 2026. Wir behalten uns vor, diese Erklärung anzupassen, um sie aktuellen rechtlichen Anforderungen oder Änderungen an unserem Webangebot anzupassen.</p>
   </div>
 
 </div>
-</main>
-
 
 <!-- FOOTER -->
-<footer class="site-footer" role="contentinfo">
-  <div class="container">
-    <div class="footer-boden" style="padding: 2rem 0;">
-      <div>
-        <a href="index.html" class="logo" style="margin-bottom:0;">
-          <div class="logo-mark" style="width:28px;height:28px;"><svg viewBox="0 0 22 22" fill="none"><rect x="2" y="2" width="8" height="8" fill="white"/><rect x="12" y="2" width="8" height="8" fill="white" opacity="0.5"/><rect x="2" y="12" width="8" height="8" fill="white" opacity="0.5"/><rect x="12" y="12" width="8" height="8" fill="white"/></svg></div>
-          <span class="logo-text" style="font-size:1rem;">BERG<span>HOFF</span></span>
+<footer>
+  <div class="ft-grid">
+    <div class="ft-brand">
+      <img src="images/Berghoff_Logo.png" alt="BERGHOFF">
+      <p>Präzisionsfertigung für Halbleiter, Aerospace &amp; Medizintechnik. Zwei Standorte. Ein Qualitätsanspruch.</p>
+      <div class="ft-socials">
+        <a href="https://www.linkedin.com/company/berghoff-gmbh-pure-performance-absolute-precision" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/berghoff_team/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/berghoff.team/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         </a>
       </div>
-      <div class="footer-boden-links">
-        <a href="index.html" data-lang="de">Startseite</a><a href="index.html" data-lang="en">Home</a>
-        <a href="impressum.html" data-lang="de">Impressum</a><a href="impressum.html" data-lang="en">Legal Notice</a>
-        <a href="datenschutz.html" data-lang="de">Datenschutz</a><a href="datenschutz.html" data-lang="en">Privacy Policy</a>
+    </div>
+    <div class="ft-col">
+      <h4>Navigation</h4>
+      <a href="index.html">Startseite</a>
+      <a href="branchen.html">Branchen</a>
+      <a href="maschinenpark.html">Maschinenpark</a>
+      <a href="ueber-berghoff.html">Über uns</a>
+      <a href="https://karriere.berghoff.eu" target="_blank" rel="noopener">Karriere ↗</a>
+    </div>
+    <div class="ft-col">
+      <h4>Branchen</h4>
+      <a href="branchen.html#halbleiter">Halbleiter</a>
+      <a href="branchen.html#aerospace">Aerospace</a>
+      <a href="branchen.html#medizin">Medizintechnik</a>
+      <a href="branchen.html#energie">Energie</a>
+    </div>
+    <div class="ft-col">
+      <h4>Hauptstandort</h4>
+      <span>Langenheid 1</span>
+      <span>57489 Drolshagen</span>
+      <a href="tel:+4927632127900">+49 2763 21279-0</a>
+      <a href="mailto:info@berghoff.eu">info@berghoff.eu</a>
+    </div>
+    <div class="ft-col">
+      <h4>Zweiter Standort</h4>
+      <span>Im Ruttenberge 6</span>
+      <span>57482 Wenden</span>
+      <div style="margin-top:1.5rem">
+        <h4>Rechtliches</h4>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="agb.html">AGB &amp; Dokumente</a>
       </div>
-      <div class="sprachumschalter"><button class="sprach-btn" data-lang="de">DE</button><button class="sprach-btn" data-lang="en">EN</button></div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span>© 2026 BERGHOFF GmbH &amp; Co. KG</span>
+    <div class="ft-bottom-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="agb.html">AGB</a>
     </div>
   </div>
 </footer>
 
-<script src="js/main.js" defer></script>
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 20), { passive: true });
+  function toggleMobile() {
+    document.getElementById('ham').classList.toggle('open');
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+  function setLang(l) {
+    localStorage.setItem('bg_lang', l);
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('on', b.textContent.toLowerCase() === l));
+    document.querySelectorAll('[data-de]').forEach(el => {
+      const val = l === 'en' ? el.dataset.en : el.dataset.de;
+      if (val && el.children.length === 0) el.textContent = val;
+    });
+  }
+  (function(){ const l = localStorage.getItem('bg_lang') || 'de'; setLang(l); })();
+</script>
 </body>
 </html>
