@@ -515,6 +515,98 @@
   .con-detail svg { flex-shrink: 0; color: var(--blue); }
   .con-detail a { color: var(--muted); transition: color var(--trans); }
   .con-detail a:hover { color: var(--blue); }
+  .con-btn-wrap { padding: 1.25rem 1.5rem 1.5rem; border-top: 1px solid var(--border); }
+  .con-btn {
+    width: 100%; display: flex; align-items: center; justify-content: center; gap: .45rem;
+    font-family: 'Sora', sans-serif; font-size: .78rem; font-weight: 700;
+    padding: .65rem 1rem; border-radius: var(--r);
+    border: 1.5px solid var(--border); color: var(--text);
+    cursor: pointer; background: none; transition: all var(--trans);
+  }
+  .con-btn:hover { border-color: var(--blue); color: var(--blue); background: rgba(0,159,227,.04); }
+  .con-btn svg { width: 14px; height: 14px; stroke: currentColor; flex-shrink: 0; }
+
+  /* ── MODAL ─────────────────────────────────────── */
+  .modal-backdrop {
+    display: none; position: fixed; inset: 0; z-index: 900;
+    background: rgba(8,8,8,.55); backdrop-filter: blur(4px);
+    align-items: center; justify-content: center; padding: 1.5rem;
+  }
+  .modal-backdrop.open { display: flex; }
+  .modal {
+    background: var(--white); border-radius: 4px;
+    width: 100%; max-width: 540px; max-height: 90vh;
+    overflow-y: auto; box-shadow: 0 24px 64px rgba(0,0,0,.18);
+    animation: modalIn .22s ease;
+  }
+  @keyframes modalIn { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:none; } }
+  .modal-head {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    padding: 1.75rem 1.75rem 0;
+  }
+  .modal-head h3 {
+    font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 700;
+    color: var(--text); line-height: 1.2;
+  }
+  .modal-head p { font-size: .8rem; color: var(--muted); margin-top: .25rem; }
+  .modal-close {
+    flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%;
+    border: 1px solid var(--border); background: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--muted); transition: all var(--trans); margin-left: 1rem;
+  }
+  .modal-close:hover { border-color: var(--text); color: var(--text); }
+  .modal-body { padding: 1.5rem 1.75rem 1.75rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-field { display: flex; flex-direction: column; gap: .35rem; margin-bottom: .9rem; }
+  .form-field label {
+    font-family: 'Sora', sans-serif; font-size: .62rem; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+  }
+  .form-field input, .form-field textarea, .form-field select {
+    font-family: 'Inter', sans-serif; font-size: .875rem; color: var(--text);
+    border: 1.5px solid var(--border); border-radius: var(--r);
+    padding: .65rem .875rem; outline: none; transition: border-color var(--trans);
+    background: var(--white); width: 100%;
+  }
+  .form-field input:focus, .form-field textarea:focus, .form-field select:focus {
+    border-color: var(--blue);
+  }
+  .form-field textarea { resize: vertical; min-height: 110px; }
+  .form-dsgvo {
+    display: flex; gap: .75rem; align-items: flex-start;
+    background: var(--off); border: 1px solid var(--border);
+    border-radius: var(--r); padding: 1rem; margin-bottom: 1.25rem;
+  }
+  .form-dsgvo input[type="checkbox"] {
+    width: 16px; height: 16px; flex-shrink: 0; margin-top: 2px;
+    accent-color: var(--blue); cursor: pointer;
+  }
+  .form-dsgvo label {
+    font-size: .78rem; color: var(--muted); line-height: 1.6; cursor: pointer;
+  }
+  .form-dsgvo label a { color: var(--blue); text-decoration: underline; }
+  .form-submit {
+    width: 100%; padding: .875rem; border-radius: var(--r);
+    background: var(--blue); color: var(--white); border: none;
+    font-family: 'Sora', sans-serif; font-size: .82rem; font-weight: 700;
+    cursor: pointer; transition: background var(--trans);
+  }
+  .form-submit:hover { background: var(--blue-d); }
+  .form-submit:disabled { opacity: .45; cursor: not-allowed; }
+  .modal-success {
+    display: none; flex-direction: column; align-items: center;
+    text-align: center; padding: 3rem 2rem;
+  }
+  .modal-success.show { display: flex; }
+  .modal-success-icon {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: rgba(0,159,227,.1); display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+  .modal-success-icon svg { width: 28px; height: 28px; stroke: var(--blue); }
+  .modal-success h4 { font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: .5rem; }
+  .modal-success p { font-size: .85rem; color: var(--muted); line-height: 1.7; }
 
   /* ── FOOTER ────────────────────────────────────── */
   footer {
@@ -1090,6 +1182,13 @@
           <a href="mailto:vertrieb@berghoff.eu">vertrieb@berghoff.eu</a>
         </div>
       </div>
+      <div class="con-btn-wrap">
+        <button class="con-btn" onclick="openModal('Jörg Merx', 'Vertrieb & Marketing', 'vertrieb@berghoff.eu')"
+                data-de="Nachricht schreiben" data-en="Send a message">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" stroke="currentColor"/></svg>
+          Nachricht schreiben
+        </button>
+      </div>
     </div>
 
     <!-- Kontakt 2: Technik -->
@@ -1111,6 +1210,13 @@
           <a href="mailto:technik@berghoff.eu">technik@berghoff.eu</a>
         </div>
       </div>
+      <div class="con-btn-wrap">
+        <button class="con-btn" onclick="openModal('Dirk Hildebrandt', 'Technische Leitung', 'technik@berghoff.eu')"
+                data-de="Nachricht schreiben" data-en="Send a message">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" stroke="currentColor"/></svg>
+          Nachricht schreiben
+        </button>
+      </div>
     </div>
 
     <!-- Kontakt 3: Qualität -->
@@ -1131,6 +1237,13 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
           <a href="mailto:qualitaet@berghoff.eu">qualitaet@berghoff.eu</a>
         </div>
+      </div>
+      <div class="con-btn-wrap">
+        <button class="con-btn" onclick="openModal('Matthias Platte', 'Qualitätsmanagement & IT', 'qualitaet@berghoff.eu')"
+                data-de="Nachricht schreiben" data-en="Send a message">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" stroke="currentColor"/></svg>
+          Nachricht schreiben
+        </button>
       </div>
     </div>
 
@@ -1344,5 +1457,154 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 <script>lucide.createIcons();</script>
+
+<!-- ════════════════════════════════════════
+     KONTAKT-MODAL
+     ════════════════════════════════════════ -->
+<div class="modal-backdrop" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+
+    <!-- Formular-Ansicht -->
+    <div id="modalForm">
+      <div class="modal-head">
+        <div>
+          <h3 id="modalTitle" data-de="Nachricht schreiben" data-en="Send a message">Nachricht schreiben</h3>
+          <p id="modalSubtitle">An: —</p>
+        </div>
+        <button class="modal-close" onclick="closeModal()" aria-label="Schließen">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form id="contactForm" onsubmit="submitForm(event)">
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="cf-name" data-de="Name *" data-en="Name *">Name *</label>
+              <input type="text" id="cf-name" name="name" required
+                     placeholder="Max Mustermann" autocomplete="name">
+            </div>
+            <div class="form-field">
+              <label for="cf-company" data-de="Unternehmen" data-en="Company">Unternehmen</label>
+              <input type="text" id="cf-company" name="company"
+                     placeholder="Musterfirma GmbH" autocomplete="organization">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="cf-email" data-de="E-Mail *" data-en="E-Mail *">E-Mail *</label>
+              <input type="email" id="cf-email" name="email" required
+                     placeholder="max@musterfirma.de" autocomplete="email">
+            </div>
+            <div class="form-field">
+              <label for="cf-phone" data-de="Telefon" data-en="Phone">Telefon</label>
+              <input type="tel" id="cf-phone" name="phone"
+                     placeholder="+49 ..." autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="cf-subject" data-de="Betreff *" data-en="Subject *">Betreff *</label>
+            <input type="text" id="cf-subject" name="subject" required
+                   placeholder="Anfrage Präzisionsbauteile">
+          </div>
+
+          <div class="form-field">
+            <label for="cf-message" data-de="Nachricht *" data-en="Message *">Nachricht *</label>
+            <textarea id="cf-message" name="message" required
+                      placeholder="Beschreiben Sie kurz Ihr Anliegen oder Ihr Bauteil …"></textarea>
+          </div>
+
+          <!-- DSGVO -->
+          <div class="form-dsgvo">
+            <input type="checkbox" id="cf-dsgvo" name="dsgvo" required>
+            <label for="cf-dsgvo" data-de="Ich habe die <a href='datenschutz.html' target='_blank'>Datenschutzerklärung</a> gelesen und bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert und verwendet werden. Die Einwilligung kann jederzeit widerrufen werden." data-en="I have read the <a href='datenschutz.html' target='_blank'>privacy policy</a> and agree that my data may be stored and used to process my enquiry. This consent can be withdrawn at any time.">
+              Ich habe die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen und bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert und verwendet werden. Die Einwilligung kann jederzeit widerrufen werden.
+            </label>
+          </div>
+
+          <button type="submit" class="form-submit" id="cf-submit"
+                  data-de="Nachricht senden" data-en="Send message">Nachricht senden</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Erfolgs-Ansicht -->
+    <div class="modal-success" id="modalSuccess">
+      <div class="modal-success-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4.5 12.75l6 6 9-13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h4 data-de="Nachricht gesendet!" data-en="Message sent!">Nachricht gesendet!</h4>
+      <p data-de="Ihr E-Mail-Client wurde geöffnet. Bitte senden Sie die vorbereitete E-Mail ab. Wir melden uns innerhalb von 24 Stunden."
+         data-en="Your email client has been opened. Please send the prepared email. We will get back to you within 24 hours.">
+        Ihr E-Mail-Client wurde geöffnet. Bitte senden Sie die vorbereitete E-Mail ab. Wir melden uns innerhalb von 24 Stunden.
+      </p>
+      <button onclick="closeModal()" class="form-submit" style="margin-top:1.5rem;max-width:200px;"
+              data-de="Schließen" data-en="Close">Schließen</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+/* ── Kontakt-Modal ───────────────────────── */
+let _modalEmail = '';
+
+function openModal(name, role, email) {
+  _modalEmail = email;
+  document.getElementById('modalSubtitle').textContent = name + ' · ' + role;
+  document.getElementById('modalForm').style.display = '';
+  document.getElementById('modalSuccess').classList.remove('show');
+  document.getElementById('contactForm').reset();
+  document.getElementById('contactModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // Focus erstes Feld
+  setTimeout(() => document.getElementById('cf-name').focus(), 80);
+}
+
+function closeModal() {
+  document.getElementById('contactModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function submitForm(e) {
+  e.preventDefault();
+  const name    = document.getElementById('cf-name').value.trim();
+  const company = document.getElementById('cf-company').value.trim();
+  const email   = document.getElementById('cf-email').value.trim();
+  const phone   = document.getElementById('cf-phone').value.trim();
+  const subject = document.getElementById('cf-subject').value.trim();
+  const message = document.getElementById('cf-message').value.trim();
+
+  const body = [
+    'Name: ' + name,
+    company ? 'Unternehmen: ' + company : '',
+    'E-Mail: ' + email,
+    phone ? 'Telefon: ' + phone : '',
+    '',
+    message,
+  ].filter(Boolean).join('\n');
+
+  window.location.href =
+    'mailto:' + _modalEmail +
+    '?subject=' + encodeURIComponent(subject) +
+    '&body='    + encodeURIComponent(body);
+
+  document.getElementById('modalForm').style.display = 'none';
+  document.getElementById('modalSuccess').classList.add('show');
+}
+
+// Schließen bei Klick auf Backdrop
+document.getElementById('contactModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+// Schließen mit Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+});
+</script>
 </body>
 </html>
