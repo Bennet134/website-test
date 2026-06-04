@@ -349,6 +349,26 @@
     color: var(--text); margin-bottom: .2rem;
   }
   .cert-eintrag p { font-size: .8rem; color: var(--muted); line-height: 1.6; }
+
+  /* Zertifikat Download-Chips */
+  .cert-downloads { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+  .cert-dl-label {
+    display: block; font-family: 'Sora', sans-serif;
+    font-size: .62rem; font-weight: 700; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: .85rem;
+  }
+  .cert-dl-row { display: flex; gap: .6rem; flex-wrap: wrap; }
+  .cert-dl-chip {
+    display: inline-flex; align-items: center; gap: .4rem;
+    font-family: 'Sora', sans-serif; font-size: .72rem; font-weight: 700;
+    color: var(--blue); border: 1.5px solid rgba(0,159,227,.3);
+    background: rgba(0,159,227,.04);
+    padding: .35rem .85rem; border-radius: 2px;
+    transition: background var(--trans), border-color var(--trans), color var(--trans);
+  }
+  .cert-dl-chip:hover { background: var(--blue); border-color: var(--blue); color: var(--white); }
+  .cert-dl-chip svg { width: 12px; height: 12px; flex-shrink: 0; }
+
   .cert-badges {
     display: flex; flex-direction: column; gap: 2rem; align-items: center;
   }
@@ -830,6 +850,26 @@
           </div>
         </div>
       </div>
+
+      <!-- Zertifikat Downloads -->
+      <div class="cert-downloads">
+        <span class="cert-dl-label" data-de="Zertifikate herunterladen" data-en="Download certificates">Zertifikate herunterladen</span>
+        <div class="cert-dl-row">
+          <a href="docs/Zertifikat-ISO-9001-2015.pdf" download class="cert-dl-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            ISO 9001:2015
+          </a>
+          <a href="docs/Zertifikat-EN-9100-2018.pdf" download class="cert-dl-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            EN 9100:2018
+          </a>
+          <a href="docs/Zertifikat-RollsRoyce-Approved-Supplier.pdf" download class="cert-dl-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Rolls-Royce CoA
+          </a>
+        </div>
+      </div>
+
     </div>
 
   </div>
