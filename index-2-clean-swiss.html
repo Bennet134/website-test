@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Berghoff GmbH – Pure Performance. Absolute Precision. Über 40 Jahre Präzisionsfertigung hochkomplexer Bauteile und Baugruppen für Hightech-Industrien.">
+  <title>Berghoff GmbH – Pure Performance. Absolute Precision.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* =============================================
+       BERGHOFF – CLEAN SWISS DESIGN
+       Echte Inhalte, echte Fotos
+       ============================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blau:    #009FE3;
+      --blau-d:  #007ec0;
+      --schwarz: #0a0a0a;
+      --grau:    #f5f5f5;
+      --grau-2:  #e5e5e5;
+      --text:    #1a1a1a;
+      --hell:    #6b6b6b;
+      --weiss:   #ffffff;
+      --ph:      clamp(1.5rem, 6%, 7rem);
+      --pv:      6rem;
+      --nav-h:   68px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--weiss); color: var(--text);
+      -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    }
+
+    /* Sprachumschaltung – Grundzustand vor JS-Initialisierung */
+    [data-lang="en"] { display: none; }
+
+    /* ---- NAV ---- */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      height: var(--nav-h);
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--grau-2);
+      display: flex; align-items: center;
+      padding: 0 var(--ph);
+      justify-content: space-between;
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.07); }
+
+    .nav-logo img {
+      height: 28px; width: auto; display: block;
+    }
+
+    .nav-links { display: flex; gap: 0.25rem; align-items: center; }
+    .nav-links a {
+      font-size: 0.8rem; font-weight: 400;
+      color: var(--hell); text-decoration: none;
+      padding: 0.4rem 0.875rem; border-radius: 2px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.aktiv { color: var(--text); }
+    .nav-pill {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.75rem; font-weight: 600;
+      background: var(--blau); color: #fff !important;
+      padding: 0.45rem 1.1rem; border-radius: 2px;
+      transition: background 0.2s !important;
+    }
+    .nav-pill:hover { background: var(--blau-d) !important; }
+
+    .nav-rechts { display: flex; align-items: center; gap: 1rem; }
+    .lang-toggle {
+      display: flex; align-items: center; gap: 3px;
+      font-family: 'Sora', sans-serif;
+      font-size: 0.7rem; font-weight: 600;
+    }
+    .sprach-btn {
+      background: none; border: none; cursor: pointer;
+      font-family: inherit; font-size: inherit; font-weight: 700;
+      padding: 0.3rem 0.45rem; border-radius: 2px;
+      color: var(--hell); letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+    .sprach-btn.aktiv { color: var(--blau); }
+    .sprach-btn:hover:not(.aktiv) { color: var(--text); }
+    .lang-sep { color: var(--grau-2); }
+
+    .hamburger {
+      display: none; flex-direction: column;
+      justify-content: space-between; width: 24px; height: 18px;
+      background: none; border: none; cursor: pointer;
+    }
+    .hamburger span { display: block; height: 1.5px; background: var(--schwarz); border-radius: 2px; transition: all 0.3s; }
+    .hamburger.offen span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.offen span:nth-child(2) { opacity: 0; }
+    .hamburger.offen span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Mobile Menü */
+    .mobile-menu {
+      display: none; position: fixed;
+      top: var(--nav-h); left: 0; right: 0; bottom: 0;
+      background: var(--weiss); z-index: 199;
+      flex-direction: column; padding: 2rem var(--ph);
+      border-top: 1px solid var(--grau-2);
+    }
+    .mobile-menu.offen { display: flex; }
+    .mobile-menu a {
+      font-family: 'Sora', sans-serif; font-size: 1.4rem; font-weight: 600;
+      color: var(--text); text-decoration: none;
+      padding: 1rem 0; border-bottom: 1px solid var(--grau-2);
+      transition: color 0.2s;
+    }
+    .mobile-menu a:hover { color: var(--blau); }
+
+    /* ---- HERO ---- */
+    .hero {
+      position: relative; min-height: 100vh;
+      display: flex; flex-direction: column;
+      padding-top: var(--nav-h); overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('images/Start/Hallenbild-Berghoff-2022.jpg.jpeg');
+      background-size: cover; background-position: center;
+      z-index: 0;
+    }
+    .hero-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10,10,10,0.65) 0%,
+        rgba(10,10,10,0.55) 60%,
+        rgba(10,10,10,0.75) 100%
+      );
+    }
+
+    .hero-inhalt {
+      position: relative; z-index: 1;
+      flex: 1; display: flex; flex-direction: column;
+      justify-content: flex-end;
+      padding: 5rem var(--ph) 4rem;
+      max-width: 1400px; width: 100%;
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: rgba(0,159,227,0.15);
+      border: 1px solid rgba(0,159,227,0.35);
+      color: #7dd9ff;
+      font-family: 'Sora', sans-serif;
+      font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.4rem 1rem; border-radius: 2px;
+      margin-bottom: 2rem;
+    }
+    .hero-badge::before {
+      content: ''; width: 6px; height: 6px;
+      background: var(--blau); border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .hero h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(2.75rem, 6.5vw, 6rem);
+      font-weight: 800; line-height: 1.0;
+      letter-spacing: -0.03em; color: var(--weiss);
+      margin-bottom: 1.5rem; max-width: 800px;
+    }
+    .hero h1 span { color: var(--blau); }
+
+    .hero-sub {
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      color: rgba(255,255,255,0.65); line-height: 1.75;
+      max-width: 560px; margin-bottom: 2.5rem;
+    }
+    .hero-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+    .btn-p {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.82rem; font-weight: 700;
+      text-decoration: none; background: var(--blau); color: #fff;
+      padding: 0.9rem 1.875rem; border-radius: 2px;
+      border: 2px solid var(--blau);
+      transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.4rem;
+    }
+    .btn-p:hover { background: var(--blau-d); border-color: var(--blau-d); }
+    .btn-s {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.82rem; font-weight: 600;
+      text-decoration: none; color: rgba(255,255,255,0.85);
+      padding: 0.875rem 1.875rem; border-radius: 2px;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: border-color 0.2s;
+    }
+    .btn-s:hover { border-color: rgba(255,255,255,0.7); }
+
+    /* Kennzahlen-Streifen im Hero unten */
+    .hero-kz {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid rgba(255,255,255,0.12);
+      background: rgba(10,10,10,0.5);
+      backdrop-filter: blur(8px);
+    }
+    .hkz {
+      padding: 1.75rem var(--ph);
+      border-right: 1px solid rgba(255,255,255,0.08);
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .hkz:last-child { border-right: none; }
+    .hkz-val {
+      font-family: 'Sora', sans-serif;
+      font-size: 2rem; font-weight: 800;
+      line-height: 1; color: var(--weiss);
+      white-space: nowrap;
+    }
+    .hkz-val span { color: var(--blau); }
+    .hkz-label {
+      font-size: 0.75rem; color: rgba(255,255,255,0.45);
+      line-height: 1.4;
+    }
+
+    /* ---- SEKTIONEN ALLGEMEIN ---- */
+    .sek {
+      padding: var(--pv) var(--ph);
+      border-bottom: 1px solid var(--grau-2);
+    }
+    .sek--grau { background: var(--grau); }
+    .sek--dunkel { background: var(--schwarz); color: var(--weiss); border-color: transparent; }
+
+    .sek-label {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--blau); display: block; margin-bottom: 0.75rem;
+    }
+    .sek h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.75rem, 3vw, 2.6rem);
+      font-weight: 700; line-height: 1.1; letter-spacing: -0.03em;
+      color: var(--schwarz);
+    }
+    .sek--dunkel h2 { color: var(--weiss); }
+    .sek-intro {
+      font-size: 1rem; color: var(--hell); line-height: 1.8;
+      max-width: 580px; margin-top: 1.25rem;
+    }
+    .sek--dunkel .sek-intro { color: rgba(255,255,255,0.5); }
+    .bl { width: 36px; height: 2px; background: var(--blau); margin-top: 1.25rem; }
+    .bl--mitte { margin: 1.25rem auto 0; }
+    .sek-kopf { margin-bottom: 4rem; }
+    .sek-kopf--mitte { text-align: center; }
+    .sek-kopf--mitte .sek-intro { margin-left: auto; margin-right: auto; }
+
+    /* ---- DAS IST BERGHOFF ---- */
+    .berghoff-layout {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .berghoff-foto {
+      position: relative;
+    }
+    .berghoff-foto img {
+      width: 100%; aspect-ratio: 4/3;
+      object-fit: cover; display: block;
+      border-radius: 2px;
+    }
+    .berghoff-foto-badge {
+      position: absolute; bottom: -1.5rem; left: -1.5rem;
+      background: var(--blau); color: #fff;
+      padding: 1.25rem 1.5rem;
+      font-family: 'Sora', sans-serif;
+    }
+    .berghoff-foto-badge .val {
+      font-size: 2rem; font-weight: 800; line-height: 1;
+    }
+    .berghoff-foto-badge .lab {
+      font-size: 0.72rem; font-weight: 500; margin-top: 0.2rem;
+      opacity: 0.85;
+    }
+    .berghoff-text h2 { margin-bottom: 0.75rem; }
+    .berghoff-text p {
+      font-size: 0.95rem; color: var(--hell); line-height: 1.85;
+      margin-bottom: 1.1rem;
+    }
+    .berghoff-text p strong { color: var(--text); font-weight: 600; }
+    .link-pfeil {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: 'Sora', sans-serif; font-size: 0.8rem; font-weight: 700;
+      color: var(--blau); text-decoration: none; margin-top: 0.75rem;
+      border-bottom: 1px solid rgba(0,159,227,0.3); padding-bottom: 2px;
+      transition: border-color 0.2s;
+    }
+    .link-pfeil:hover { border-color: var(--blau); }
+
+    /* ---- 3-STEP PROCESS ---- */
+    .dreistep-layout {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .dreistep-img img {
+      width: 100%; max-width: 480px; display: block;
+    }
+    .dreistep-text h2 { margin-bottom: 0.75rem; }
+    .dreistep-text > p {
+      font-size: 0.95rem; color: var(--hell); line-height: 1.85;
+      margin-bottom: 2rem;
+    }
+    .schritte { display: flex; flex-direction: column; gap: 1.25rem; }
+    .schritt {
+      display: flex; gap: 1.25rem; align-items: flex-start;
+      padding: 1.25rem; background: var(--weiss);
+      border: 1px solid var(--grau-2); border-radius: 2px;
+    }
+    .schritt-nr {
+      width: 36px; height: 36px; background: var(--blau); color: #fff;
+      border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 700;
+    }
+    .schritt-text strong {
+      display: block; font-size: 0.9rem; font-weight: 600;
+      color: var(--text); margin-bottom: 0.2rem;
+    }
+    .schritt-text p { font-size: 0.8rem; color: var(--hell); line-height: 1.65; }
+
+    /* ---- BRANCHEN ---- */
+    .branchen-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .branche-card {
+      text-decoration: none; display: block;
+      border-radius: 2px; overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+      background: #111;
+    }
+    .branche-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,0.4); }
+    .branche-foto {
+      position: relative; aspect-ratio: 16/10; overflow: hidden;
+    }
+    .branche-foto img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.5s ease;
+      filter: brightness(0.7);
+    }
+    .branche-card:hover .branche-foto img { transform: scale(1.04); }
+    .branche-nr {
+      position: absolute; top: 1rem; left: 1rem;
+      font-family: 'Sora', sans-serif; font-size: 0.62rem;
+      font-weight: 700; letter-spacing: 0.18em; color: rgba(255,255,255,0.5);
+    }
+    .branche-info { padding: 1.5rem 1.75rem 1.75rem; }
+    .branche-info h3 {
+      font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 700;
+      color: var(--weiss); margin-bottom: 0.5rem; line-height: 1.2;
+    }
+    .branche-info p { font-size: 0.8rem; color: rgba(255,255,255,0.45); line-height: 1.65; }
+    .branche-link {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      margin-top: 0.875rem; font-family: 'Sora', sans-serif;
+      font-size: 0.72rem; font-weight: 700; color: var(--blau);
+      opacity: 0; transform: translateX(-4px); transition: all 0.25s;
+    }
+    .branche-card:hover .branche-link { opacity: 1; transform: translateX(0); }
+
+    /* ---- REINRAUM TEASER ---- */
+    .reinraum-layout {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .reinraum-foto img {
+      width: 100%; aspect-ratio: 4/3;
+      object-fit: cover; border-radius: 2px; display: block;
+    }
+    .reinraum-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(0,159,227,0.08); border: 1px solid rgba(0,159,227,0.2);
+      color: var(--blau); padding: 0.35rem 0.875rem; border-radius: 2px;
+      font-family: 'Sora', sans-serif; font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.25rem;
+    }
+    .reinraum-badge::before { content: '●'; font-size: 0.5em; animation: pulse 2s infinite; }
+    .reinraum-text h2 { margin-bottom: 0.75rem; }
+    .reinraum-text p { font-size: 0.95rem; color: var(--hell); line-height: 1.85; margin-bottom: 1rem; }
+    .reinraum-specs {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1rem; margin-top: 1.5rem;
+    }
+    .spec-box {
+      padding: 1.25rem; background: var(--grau);
+      border-radius: 2px; border: 1px solid var(--grau-2);
+    }
+    .spec-box .spec-val {
+      font-family: 'Sora', sans-serif; font-size: 1.25rem;
+      font-weight: 800; color: var(--schwarz);
+    }
+    .spec-box .spec-val span { color: var(--blau); }
+    .spec-box .spec-lab { font-size: 0.72rem; color: var(--hell); margin-top: 0.2rem; }
+
+    /* ---- TEAM ---- */
+    .team-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    .team-karte {
+      background: var(--weiss); border-radius: 2px;
+      overflow: hidden; border: 1px solid var(--grau-2);
+      transition: box-shadow 0.2s;
+    }
+    .team-karte:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .team-foto {
+      aspect-ratio: 1/1; overflow: hidden; background: var(--grau);
+    }
+    .team-foto img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top center;
+      display: block; filter: grayscale(20%);
+      transition: filter 0.3s;
+    }
+    .team-karte:hover .team-foto img { filter: grayscale(0%); }
+    .team-info { padding: 1.25rem 1.25rem 1.5rem; }
+    .team-info h4 {
+      font-family: 'Sora', sans-serif; font-size: 0.95rem; font-weight: 700;
+      color: var(--schwarz); margin-bottom: 0.25rem;
+    }
+    .team-info span { font-size: 0.78rem; color: var(--hell); }
+    .team-geschaeft .team-info span { color: var(--blau); font-weight: 600; }
+
+    /* ---- KUNDEN & PARTNER ---- */
+    .kunden-logos {
+      text-align: center;
+    }
+    .kunden-logos img {
+      max-width: 100%; height: auto; display: block;
+      margin: 0 auto; filter: grayscale(100%); opacity: 0.5;
+      transition: all 0.3s; max-height: 60px; object-fit: contain;
+    }
+    .kunden-logos img:hover { filter: grayscale(0%); opacity: 1; }
+
+    /* Zertifikate */
+    .zert-reihe {
+      display: flex; align-items: center; justify-content: center;
+      gap: 3rem; flex-wrap: wrap; margin-top: 3rem;
+    }
+    .zert-item {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 0.75rem; text-align: center;
+    }
+    .zert-item img {
+      height: 80px; width: auto; object-fit: contain;
+      filter: grayscale(20%); opacity: 0.8;
+      transition: all 0.2s;
+    }
+    .zert-item:hover img { filter: grayscale(0%); opacity: 1; }
+    .zert-item span {
+      font-size: 0.72rem; font-weight: 600; color: var(--hell);
+      font-family: 'Sora', sans-serif; letter-spacing: 0.05em;
+    }
+    .zert-text-item {
+      padding: 1.25rem 2rem;
+      border: 1px solid var(--grau-2); border-radius: 2px;
+      text-align: center;
+    }
+    .zert-text-item .zt-val {
+      font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 800;
+      color: var(--schwarz);
+    }
+    .zert-text-item .zt-lab {
+      font-size: 0.72rem; color: var(--hell); margin-top: 0.2rem;
+    }
+
+    /* ---- KONTAKT ---- */
+    .kontakt-layout {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: start;
+    }
+    .kontakt-info h2 { margin-bottom: 0.75rem; }
+    .kontakt-info > p { font-size: 0.95rem; color: var(--hell); line-height: 1.8; margin-bottom: 2.5rem; }
+
+    .standorte { display: flex; flex-direction: column; gap: 1.5rem; }
+    .standort {
+      padding: 1.5rem; border: 1px solid var(--grau-2); border-radius: 2px;
+      border-left: 3px solid var(--blau);
+    }
+    .standort h4 {
+      font-family: 'Sora', sans-serif; font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--blau);
+      margin-bottom: 0.75rem;
+    }
+    .standort p { font-size: 0.875rem; color: var(--text); line-height: 1.8; }
+    .standort a { color: var(--blau); text-decoration: none; }
+
+    .oeffnung {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-top: 2rem; padding: 1rem 1.25rem;
+      background: var(--grau); border-radius: 2px;
+      font-size: 0.85rem; color: var(--text);
+    }
+    .oeffnung svg { color: var(--blau); flex-shrink: 0; }
+
+    /* Formular */
+    .formular { display: flex; flex-direction: column; gap: 1rem; }
+    .form-gruppe label {
+      display: block; font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--hell); margin-bottom: 0.45rem;
+    }
+    .form-gruppe input,
+    .form-gruppe select,
+    .form-gruppe textarea {
+      width: 100%; padding: 0.8rem 1rem;
+      border: 1px solid var(--grau-2); border-radius: 2px;
+      font-family: 'Inter', sans-serif; font-size: 0.9rem;
+      color: var(--text); background: var(--weiss);
+      outline: none; transition: border-color 0.2s; -webkit-appearance: none;
+    }
+    .form-gruppe input:focus,
+    .form-gruppe select:focus,
+    .form-gruppe textarea:focus { border-color: var(--blau); }
+    .form-gruppe textarea { min-height: 110px; resize: vertical; }
+    .form-reihe { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .ds { font-size: 0.72rem; color: var(--hell); line-height: 1.6; }
+    .ds a { color: var(--blau); }
+    .btn-submit {
+      font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 700;
+      background: var(--blau); color: #fff; border: none; cursor: pointer;
+      padding: 1rem 2rem; width: 100%; border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .btn-submit:hover { background: var(--blau-d); }
+
+    /* ---- FOOTER ---- */
+    footer {
+      background: var(--schwarz); color: rgba(255,255,255,0.5);
+      padding: 5rem var(--ph) 0;
+    }
+    .footer-oben {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem; padding-bottom: 4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .footer-logo img { height: 22px; width: auto; margin-bottom: 1.25rem; filter: brightness(0) invert(1); }
+    .footer-marke-text {
+      font-size: 0.82rem; color: rgba(255,255,255,0.4);
+      line-height: 1.75; max-width: 240px; margin-bottom: 1.5rem;
+    }
+    .soz { display: flex; gap: 0.6rem; }
+    .soz a {
+      width: 32px; height: 32px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.4); font-size: 0.68rem; font-weight: 700;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .soz a:hover { border-color: var(--blau); color: var(--blau); }
+    footer h4 {
+      font-family: 'Sora', sans-serif; font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.85); margin-bottom: 1.25rem;
+    }
+    .footer-liste { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer-liste a {
+      font-size: 0.82rem; color: rgba(255,255,255,0.4);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .footer-liste a:hover { color: var(--blau); }
+    .footer-unten {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.5rem 0; gap: 1rem; flex-wrap: wrap;
+    }
+    .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+    .footer-legal { display: flex; gap: 1.5rem; }
+    .footer-legal a { font-size: 0.75rem; color: rgba(255,255,255,0.25); text-decoration: none; transition: color 0.2s; }
+    .footer-legal a:hover { color: rgba(255,255,255,0.5); }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 1100px) {
+      .branchen-grid { grid-template-columns: repeat(2, 1fr); }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .berghoff-layout,
+      .dreistep-layout,
+      .reinraum-layout,
+      .kontakt-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-kz { grid-template-columns: repeat(2, 1fr); }
+      .hkz:nth-child(2) { border-right: none; }
+      .hkz:nth-child(3),
+      .hkz:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.08); }
+      .footer-oben { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      :root { --ph: 1.5rem; --pv: 4rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .hero h1 { font-size: clamp(2.25rem, 8vw, 3.5rem); }
+      .hero-kz { grid-template-columns: 1fr 1fr; }
+      .branchen-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .form-reihe { grid-template-columns: 1fr; }
+      .footer-oben { grid-template-columns: 1fr; gap: 2rem; }
+      .reinraum-specs { grid-template-columns: 1fr; }
+      .berghoff-foto-badge { bottom: 0; left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========================
+     NAVIGATION
+     ======================== -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="images/Start/berghoff_logo-schwarz-gross.png"
+         alt="Berghoff GmbH Logo" loading="eager">
+  </a>
+
+  <div class="nav-links">
+    <a href="branchen.html" data-lang="de">Branchen</a>
+    <a href="branchen.html" data-lang="en">Industries</a>
+    <a href="maschinenpark.html" data-lang="de">Maschinenpark</a>
+    <a href="maschinenpark.html" data-lang="en">Equipment</a>
+    <a href="https://karriere.berghoff.eu" target="_blank" rel="noopener" data-lang="de">Karriere ↗</a>
+    <a href="https://karriere.berghoff.eu" target="_blank" rel="noopener" data-lang="en">Careers ↗</a>
+    <a href="lieferant.html" class="nav-pill" data-lang="de">Lieferant werden</a>
+    <a href="lieferant.html" class="nav-pill" data-lang="en">Become a Supplier</a>
+  </div>
+
+  <div class="nav-rechts">
+    <div class="lang-toggle">
+      <button class="sprach-btn aktiv" data-lang="de">DE</button>
+      <span class="lang-sep">/</span>
+      <button class="sprach-btn" data-lang="en">EN</button>
+    </div>
+    <a href="#kontakt" class="btn-p" style="padding:0.55rem 1.1rem;font-size:0.75rem;border-radius:2px;" data-lang="de">Anfragen</a>
+    <a href="#kontakt" class="btn-p" style="padding:0.55rem 1.1rem;font-size:0.75rem;border-radius:2px;" data-lang="en">Contact</a>
+    <button class="hamburger" id="hamburger" aria-label="Menü">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menü -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="branchen.html" data-lang="de">Branchen</a>
+  <a href="branchen.html" data-lang="en">Industries</a>
+  <a href="maschinenpark.html" data-lang="de">Maschinenpark</a>
+  <a href="maschinenpark.html" data-lang="en">Equipment</a>
+  <a href="lieferant.html" data-lang="de">Lieferant werden</a>
+  <a href="lieferant.html" data-lang="en">Become a Supplier</a>
+  <a href="#kontakt" data-lang="de">Kontakt</a>
+  <a href="#kontakt" data-lang="en">Contact</a>
+</div>
+
+
+<main>
+
+<!-- ========================
+     HERO
+     ======================== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+
+  <div class="hero-inhalt">
+    <div class="hero-badge" data-lang="de">Präzisionsfertigung seit über 40 Jahren</div>
+    <div class="hero-badge" data-lang="en">Precision Manufacturing for 40+ Years</div>
+
+    <h1 data-lang="de">
+      Pure Performance.<br>
+      <span>Absolute Precision.</span>
+    </h1>
+    <h1 data-lang="en">
+      Pure Performance.<br>
+      <span>Absolute Precision.</span>
+    </h1>
+
+    <p class="hero-sub" data-lang="de">
+      Seit über 40 Jahren vertrauen führende Hightech-Unternehmen der BERGHOFF
+      bei der Planung und Fertigung hochkomplexer Bauteile, Baugruppen und Module.
+    </p>
+    <p class="hero-sub" data-lang="en">
+      For over 40 years, leading high-tech companies have trusted BERGHOFF
+      with the planning and manufacturing of highly complex components, assemblies and modules.
+    </p>
+
+    <div class="hero-btns">
+      <a href="#kontakt" class="btn-p" data-lang="de">Jetzt anfragen →</a>
+      <a href="#kontakt" class="btn-p" data-lang="en">Get in touch →</a>
+      <a href="maschinenpark.html" class="btn-s" data-lang="de">Maschinenpark</a>
+      <a href="maschinenpark.html" class="btn-s" data-lang="en">Our Equipment</a>
+    </div>
+  </div>
+
+  <div class="hero-kz">
+    <div class="hkz">
+      <div>
+        <div class="hkz-val">40<span>+</span></div>
+        <div class="hkz-label" data-lang="de">Jahre Erfahrung</div>
+        <div class="hkz-label" data-lang="en">Years Experience</div>
+      </div>
+    </div>
+    <div class="hkz">
+      <div>
+        <div class="hkz-val">&lt;4</div>
+        <div class="hkz-label" data-lang="de">Wochen Prototyp</div>
+        <div class="hkz-label" data-lang="en">Weeks to Prototype</div>
+      </div>
+    </div>
+    <div class="hkz">
+      <div>
+        <div class="hkz-val">ISO<span>-6</span></div>
+        <div class="hkz-label" data-lang="de">Reinraum ab 2026</div>
+        <div class="hkz-label" data-lang="en">Cleanroom from 2026</div>
+      </div>
+    </div>
+    <div class="hkz">
+      <div>
+        <div class="hkz-val">6</div>
+        <div class="hkz-label" data-lang="de">Fokus-Branchen</div>
+        <div class="hkz-label" data-lang="en">Focus Industries</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========================
+     DAS IST BERGHOFF
+     ======================== -->
+<section class="sek" id="ueber">
+  <div class="berghoff-layout">
+
+    <div class="berghoff-foto">
+      <img src="images/Start/Berghoff-fertigungshalle.jpg.jpeg"
+           alt="Berghoff Fertigungshalle" loading="lazy">
+      <div class="berghoff-foto-badge">
+        <div class="val">40+</div>
+        <div class="lab" data-lang="de">Jahre Erfahrung</div>
+        <div class="lab" data-lang="en">Years Experience</div>
+      </div>
+    </div>
+
+    <div class="berghoff-text">
+      <span class="sek-label" data-lang="de">Das ist BERGHOFF</span>
+      <span class="sek-label" data-lang="en">This is BERGHOFF</span>
+      <h2 data-lang="de">Ihr strategischer Partner für hochkomplexe Bauteile.</h2>
+      <h2 data-lang="en">Your strategic partner for highly complex components.</h2>
+      <div class="bl"></div>
+      <p style="margin-top:1.5rem;" data-lang="de">
+        Seit über 40 Jahren vertrauen führende Hightech-Unternehmen aus dem Maschinen-
+        und Anlagenbau der BERGHOFF bei der Planung und Fertigung hochkomplexer Bauteile,
+        Baugruppen und Module.
+      </p>
+      <p data-lang="en">
+        For over 40 years, leading high-tech companies in mechanical and plant engineering
+        have trusted BERGHOFF with the planning and manufacturing of highly complex
+        components, assemblies and modules.
+      </p>
+      <p data-lang="de">
+        Dabei stellen wir uns den <strong>allerhöchsten Ansprüchen an Qualität und
+        Versorgungssicherheit</strong>. Als strategischer Partner unterstützen wir
+        unsere Kunden dabei, ihre Innovationsgeschwindigkeit zu erhöhen, Risiken zu
+        reduzieren und Kosten dauerhaft zu senken.
+      </p>
+      <p data-lang="en">
+        We meet the <strong>most stringent requirements for quality and supply security</strong>.
+        As a strategic partner, we help our customers increase their innovation speed,
+        reduce risk and permanently reduce costs.
+      </p>
+      <p data-lang="de">
+        Mit unserem <strong>state-of-the-art Maschinenpark</strong> und einem Team aus
+        weltbesten Fertigungsspezialisten bieten wir Ihnen Lösungen aus einer Hand –
+        von der Entwicklungsbegleitung bis zum Supply-Chain-Management.
+      </p>
+      <p data-lang="en">
+        With our <strong>state-of-the-art machine park</strong> and a team of world-class
+        manufacturing specialists, we offer you end-to-end solutions – from engineering
+        support to supply chain management.
+      </p>
+      <a href="maschinenpark.html" class="link-pfeil" data-lang="de">Maschinenpark ansehen →</a>
+      <a href="maschinenpark.html" class="link-pfeil" data-lang="en">View our equipment →</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ========================
+     3-STEP VERTICAL INTEGRATION PROCESS
+     ======================== -->
+<section class="sek sek--grau" id="prozess">
+  <div class="dreistep-layout">
+
+    <div class="dreistep-text">
+      <span class="sek-label">3SVIP®</span>
+      <h2 data-lang="de">Unser 3-Schritt Prozess für Ihre Sicherheit.</h2>
+      <h2 data-lang="en">Our 3-step process for your security.</h2>
+      <div class="bl"></div>
+      <p style="margin-top:1.5rem;" data-lang="de">
+        Der 3-Step Vertical Integration Process ist unser bewährtes Framework für
+        die Steuerung komplexer Fertigungsprojekte – entlang der vier Dimensionen
+        Qualität, Logistik, Technologie und Kosten.
+      </p>
+      <p style="margin-top:1.5rem;" data-lang="en">
+        The 3-Step Vertical Integration Process is our proven framework for managing
+        complex manufacturing projects – across the four dimensions of quality,
+        logistics, technology and cost.
+      </p>
+      <div class="schritte" style="margin-top:2rem;">
+        <div class="schritt">
+          <div class="schritt-nr">1</div>
+          <div class="schritt-text">
+            <strong data-lang="de">Analyse & Planung</strong>
+            <strong data-lang="en">Analysis & Planning</strong>
+            <p data-lang="de">Tiefgehende Anforderungsanalyse, Machbarkeitsprüfung und gemeinsame Projektplanung mit klaren Meilensteinen.</p>
+            <p data-lang="en">In-depth requirements analysis, feasibility assessment and joint project planning with clear milestones.</p>
+          </div>
+        </div>
+        <div class="schritt">
+          <div class="schritt-nr">2</div>
+          <div class="schritt-text">
+            <strong data-lang="de">Fertigung & Qualitätssicherung</strong>
+            <strong data-lang="en">Manufacturing & Quality Assurance</strong>
+            <p data-lang="de">Präzisionsfertigung auf modernsten CNC-Anlagen, begleitet von lückenloser Prüfung und Dokumentation nach ISO-Standards.</p>
+            <p data-lang="en">Precision manufacturing on state-of-the-art CNC systems, accompanied by comprehensive inspection and ISO-compliant documentation.</p>
+          </div>
+        </div>
+        <div class="schritt">
+          <div class="schritt-nr">3</div>
+          <div class="schritt-text">
+            <strong data-lang="de">Lieferung & Supply Chain</strong>
+            <strong data-lang="en">Delivery & Supply Chain</strong>
+            <p data-lang="de">Termingerechte Lieferung, Lagerhaltung und proaktives Supply-Chain-Management für maximale Versorgungssicherheit.</p>
+            <p data-lang="en">On-time delivery, warehousing and proactive supply chain management for maximum supply security.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dreistep-img">
+      <img src="images/Start/3-step-vertical-integration-process-logo-final-scaled-1.png"
+           alt="3-Step Vertical Integration Process Berghoff" loading="lazy">
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ========================
+     BRANCHEN
+     ======================== -->
+<section class="sek sek--dunkel" id="branchen">
+  <div class="sek-kopf--mitte sek-kopf">
+    <span class="sek-label" data-lang="de">Unsere Märkte</span>
+    <span class="sek-label" data-lang="en">Our Markets</span>
+    <h2 data-lang="de">Fokus-Branchen</h2>
+    <h2 data-lang="en">Focus Industries</h2>
+    <div class="bl bl--mitte"></div>
+    <p class="sek-intro" data-lang="de">
+      Wir fertigen für Industrien, in denen Fehler keine Option sind.
+      Höchste Präzision, zertifizierte Qualität, absolute Versorgungssicherheit.
+    </p>
+    <p class="sek-intro" data-lang="en">
+      We manufacture for industries where failure is not an option.
+      Highest precision, certified quality, absolute supply security.
+    </p>
+  </div>
+
+  <div class="branchen-grid">
+
+    <!-- Halbleiter -->
+    <a href="branchen.html#halbleiter" class="branche-card">
+      <div class="branche-foto">
+        <img src="images/Start/Semiconductor_Berghoff.jpg.jpeg"
+             alt="Halbleitertechnologie Berghoff" loading="lazy">
+        <div class="branche-nr">01</div>
+      </div>
+      <div class="branche-info">
+        <h3 data-lang="de">Halbleiterindustrie</h3>
+        <h3 data-lang="en">Semiconductor Industry</h3>
+        <p data-lang="de">Extrem strenge Anforderungen an mechanische Komponenten für Lithographieanlagen, Waferhandling und Vakuumsysteme.</p>
+        <p data-lang="en">Extremely stringent requirements for mechanical components used in lithography systems, wafer handling and vacuum equipment.</p>
+        <div class="branche-link" data-lang="de">Mehr erfahren →</div>
+        <div class="branche-link" data-lang="en">Learn more →</div>
+      </div>
+    </a>
+
+    <!-- Aerospace -->
+    <a href="branchen.html#luft-raumfahrt" class="branche-card">
+      <div class="branche-foto">
+        <img src="images/Start/berghoff-gmbh-co-kg-aerospace-machining-plane.jpg.jpeg"
+             alt="Aerospace Berghoff" loading="lazy">
+        <div class="branche-nr">02</div>
+      </div>
+      <div class="branche-info">
+        <h3 data-lang="de">Aerospace</h3>
+        <h3 data-lang="en">Aerospace</h3>
+        <p data-lang="de">Immer leichter, immer weniger Verbrauch – flugkritische Strukturbauteile nach EN 9100 aus Titan und Speziallegierungen.</p>
+        <p data-lang="en">Ever lighter, ever lower consumption – flight-critical structural components to EN 9100 from titanium and special alloys.</p>
+        <div class="branche-link" data-lang="de">Mehr erfahren →</div>
+        <div class="branche-link" data-lang="en">Learn more →</div>
+      </div>
+    </a>
+
+    <!-- Pumpen & Extruder -->
+    <a href="branchen.html" class="branche-card">
+      <div class="branche-foto">
+        <img src="images/Start/BERGHOFF_Pumpengehaeuse.jpg.jpeg"
+             alt="Pumpen und Extruder Berghoff" loading="lazy">
+        <div class="branche-nr">03</div>
+      </div>
+      <div class="branche-info">
+        <h3 data-lang="de">Pumpen & Extruder</h3>
+        <h3 data-lang="en">Pumps & Extruders</h3>
+        <p data-lang="de">Zuverlässiger Ideenlieferant für maßgeschneiderte Losgrößen. Komplexe Gehäuse und Präzisionskomponenten für anspruchsvolle Anwendungen.</p>
+        <p data-lang="en">Reliable ideas partner for customised batch sizes. Complex housings and precision components for demanding applications.</p>
+        <div class="branche-link" data-lang="de">Mehr erfahren →</div>
+        <div class="branche-link" data-lang="en">Learn more →</div>
+      </div>
+    </a>
+
+    <!-- Energie -->
+    <a href="branchen.html#energie" class="branche-card">
+      <div class="branche-foto">
+        <img src="images/Start/windenergy_generator_windkraft_Berghoff.jpg.jpeg"
+             alt="Energietechnik Berghoff" loading="lazy">
+        <div class="branche-nr">04</div>
+      </div>
+      <div class="branche-info">
+        <h3 data-lang="de">Energie</h3>
+        <h3 data-lang="en">Energy</h3>
+        <p data-lang="de">Zuverlässigkeit, Umweltverträglichkeit, Wirtschaftlichkeit – hochbelastbare Komponenten für Turbinen, Generatoren und erneuerbare Energien.</p>
+        <p data-lang="en">Reliability, environmental compatibility, cost-effectiveness – high-performance components for turbines, generators and renewable energy.</p>
+        <div class="branche-link" data-lang="de">Mehr erfahren →</div>
+        <div class="branche-link" data-lang="en">Learn more →</div>
+      </div>
+    </a>
+
+    <!-- Öl & Gas -->
+    <a href="branchen.html" class="branche-card">
+      <div class="branche-foto">
+        <img src="images/Start/oil_gas_energy_berghoff.jpg.jpeg"
+             alt="Öl und Gas Berghoff" loading="lazy">
+        <div class="branche-nr">05</div>
+      </div>
+      <div class="branche-info">
+        <h3 data-lang="de">Öl & Gas</h3>
+        <h3 data-lang="en">Oil & Gas</h3>
+        <p data-lang="de">Neue Technologien mit Schwerpunkt nachhaltiger Umweltschutz – präzise Bauteile für die Erschließung und Förderung mit modernsten Standards.</p>
+        <p data-lang="en">New technologies focused on sustainable environmental protection – precision components for exploration and production to the latest standards.</p>
+        <div class="branche-link" data-lang="de">Mehr erfahren →</div>
+        <div class="branche-link" data-lang="en">Learn more →</div>
+      </div>
+    </a>
+
+    <!-- Medizintechnik -->
+    <a href="branchen.html#medizintechnik" class="branche-card">
+      <div class="branche-foto">
+        <img src="images/Start/medizintechnik_Berghoff.jpg.jpeg"
+             alt="Medizintechnik Berghoff" loading="lazy">
+        <div class="branche-nr">06</div>
+      </div>
+      <div class="branche-info">
+        <h3 data-lang="de">Medizintechnik</h3>
+        <h3 data-lang="en">Medical Technology</h3>
+        <p data-lang="de">Höchste Präzision und strenge Richtlinien – flexible Fertigung für MRT, OP-Robotik und Implantattechnologie nach ISO 13485.</p>
+        <p data-lang="en">Highest precision and strict guidelines – flexible manufacturing for MRI, surgical robotics and implant technology to ISO 13485.</p>
+        <div class="branche-link" data-lang="de">Mehr erfahren →</div>
+        <div class="branche-link" data-lang="en">Learn more →</div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+
+<!-- ========================
+     REINRAUM TEASER
+     ======================== -->
+<section class="sek" id="reinraum">
+  <div class="reinraum-layout">
+
+    <div class="reinraum-foto">
+      <img src="images/Start/reinraum-berghoff-visualisierung-webseite.jpg.jpeg"
+           alt="Reinraum Berghoff ISO-6" loading="lazy">
+    </div>
+
+    <div class="reinraum-text">
+      <div class="reinraum-badge" data-lang="de">Neu · Fertigstellung März 2026</div>
+      <div class="reinraum-badge" data-lang="en">New · Completion March 2026</div>
+      <h2 data-lang="de">Reinraum nach ISO-6-Standard.</h2>
+      <h2 data-lang="en">Cleanroom to ISO-6 standard.</h2>
+      <div class="bl"></div>
+      <p style="margin-top:1.5rem;" data-lang="de">
+        Mit unserem neuen, klimatisierten Reinraum nach ISO-6-Sauberkeitsstandard
+        erweitern wir unsere Möglichkeiten in der Montage und Bearbeitung
+        komplexer Module erheblich.
+      </p>
+      <p data-lang="en">
+        With our new, climate-controlled cleanroom to ISO-6 cleanliness standard,
+        we significantly expand our capabilities for the assembly and processing
+        of complex modules.
+      </p>
+      <p data-lang="de">
+        Der Reinraum umfasst spezialisierte Ultraschallreinigung, Bake-out-Verfahren
+        und Helium-Lecktest – für höchste Anforderungen der Halbleiter- und Medizintechnik.
+      </p>
+      <p data-lang="en">
+        The cleanroom includes specialised ultrasonic cleaning, bake-out processes
+        and helium leak testing – for the most stringent requirements of the
+        semiconductor and medical technology industries.
+      </p>
+      <div class="reinraum-specs">
+        <div class="spec-box">
+          <div class="spec-val">ISO<span>-6</span></div>
+          <div class="spec-lab" data-lang="de">Reinraumklasse</div>
+          <div class="spec-lab" data-lang="en">Cleanroom class</div>
+        </div>
+        <div class="spec-box">
+          <div class="spec-val">03<span>/2026</span></div>
+          <div class="spec-lab" data-lang="de">Fertigstellung</div>
+          <div class="spec-lab" data-lang="en">Completion</div>
+        </div>
+        <div class="spec-box">
+          <div class="spec-val" data-lang="de">He</div>
+          <div class="spec-lab" data-lang="de">Helium-Lecktest</div>
+          <div class="spec-lab" data-lang="en">Helium leak test</div>
+        </div>
+        <div class="spec-box">
+          <div class="spec-val" data-lang="de">US</div>
+          <div class="spec-lab" data-lang="de">Ultraschallreinigung</div>
+          <div class="spec-lab" data-lang="en">Ultrasonic cleaning</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ========================
+     TEAM
+     ======================== -->
+<section class="sek sek--grau" id="team">
+  <div class="sek-kopf">
+    <span class="sek-label" data-lang="de">Unsere Ansprechpartner</span>
+    <span class="sek-label" data-lang="en">Our Contact Persons</span>
+    <h2 data-lang="de">Das Team hinter BERGHOFF.</h2>
+    <h2 data-lang="en">The team behind BERGHOFF.</h2>
+    <div class="bl"></div>
+  </div>
+
+  <div class="team-grid">
+
+    <div class="team-karte team-geschaeft">
+      <div class="team-foto">
+        <img src="images/Start/Ulrich-Berghoff-2022.jpg.jpeg"
+             alt="Ulrich Berghoff" loading="lazy">
+      </div>
+      <div class="team-info">
+        <h4>Ulrich Berghoff</h4>
+        <span data-lang="de">Geschäftsführung</span>
+        <span data-lang="en">Managing Director</span>
+      </div>
+    </div>
+
+    <div class="team-karte team-geschaeft">
+      <div class="team-foto">
+        <img src="images/Start/Berghoff-Markus-2022.jpg.jpeg"
+             alt="Markus Berghoff" loading="lazy">
+      </div>
+      <div class="team-info">
+        <h4>Markus Berghoff</h4>
+        <span data-lang="de">Geschäftsführung</span>
+        <span data-lang="en">Managing Director</span>
+      </div>
+    </div>
+
+    <div class="team-karte">
+      <div class="team-foto">
+        <img src="images/Start/Dirk-Hildebrandt-2022.jpg.jpeg"
+             alt="Dirk Hildebrandt" loading="lazy">
+      </div>
+      <div class="team-info">
+        <h4>Dirk Hildebrandt</h4>
+        <span data-lang="de">Technische Leitung</span>
+        <span data-lang="en">Technical Director</span>
+      </div>
+    </div>
+
+    <div class="team-karte">
+      <div class="team-foto">
+        <img src="images/Start/Matthias-Platte-2022.jpg.jpeg"
+             alt="Matthias Platte" loading="lazy">
+      </div>
+      <div class="team-info">
+        <h4>Matthias Platte</h4>
+        <span data-lang="de">Leiter QM / IT</span>
+        <span data-lang="en">Head of QM / IT</span>
+      </div>
+    </div>
+
+    <div class="team-karte">
+      <div class="team-foto">
+        <img src="images/Start/Joerg-Merx-2022.jpg.jpeg"
+             alt="Jörg Merx" loading="lazy">
+      </div>
+      <div class="team-info">
+        <h4>Jörg Merx</h4>
+        <span data-lang="de">Vertriebs- &amp; Marketingleitung</span>
+        <span data-lang="en">Sales &amp; Marketing Director</span>
+      </div>
+    </div>
+
+    <div class="team-karte">
+      <div class="team-foto">
+        <img src="images/Start/Sonja-Saul-2022.jpg.jpeg"
+             alt="Sonja Saul" loading="lazy">
+      </div>
+      <div class="team-info">
+        <h4>Sonja Saul</h4>
+        <span data-lang="de">Personalleitung</span>
+        <span data-lang="en">Head of HR</span>
+      </div>
+    </div>
+
+    <div class="team-karte">
+      <div class="team-foto">
+        <img src="images/Start/Christoph-Doemer-2022.jpg.jpeg"
+             alt="Christoph Dömer" loading="lazy">
+      </div>
+      <div class="team-info">
+        <h4>Christoph Dömer</h4>
+        <span data-lang="de">Ausbildungsleitung</span>
+        <span data-lang="en">Head of Training</span>
+      </div>
+    </div>
+
+    <!-- Messmaschine / Hallenbild als Abschlussbild -->
+    <div class="team-karte" style="overflow:hidden;">
+      <div class="team-foto" style="aspect-ratio:1/1;">
+        <img src="images/Start/Berghhoff-gmbh-co-kg-messmaschine-hexagon.jpg.jpeg"
+             alt="Berghoff Messmaschine Hexagon" loading="lazy"
+             style="object-position:center;">
+      </div>
+      <div class="team-info">
+        <h4 data-lang="de">State-of-the-Art</h4>
+        <h4 data-lang="en">State-of-the-Art</h4>
+        <span data-lang="de">Messtechnik & Qualitätssicherung</span>
+        <span data-lang="en">Measurement & Quality Assurance</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ========================
+     REFERENZEN & ZERTIFIKATE
+     ======================== -->
+<section class="sek" id="referenzen">
+  <div class="sek-kopf--mitte sek-kopf">
+    <span class="sek-label" data-lang="de">Vertrauen & Qualität</span>
+    <span class="sek-label" data-lang="en">Trust & Quality</span>
+    <h2 data-lang="de">Referenzen &amp; Zertifizierungen</h2>
+    <h2 data-lang="en">References &amp; Certifications</h2>
+    <div class="bl bl--mitte"></div>
+    <p class="sek-intro" data-lang="de">
+      Führende Unternehmen aus Halbleiter-, Luft- und Raumfahrt- sowie Medizintechnik
+      vertrauen auf BERGHOFF. Unsere Zertifizierungen belegen unsere Qualitätsverpflichtung.
+    </p>
+    <p class="sek-intro" data-lang="en">
+      Leading companies in semiconductor, aerospace and medical technology trust BERGHOFF.
+      Our certifications demonstrate our commitment to quality.
+    </p>
+  </div>
+
+  <!-- Kunden-Logos -->
+  <div style="max-width:900px;margin:0 auto 4rem;" class="kunden-logos">
+    <img src="images/Start/logos_home.png"
+         alt="Berghoff Kundenreferenzen" loading="lazy"
+         style="max-height:none;filter:grayscale(100%);opacity:0.45;max-width:100%;">
+  </div>
+
+  <!-- Zertifikate -->
+  <div class="zert-reihe">
+    <div class="zert-item">
+      <img src="images/Caertifications/9001_ger_tc_p.png"
+           alt="ISO 9001:2015 Zertifikat" loading="lazy">
+      <span>ISO 9001:2015</span>
+    </div>
+    <div class="zert-item">
+      <img src="images/Caertifications/9100_ger_tc_p.png"
+           alt="EN 9100:2018 Zertifikat" loading="lazy">
+      <span>EN 9100:2018</span>
+    </div>
+    <div class="zert-text-item">
+      <div class="zt-val">Rolls-Royce</div>
+      <div class="zt-lab" data-lang="de">Approved Supplier</div>
+      <div class="zt-lab" data-lang="en">Approved Supplier</div>
+    </div>
+    <div class="zert-text-item">
+      <div class="zt-val">EN ISO 9712</div>
+      <div class="zt-lab">DIN EN 473</div>
+    </div>
+    <div class="zert-text-item">
+      <div class="zt-val">ISO 13485</div>
+      <div class="zt-lab" data-lang="de">Medizintechnik QMS</div>
+      <div class="zt-lab" data-lang="en">Medical Device QMS</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========================
+     KONTAKT
+     ======================== -->
+<section class="sek sek--grau" id="kontakt">
+  <div class="kontakt-layout">
+
+    <div class="kontakt-info">
+      <span class="sek-label" data-lang="de">Kontakt</span>
+      <span class="sek-label" data-lang="en">Contact</span>
+      <h2 data-lang="de">Sprechen wir über Ihr Projekt.</h2>
+      <h2 data-lang="en">Let's talk about your project.</h2>
+      <div class="bl"></div>
+      <p style="margin-top:1.5rem;" data-lang="de">
+        Unser Vertriebsteam analysiert Ihre Anforderungen und erstellt ein
+        maßgeschneidertes Angebot – persönlich, direkt und innerhalb von 24 Stunden.
+      </p>
+      <p style="margin-top:1.5rem;" data-lang="en">
+        Our sales team analyses your requirements and creates a tailored proposal –
+        personal, direct and within 24 hours.
+      </p>
+
+      <div class="standorte">
+        <div class="standort">
+          <h4 data-lang="de">Standort Drolshagen</h4>
+          <h4 data-lang="en">Location Drolshagen</h4>
+          <p>
+            Langenheid 1<br>
+            57489 Drolshagen<br>
+            <a href="tel:+492763212790">+49 2763 212790</a>
+          </p>
+        </div>
+        <div class="standort">
+          <h4 data-lang="de">Standort Wenden</h4>
+          <h4 data-lang="en">Location Wenden</h4>
+          <p>
+            Im Ruttenberge 6<br>
+            57482 Wenden<br>
+            <a href="tel:+4927629874">+49 2762 98740</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="oeffnung">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>
+        </svg>
+        <span data-lang="de">Mo – Fr: 08:00 – 17:00 Uhr &nbsp;·&nbsp; <a href="mailto:info@berghoff.eu" style="color:var(--blau);">info@berghoff.eu</a></span>
+        <span data-lang="en">Mon – Fri: 08:00 – 17:00 &nbsp;·&nbsp; <a href="mailto:info@berghoff.eu" style="color:var(--blau);">info@berghoff.eu</a></span>
+      </div>
+    </div>
+
+    <div class="formular">
+      <div class="form-reihe">
+        <div class="form-gruppe">
+          <label data-lang="de">Name *</label>
+          <label data-lang="en">Name *</label>
+          <input type="text" placeholder="Max Mustermann" autocomplete="name">
+        </div>
+        <div class="form-gruppe">
+          <label data-lang="de">Unternehmen *</label>
+          <label data-lang="en">Company *</label>
+          <input type="text" placeholder="Mustermann GmbH" autocomplete="organization">
+        </div>
+      </div>
+      <div class="form-gruppe">
+        <label data-lang="de">E-Mail *</label>
+        <label data-lang="en">E-Mail *</label>
+        <input type="email" placeholder="max@mustermann.de" autocomplete="email">
+      </div>
+      <div class="form-gruppe">
+        <label data-lang="de">Telefon</label>
+        <label data-lang="en">Phone</label>
+        <input type="tel" placeholder="+49 …" autocomplete="tel">
+      </div>
+      <div class="form-gruppe">
+        <label data-lang="de">Betreff</label>
+        <label data-lang="en">Subject</label>
+        <select>
+          <option value="" data-lang="de">Bitte wählen …</option>
+          <option value="" data-lang="en">Please select …</option>
+          <option data-lang="de">Bauteilanfrage</option>
+          <option data-lang="en">Part enquiry</option>
+          <option data-lang="de">Baugruppenmontage</option>
+          <option data-lang="en">Assembly project</option>
+          <option data-lang="de">Werksbesichtigung</option>
+          <option data-lang="en">Factory visit</option>
+          <option data-lang="de">Reinraum-Anfrage</option>
+          <option data-lang="en">Cleanroom enquiry</option>
+          <option data-lang="de">Sonstiges</option>
+          <option data-lang="en">Other</option>
+        </select>
+      </div>
+      <div class="form-gruppe">
+        <label data-lang="de">Nachricht</label>
+        <label data-lang="en">Message</label>
+        <textarea data-lang="de" placeholder="Beschreiben Sie kurz Ihr Projekt oder Ihre Anforderungen …"></textarea>
+        <textarea data-lang="en" placeholder="Briefly describe your project or requirements …"></textarea>
+      </div>
+      <p class="ds" data-lang="de">
+        Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß unserer
+        <a href="datenschutz.html">Datenschutzerklärung</a> zu.
+      </p>
+      <p class="ds" data-lang="en">
+        By submitting you agree to the processing of your data per our
+        <a href="datenschutz.html">Privacy Policy</a>.
+      </p>
+      <button class="btn-submit" data-lang="de">Nachricht senden</button>
+      <button class="btn-submit" data-lang="en">Send Message</button>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+
+<!-- ========================
+     FOOTER
+     ======================== -->
+<footer>
+  <div class="footer-oben">
+
+    <div>
+      <div class="footer-logo">
+        <img src="images/Start/berghoff_logo-weiss-gross-1024x145.png"
+             alt="Berghoff GmbH" loading="lazy">
+      </div>
+      <p class="footer-marke-text" data-lang="de">
+        Pure Performance. Absolute Precision. – Präzisionsfertigung für die
+        anspruchsvollsten Industrien der Welt. Standorte in Drolshagen und Wenden.
+      </p>
+      <p class="footer-marke-text" data-lang="en">
+        Pure Performance. Absolute Precision. – Precision manufacturing for the
+        world's most demanding industries. Locations in Drolshagen and Wenden.
+      </p>
+      <div class="soz">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">fb</a>
+      </div>
+    </div>
+
+    <div>
+      <h4 data-lang="de">Seiten</h4>
+      <h4 data-lang="en">Pages</h4>
+      <ul class="footer-liste">
+        <li><a href="branchen.html" data-lang="de">Branchen</a><a href="branchen.html" data-lang="en">Industries</a></li>
+        <li><a href="maschinenpark.html" data-lang="de">Maschinenpark</a><a href="maschinenpark.html" data-lang="en">Equipment</a></li>
+        <li><a href="https://karriere.berghoff.eu" target="_blank" rel="noopener" data-lang="de">Karriere ↗</a><a href="https://karriere.berghoff.eu" target="_blank" rel="noopener" data-lang="en">Careers ↗</a></li>
+        <li><a href="lieferant.html" data-lang="de">Lieferant werden</a><a href="lieferant.html" data-lang="en">Become a Supplier</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 data-lang="de">Branchen</h4>
+      <h4 data-lang="en">Industries</h4>
+      <ul class="footer-liste">
+        <li><a href="branchen.html#halbleiter" data-lang="de">Halbleiterindustrie</a><a href="branchen.html#halbleiter" data-lang="en">Semiconductor</a></li>
+        <li><a href="branchen.html#luft-raumfahrt" data-lang="de">Aerospace</a><a href="branchen.html#luft-raumfahrt" data-lang="en">Aerospace</a></li>
+        <li><a href="branchen.html#medizintechnik" data-lang="de">Medizintechnik</a><a href="branchen.html#medizintechnik" data-lang="en">Medical Technology</a></li>
+        <li><a href="branchen.html#energie" data-lang="de">Energie</a><a href="branchen.html#energie" data-lang="en">Energy</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 data-lang="de">Kontakt</h4>
+      <h4 data-lang="en">Contact</h4>
+      <ul class="footer-liste">
+        <li><a href="mailto:info@berghoff.eu">info@berghoff.eu</a></li>
+        <li><a href="tel:+492763212790">+49 2763 212790</a></li>
+        <li style="color:rgba(255,255,255,0.25);font-size:0.75rem;margin-top:0.5rem;">Drolshagen · Wenden</li>
+      </ul>
+      <div style="margin-top:2rem;display:flex;gap:4px;align-items:center;">
+        <button class="sprach-btn" data-lang="de" style="color:rgba(255,255,255,0.5);">DE</button>
+        <span style="color:rgba(255,255,255,0.2);font-size:0.75rem;">/</span>
+        <button class="sprach-btn" data-lang="en" style="color:rgba(255,255,255,0.5);">EN</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-unten">
+    <p class="footer-copy" data-lang="de">© 2025 Berghoff GmbH & Co. KG. Alle Rechte vorbehalten.</p>
+    <p class="footer-copy" data-lang="en">© 2025 Berghoff GmbH & Co. KG. All rights reserved.</p>
+    <div class="footer-legal">
+      <a href="impressum.html" data-lang="de">Impressum</a>
+      <a href="impressum.html" data-lang="en">Legal Notice</a>
+      <a href="datenschutz.html" data-lang="de">Datenschutz</a>
+      <a href="datenschutz.html" data-lang="en">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ========================
+     SCRIPTS
+     ======================== -->
+<script>
+  // Nav Scroll-Shadow
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', scrollY > 20);
+  }, { passive: true });
+
+  // Hamburger
+  const hb = document.getElementById('hamburger');
+  const mm = document.getElementById('mobile-menu');
+  hb?.addEventListener('click', () => {
+    hb.classList.toggle('offen');
+    mm.classList.toggle('offen');
+    document.body.style.overflow = mm.classList.contains('offen') ? 'hidden' : '';
+  });
+
+  // Sprache – inline-Style direkt am Element, damit
+  // Klassen wie .sek-label { display: block } nie gewinnen können.
+  function setSprache(lang) {
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      // '' entfernt den inline-Style → Klassen-CSS greift wieder
+      el.style.display = el.dataset.lang === lang ? '' : 'none';
+    });
+    localStorage.setItem('berghoff_lang', lang);
+    document.querySelectorAll('.sprach-btn').forEach(b => {
+      b.classList.toggle('aktiv', b.dataset.lang === lang);
+    });
+  }
+  setSprache(localStorage.getItem('berghoff_lang') || 'de');
+  document.addEventListener('click', e => {
+    if (e.target.matches('.sprach-btn')) setSprache(e.target.dataset.lang);
+  });
+
+  // Smooth Scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+</script>
+
+</body>
+</html>
