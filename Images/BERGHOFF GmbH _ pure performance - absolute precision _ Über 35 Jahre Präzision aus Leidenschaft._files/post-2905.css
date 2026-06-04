@@ -1,0 +1,77 @@
+.elementor-kit-2905{--e-global-color-primary:#00B6FF;--e-global-color-secondary:#FFFFFF;--e-global-color-text:#000000;--e-global-color-accent:#1D2D3F;--e-global-color-6ac72321:#6EC1E4;--e-global-color-503ea45:#54595F;--e-global-color-32ee9ec4:#7A7A7A;--e-global-color-2d0f7c21:#61CE70;--e-global-color-70a30cb:#4054B2;--e-global-color-1cef50bf:#23A455;--e-global-color-d47636:#000;--e-global-color-1e0f23e9:#FFF;--e-global-typography-primary-font-family:"Open Sans";--e-global-typography-primary-font-size:29px;--e-global-typography-primary-font-weight:bold;--e-global-typography-secondary-font-family:"Open Sans";--e-global-typography-secondary-font-weight:600;--e-global-typography-text-font-family:"Source Sans Pro";--e-global-typography-text-font-size:17px;--e-global-typography-text-font-weight:normal;--e-global-typography-accent-font-family:"Open Sans";--e-global-typography-accent-font-weight:500;}.elementor-kit-2905 e-page-transition{background-color:#FFBC7D;}.elementor-kit-2905 a{color:#00B3FF;}.elementor-kit-2905 a:hover{color:#00B3FF;}.elementor-kit-2905 h1{font-family:"Roboto Condensed", Sans-serif;font-size:18px;}.elementor-kit-2905 button,.elementor-kit-2905 input[type="button"],.elementor-kit-2905 input[type="submit"],.elementor-kit-2905 .elementor-button{color:#FFFFFF;}.elementor-section.elementor-section-boxed > .elementor-container{max-width:1140px;}.e-con{--container-max-width:1140px;}{}h1.entry-title{display:var(--page-title-display);}@media(max-width:1024px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:1024px;}.e-con{--container-max-width:1024px;}}@media(max-width:767px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:767px;}.e-con{--container-max-width:767px;}}/* Start custom CSS */header.sticky-header {
+    --header-height: 100px;
+    --opacity: 1.0;
+    --shrink-me: 0.80;
+    --sticky-background-color: #FFFFFF;
+    --transition: .4s ease-in-out;
+
+    transition: background-color var(--transition),
+                background-image var(--transition),
+                backdrop-filter var(--transition),
+                opacity var(--transition);
+}
+header.sticky-header.elementor-sticky--effects {
+    background-color: var(--sticky-background-color) !important;
+    background-image: none !important;
+    opacity: var(--opacity) !important;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+header.sticky-header > .elementor-container {
+    transition: min-height var(--transition);
+}
+header.sticky-header.elementor-sticky--effects > .elementor-container {
+    min-height: calc(var(--header-height) * var(--shrink-me))!important;
+    height: calc(var(--header-height) * var(--shrink-me));
+}
+header.sticky-header .elementor-nav-menu .elementor-item {
+    transition: padding var(--transition);
+}
+header.sticky-header.elementor-sticky--effects .elementor-nav-menu .elementor-item {
+    padding-bottom: 10px !important;
+    padding-top: 10px !important;
+}
+header.sticky-header > .elementor-container .logo img {
+    transition: max-width var(--transition);
+}
+header.sticky-header.elementor-sticky--effects .logo img {
+    max-width: calc(80% * var(--shrink-me));
+}
+header.sticky-header-mobile {
+    --header-height:60px;
+    --opacity: 1.0;
+    --shrink-me: 0.90;
+    --sticky-background-color: #FFFFFF;
+    --transition: .4s ease-in-out;
+
+    transition: background-color var(--transition),
+                background-image var(--transition),
+                backdrop-filter var(--transition),
+                opacity var(--transition);
+}
+header.sticky-header-mobile.elementor-sticky--effects {
+    background-color: var(--sticky-background-color) !important;
+    background-image: none !important;
+    opacity: var(--opacity) !important;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+header.sticky-header-mobile > .elementor-container {
+    transition: min-height var(--transition);
+}
+header.sticky-header-mobile.elementor-sticky--effects > .elementor-container {
+    min-height: calc(var(--header-height) * var(--shrink-me))!important;
+    height: calc(var(--header-height) * var(--shrink-me));
+}
+header.sticky-header-mobile .elementor-nav-menu .elementor-item {
+    transition: padding var(--transition);
+}
+header.sticky-header-mobile.elementor-sticky--effects .elementor-nav-menu .elementor-item {
+    padding-bottom: 10px !important;
+    padding-top: 10px !important;
+}
+header.sticky-header-mobile > .elementor-container .logomobile img {
+    transition: max-width var(--transition);
+}
+header.sticky-header-mobile.elementor-sticky--effects .logomobile img {
+    max-width: calc(80% * var(--shrink-me));/* End custom CSS */
