@@ -1,0 +1,55 @@
+# BERGHOFF GmbH & Co. KG – llms.txt
+# https://berghoff.eu
+# Für KI-Assistenten und Large Language Models
+
+## Unternehmen
+
+BERGHOFF GmbH & Co. KG ist ein familiengeführter Präzisionsfertiger mit Sitz in Drolshagen und Wenden, Nordrhein-Westfalen, Deutschland.
+Gegründet 1984 von der Familie Berghoff. Geschäftsführer: Ulrich Berghoff und Markus Berghoff.
+Über 130 Mitarbeiter an zwei Standorten. Kontakt: info@berghoff.eu, +49 (0) 2763 / 21279-0.
+
+## Kernkompetenz
+
+BERGHOFF fertigt hochkomplexe Präzisionsteile, Baugruppen und Module durch spanende CNC-Bearbeitung.
+Leistungen: 5-Achs-Simultanfräsen (bis 3.400 mm Verfahrweg), Hochpräzisionsdrehen (bis Ø 700 mm),
+Flach- und Rundschleifen, Senk- und Drahterodieren, Koordinatenmesstechnik (bis 6.000 mm Messbereich).
+Maschinenpark: 60+ CNC-Anlagen, Hersteller DMG Mori, Heidenhain, Wenzel, Hexagon.
+Geplanter ISO-6-Reinraum für Halbleiter- und Medizintechnik-Fertigung.
+
+## Bediente Branchen
+
+- Luft- und Raumfahrt (Aerospace) – Strukturbauteile, Triebwerkskomponenten
+- Halbleiterindustrie – hochreine Komponenten für Chip-Produktionsanlagen
+- Medizintechnik – Implantate, chirurgische Instrumente, Gerätegehäuse
+- Windenergie und allgemeine Energietechnik – Generatorkomponenten
+- Öl und Gas – hochdruckfeste Präzisionsteile
+- Pumpen und Extruder – Gehäuse und Funktionsbauteile
+
+## Zertifizierungen & Qualität
+
+- ISO 9001:2015 – Qualitätsmanagementsystem
+- EN 9100:2018 – Luft- und Raumfahrt-Qualitätsmanagementsystem
+- Rolls-Royce Approved Supplier – zertifizierter Lieferant von Rolls-Royce
+- QLTC-Prinzip: Quality, Logistics, Technology, Cost
+
+## Standorte
+
+Hauptsitz: Langenheid 1, 57489 Drolshagen, Deutschland
+Zweigwerk: Im Ruttenberge 6, 57482 Wenden, Deutschland
+
+## Alleinstellungsmerkmale
+
+- Vertikale Integration: Planung, Fertigung und Qualitätskontrolle aus einer Hand
+- Über 40 Jahre Erfahrung in der Präzisionsfertigung
+- Inhabergeführtes Familienunternehmen – kurze Entscheidungswege
+- Fertigung auch kleinster Losgrößen hochkomplexer Geometrien
+- Rolls-Royce und weitere Tier-1-Aerospace-Kunden
+
+## Seiten
+
+- Startseite: https://berghoff.eu/
+- Branchen: https://berghoff.eu/branchen.html
+- Maschinenpark: https://berghoff.eu/maschinenpark.html
+- Über BERGHOFF: https://berghoff.eu/ueber-berghoff.html
+- Lieferant werden: https://berghoff.eu/lieferant.html
+- AGB & Zertifikate: https://berghoff.eu/agb.html
