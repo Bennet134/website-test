@@ -509,6 +509,20 @@
   .ft-lang { display: flex; gap: .5rem; align-items: center; }
 
   /* ── RESPONSIVE ─────────────────────────────── */
+  /* Mobile Nav – Kontakt-CTA */
+  .mob-kontakt {
+    display: block !important;
+    margin-top: 1rem;
+    background: var(--blue) !important;
+    color: var(--white) !important;
+    text-align: center;
+    padding: .875rem 1rem !important;
+    border-radius: var(--r);
+    border-bottom: none !important;
+    font-size: 1rem !important;
+  }
+  .mob-kontakt:hover { background: var(--blue-d) !important; }
+
   @media (max-width: 1100px) {
     .split, .standort-layout { grid-template-columns: 1fr; gap: 3rem; }
     .split.flip .img { order: 0; }
@@ -518,15 +532,36 @@
     .ft-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
     .ft-adresse-sep { margin: .6rem 0; }
     .map-grid { grid-template-columns: 1fr; }
+    /* Zertifikate */
+    .cert-layout { grid-template-columns: 1fr; gap: 3rem; }
   }
+
   @media (max-width: 768px) {
-    :root { --pad: 1.5rem; --sec: 4rem; }
-    .nav-links { display: none; }
+    :root { --pad: 1.25rem; --sec: 4rem; }
+    .nav-links, .nav-right .btn, .nav-right .lang { display: none; }
     .hamburger { display: flex; }
-    .gf-diptych { grid-template-columns: 1fr; gap: 2px; }
-    .gf-zitate { grid-template-columns: 1fr; }
-    .ft-grid { grid-template-columns: 1fr; }
-    .tl-item { grid-template-columns: 70px 1px 1fr; }
+    .gf-diptych  { grid-template-columns: 1fr; gap: 2px; }
+    .gf-zitate   { grid-template-columns: 1fr; }
+    .ft-grid     { grid-template-columns: 1fr; }
+    .tl-item     { grid-template-columns: 70px 1px 1fr; }
+    /* Hero */
+    .hero-body h1 { font-size: clamp(1.9rem, 7vw, 3rem); }
+    /* Timeline kompakter */
+    .tl-year { font-size: 1rem; }
+    .sec-head { margin-bottom: 2rem; }
+    /* Cert downloads */
+    .cert-dl-row { flex-direction: column; gap: .5rem; }
+    .cert-dl-chip { justify-content: center; }
+  }
+
+  @media (max-width: 480px) {
+    :root { --sec: 3rem; }
+    .nav { padding: 0 1rem; }
+    .werte-grid  { grid-template-columns: 1fr; }
+    .gf-diptych  { display: none; } /* zu eng, weglassen */
+    .ft-bottom   { flex-direction: column; align-items: flex-start; gap: .75rem; }
+    /* OSM-Karten */
+    .map-frame   { height: 220px; }
   }
   </style>
 </head>
@@ -566,7 +601,7 @@
   <a href="https://karriere.berghoff.eu" target="_blank" rel="noopener"
                            data-de="Karriere ↗"       data-en="Careers ↗">Karriere ↗</a>
   <a href="lieferant.html" data-de="Lieferant werden" data-en="Become a Supplier">Lieferant werden</a>
-  <a href="index.html#kontakt" data-de="Kontakt"      data-en="Contact">Kontakt</a>
+  <a href="index.html#kontakt" class="mob-kontakt" data-de="Kontakt anfragen" data-en="Get in touch">Kontakt anfragen</a>
   <div class="lang" style="margin-top:1.5rem;">
     <button class="lang-btn on" data-l="de">DE</button>
     <span class="lang-sep">/</span>
