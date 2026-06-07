@@ -8,10 +8,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="images/logo/berghoff-icon.png">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png?v=1.0" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=1.0" />
+  <link rel="shortcut icon" href="/favicon.ico?v=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1.0" />
+  <meta name="apple-mobile-web-app-title" content="BERGHOFF" />
+  <link rel="manifest" href="/site.webmanifest?v=1.0" />
   <link rel="canonical" href="https://berghoff.eu/branchen.html">
 
-  <!-- Open Graph -->
+  
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://berghoff.eu/branchen.html">
   <meta property="og:title"       content="Präzisionsteile für Aerospace, Halbleiter & Medizintechnik | BERGHOFF">
@@ -24,7 +29,7 @@
   <meta name="twitter:card"       content="summary_large_image">
   <meta name="twitter:image"      content="https://berghoff.eu/images/og/branchen-og.jpg">
 
-  <!-- Schema.org -->
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -47,10 +52,7 @@
   </script>
 
   <style>
-  /* ==============================================
-     BERGHOFF — BRANCHEN
-     Gleiches Design-System wie index.html
-     ============================================== */
+  
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   img { display: block; max-width: 100%; }
@@ -59,8 +61,8 @@
   button { font-family: inherit; cursor: pointer; background: none; border: none; }
 
   :root {
-    --blue:   #009FE3;
-    --blue-d: #0080c0;
+    --blue:   #00A0E4;
+    --blue-d: #0081B8;
     --black:  #080808;
     --off:    #f5f5f5;
     --border: #e4e4e4;
@@ -68,7 +70,7 @@
     --muted:  #6b6b6b;
     --white:  #fff;
     --nav-h:  64px;
-    --ind-h:  48px;   /* Branchen-Nav-Höhe */
+    --ind-h:  48px;   
     --r:      2px;
     --pad:    clamp(1.5rem, 7vw, 8rem);
     --sec:    6rem;
@@ -100,7 +102,7 @@
   .btn-outline-dark { color: var(--text); border: 2px solid var(--border); }
   .btn-outline-dark:hover { border-color: var(--blue); color: var(--blue); }
 
-  /* ── HAUPTNAVIGATION ──────────────────────────── */
+  
   .nav {
     position: fixed; inset: 0 0 auto;
     height: var(--nav-h); z-index: 300;
@@ -156,7 +158,7 @@
   }
   .mobile-nav a:hover { color: var(--blue); }
 
-  /* ── BRANCHEN-SUBNAV (sticky unter Hauptnav) ───── */
+  
   .ind-nav {
     position: sticky;
     top: var(--nav-h);
@@ -168,7 +170,7 @@
     padding: 0 var(--pad);
     overflow-x: auto;
     gap: 0;
-    /* kein Scrollbar-Flickern */
+    
     scrollbar-width: none;
   }
   .ind-nav::-webkit-scrollbar { display: none; }
@@ -183,18 +185,18 @@
     white-space: nowrap;
     border-bottom: 2px solid transparent;
     transition: color var(--trans), border-color var(--trans);
-    margin-bottom: -1px;  /* deckt den Border der .ind-nav */
+    margin-bottom: -1px;  
   }
   .ind-link:hover { color: var(--text); }
   .ind-link.aktiv { color: var(--blue); border-bottom-color: var(--blue); }
 
-  /* ── HERO ─────────────────────────────────────── */
+  
   .hero {
     position: relative; overflow: hidden;
     padding: calc(var(--nav-h) + var(--ind-h) + 5rem) var(--pad) 5rem;
     background: linear-gradient(135deg, #030d1f 0%, #041833 40%, #062448 70%, #0a3060 100%);
   }
-  /* Geometrisches Dekor-Muster */
+  
   .hero::before {
     content: '';
     position: absolute; inset: 0;
@@ -204,7 +206,7 @@
     background-size: 64px 64px;
     mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
   }
-  /* Blauer Glow oben rechts */
+  
   .hero::after {
     content: '';
     position: absolute;
@@ -228,7 +230,7 @@
   }
   .hero-body .rule { margin: 1.25rem 0; }
 
-  /* ── SEKTIONEN ────────────────────────────────── */
+  
   .ind-sec {
     padding: var(--sec) var(--pad);
     border-bottom: 1px solid var(--border);
@@ -236,7 +238,7 @@
   }
   .ind-sec:nth-child(even) { background: var(--off); }
 
-  /* Zwei-Spalten: Foto + Text */
+  
   .split {
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 5rem; align-items: start;
@@ -250,7 +252,7 @@
     object-fit: cover; border-radius: var(--r); display: block;
   }
 
-  /* Nummer-Overlay auf dem Foto */
+  
   .ind-nr-badge {
     position: absolute; top: 1.25rem; left: 1.25rem;
     font-family: 'Sora', sans-serif;
@@ -273,7 +275,7 @@
     font-size: .9rem; color: var(--muted); line-height: 1.85; margin-bottom: 1.5rem;
   }
 
-  /* Leistungs-Liste */
+  
   .leistungs-liste {
     display: grid; grid-template-columns: 1fr 1fr;
     gap: .5rem 1.5rem; margin-bottom: 1.75rem;
@@ -288,7 +290,7 @@
     background: var(--blue); margin-top: .45rem;
   }
 
-  /* Meta-Tags: Werkstoffe, Zertifikate */
+  
   .meta-reihe { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.5rem; }
   .meta-tag {
     font-family: 'Sora', sans-serif;
@@ -301,10 +303,10 @@
     color: var(--blue); background: rgba(0,159,227,.06);
     border-color: rgba(0,159,227,.2);
   }
-  /* Bei even-Sektionen: off-bg → weiße Tags */
+  
   .ind-sec:nth-child(even) .meta-tag { background: var(--white); }
 
-  /* ── ANSPRECHPARTNER-KARTE ───────────────────── */
+  
   .ap-karte {
     display: flex; align-items: center; gap: 1rem;
     margin-top: 1.75rem;
@@ -335,7 +337,7 @@
   .ap-name.placeholder { color: var(--muted); font-style: italic; }
   .ap-detail { font-size: .78rem; color: var(--muted); }
 
-  /* ── FOOTER ──────────────────────────────────── */
+  
   footer {
     background: var(--black); color: rgba(255,255,255,.45);
     padding: 5rem var(--pad) 0;
@@ -384,8 +386,8 @@
   .ft-legal a { color: rgba(255,255,255,.22); transition: color var(--trans); }
   .ft-legal a:hover { color: rgba(255,255,255,.5); }
 
-  /* ── RESPONSIVE ──────────────────────────────── */
-  /* Mobile Nav – Kontakt-CTA */
+  
+  
   .mob-kontakt {
     display: block !important;
     margin-top: 1rem;
@@ -411,10 +413,10 @@
     .hamburger { display: flex; }
     .ft-grid { grid-template-columns: 1fr; }
     .ind-link { padding: 0 .75rem; font-size: .65rem; }
-    /* Hero kleiner */
+    
     .hero-body h1 { font-size: clamp(1.9rem, 7vw, 3rem); }
     .hero-body p  { font-size: .9rem; }
-    /* Branchenkarten */
+    
     .split .img   { aspect-ratio: 16/9; }
     .sec-head     { margin-bottom: 2rem; }
   }
@@ -429,7 +431,6 @@
 </head>
 <body>
 
-<!-- ── HAUPTNAVIGATION ──────────────────────────── -->
 <nav class="nav" id="nav">
   <a href="index.html" class="nav-logo">
     <img class="logo-light" src="images/logo/berghoff-logo-hell.png" alt="BERGHOFF GmbH">
@@ -471,8 +472,6 @@
   </div>
 </nav>
 
-
-<!-- ── BRANCHEN-SUBNAV ──────────────────────────── -->
 <nav class="ind-nav" id="ind-nav" aria-label="Branchennavigation">
   <a href="#halbleiter"  class="ind-link" data-de="Halbleiter"    data-en="Semiconductor">Halbleiter</a>
   <a href="#aerospace"   class="ind-link" data-de="Aerospace"      data-en="Aerospace">Aerospace</a>
@@ -482,10 +481,8 @@
   <a href="#medizin"     class="ind-link" data-de="Medizintechnik" data-en="Medical">Medizintechnik</a>
 </nav>
 
-
 <main>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-body">
@@ -498,19 +495,9 @@
        data-en="Six industries. Six times highest precision. No standard programme, but tailored manufacturing solutions for requirements that others reject.">
       Sechs Branchen. Sechs Mal höchste Präzision. Kein Standardprogramm, sondern maßgeschneiderte Fertigungslösungen für die Anforderungen, die andere ablehnen.
     </p>
-    <p style="margin-top:1rem;">
-      <a href="maschinenpark.html" style="color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:3px;"
-         data-de="Unser CNC-Maschinenpark macht es möglich →" data-en="Our CNC machine park makes it possible →">
-        Unser CNC-Maschinenpark macht es möglich →
-      </a>
-    </p>
   </div>
 </section>
 
-
-<!-- ══════════════════════════════════════════════
-     01 HALBLEITERINDUSTRIE
-     ══════════════════════════════════════════════ -->
 <section class="ind-sec" id="halbleiter">
   <div class="split">
 
@@ -551,7 +538,7 @@
         <span class="meta-tag cert">Reinraum ISO-6 (ab 2026)</span>
       </div>
 
-      <!-- Ansprechpartner-Platzhalter – wird vom Vertrieb befüllt -->
+      
       <div class="ap-karte">
         <div class="ap-avatar">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
@@ -574,10 +561,6 @@
   </div>
 </section>
 
-
-<!-- ══════════════════════════════════════════════
-     02 AEROSPACE
-     ══════════════════════════════════════════════ -->
 <section class="ind-sec" id="aerospace">
   <div class="split flip">
 
@@ -618,7 +601,7 @@
         <span class="meta-tag cert">Rolls-Royce Approved</span>
       </div>
 
-      <!-- Ansprechpartner-Platzhalter – wird vom Vertrieb befüllt -->
+      
       <div class="ap-karte">
         <div class="ap-avatar">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
@@ -641,10 +624,6 @@
   </div>
 </section>
 
-
-<!-- ══════════════════════════════════════════════
-     03 PUMPEN & EXTRUDER
-     ══════════════════════════════════════════════ -->
 <section class="ind-sec" id="pumpen">
   <div class="split">
 
@@ -684,7 +663,7 @@
         <span class="meta-tag cert">PED-Konformität</span>
       </div>
 
-      <!-- Ansprechpartner-Platzhalter – wird vom Vertrieb befüllt -->
+      
       <div class="ap-karte">
         <div class="ap-avatar">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
@@ -707,10 +686,6 @@
   </div>
 </section>
 
-
-<!-- ══════════════════════════════════════════════
-     04 ENERGIE
-     ══════════════════════════════════════════════ -->
 <section class="ind-sec" id="energie">
   <div class="split flip">
 
@@ -750,7 +725,7 @@
         <span class="meta-tag cert">AD 2000 Merkblatt</span>
       </div>
 
-      <!-- Ansprechpartner-Platzhalter – wird vom Vertrieb befüllt -->
+      
       <div class="ap-karte">
         <div class="ap-avatar">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
@@ -773,10 +748,6 @@
   </div>
 </section>
 
-
-<!-- ══════════════════════════════════════════════
-     05 ÖL & GAS
-     ══════════════════════════════════════════════ -->
 <section class="ind-sec" id="oel-gas">
   <div class="split">
 
@@ -817,7 +788,7 @@
         <span class="meta-tag cert">API-konform</span>
       </div>
 
-      <!-- Ansprechpartner-Platzhalter – wird vom Vertrieb befüllt -->
+      
       <div class="ap-karte">
         <div class="ap-avatar">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
@@ -840,10 +811,6 @@
   </div>
 </section>
 
-
-<!-- ══════════════════════════════════════════════
-     06 MEDIZINTECHNIK
-     ══════════════════════════════════════════════ -->
 <section class="ind-sec" id="medizin">
   <div class="split flip">
 
@@ -884,7 +851,7 @@
         <span class="meta-tag cert">ISO-6 Reinraum ab 2026</span>
       </div>
 
-      <!-- Ansprechpartner-Platzhalter – wird vom Vertrieb befüllt -->
+      
       <div class="ap-karte">
         <div class="ap-avatar">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
@@ -907,14 +874,37 @@
   </div>
 </section>
 
+<section style="background:var(--black);padding:4rem var(--pad);border-top:1px solid rgba(255,255,255,.06);">
+  <div style="max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;">
+    <div>
+      <p style="font-family:'Sora',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:.6rem;"
+         data-de="Technologie" data-en="Technology">Technologie</p>
+      <h2 style="font-family:'Sora',sans-serif;font-size:clamp(1.3rem,2.5vw,1.75rem);font-weight:700;color:#fff;line-height:1.15;margin-bottom:.6rem;"
+          data-de="60+ CNC-Anlagen. Das ist der Maschinenpark dahinter."
+          data-en="60+ CNC systems. The machine park behind it.">
+        60+ CNC-Anlagen. Das ist der Maschinenpark dahinter.
+      </h2>
+      <p style="font-size:.85rem;color:rgba(255,255,255,.45);max-width:480px;line-height:1.75;"
+         data-de="5-Achs-Fräsen bis Ø 3.400 mm, Drehen bis Ø 700 mm, Schleifen, Erodieren, KMM bis 6.000 mm – alles unter einem Dach."
+         data-en="5-axis milling up to Ø 3,400 mm, turning up to Ø 700 mm, grinding, EDM, CMM up to 6,000 mm – all under one roof.">
+        5-Achs-Fräsen bis Ø 3.400 mm, Drehen bis Ø 700 mm, Schleifen, Erodieren, KMM bis 6.000 mm – alles unter einem Dach.
+      </p>
+    </div>
+    <a href="maschinenpark.html"
+       style="flex-shrink:0;display:inline-flex;align-items:center;gap:.5rem;font-family:'Sora',sans-serif;font-size:.82rem;font-weight:700;color:#fff;border:2px solid rgba(255,255,255,.25);padding:.875rem 1.75rem;border-radius:2px;white-space:nowrap;transition:border-color 220ms ease;"
+       onmouseover="this.style.borderColor='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,.25)'"
+       data-de="Maschinenpark ansehen →" data-en="View machine park →">
+      Maschinenpark ansehen →
+    </a>
+  </div>
+</section>
+
 </main>
 
-
-<!-- ── FOOTER ──────────────────────────────────── -->
 <footer>
   <div class="ft-grid">
 
-    <!-- Branding -->
+    
     <div>
       <div class="ft-logo">
         <img src="images/logo/berghoff-logo-hell.png" alt="BERGHOFF GmbH">
@@ -937,7 +927,7 @@
       </div>
     </div>
 
-    <!-- Navigation -->
+    
     <div>
       <h4 data-de="Navigation" data-en="Navigation">Navigation</h4>
       <ul class="ft-links">
@@ -951,7 +941,7 @@
       </ul>
     </div>
 
-    <!-- Branchen -->
+    
     <div>
       <h4 data-de="Branchen" data-en="Industries">Branchen</h4>
       <ul class="ft-links">
@@ -964,7 +954,7 @@
       </ul>
     </div>
 
-    <!-- Hauptstandort -->
+    
     <div>
       <h4 data-de="Hauptstandort" data-en="Main Site">Hauptstandort</h4>
       <div class="ft-adresse">
@@ -976,7 +966,7 @@
       </div>
     </div>
 
-    <!-- Zweiter Standort + Rechtliches -->
+    
     <div>
       <h4 data-de="Zweiter Standort" data-en="Second Location">Zweiter Standort</h4>
       <div class="ft-adresse">
@@ -1005,7 +995,6 @@
     </div>
   </div>
 </footer>
-
 
 <script>
 'use strict';

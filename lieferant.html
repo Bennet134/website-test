@@ -8,10 +8,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="images/logo/berghoff-icon.png">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png?v=1.0" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=1.0" />
+  <link rel="shortcut icon" href="/favicon.ico?v=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1.0" />
+  <meta name="apple-mobile-web-app-title" content="BERGHOFF" />
+  <link rel="manifest" href="/site.webmanifest?v=1.0" />
   <link rel="canonical" href="https://berghoff.eu/lieferant.html">
 
-  <!-- Open Graph -->
+  
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://berghoff.eu/lieferant.html">
   <meta property="og:title"       content="Lieferant werden | BERGHOFF Zuliefererqualifikation & QLTC">
@@ -24,7 +29,7 @@
   <meta name="twitter:card"       content="summary_large_image">
   <meta name="twitter:image"      content="https://berghoff.eu/images/og/lieferanten-og.jpg">
 
-  <!-- Schema.org -->
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -47,10 +52,7 @@
   </script>
 
   <style>
-  /* ==============================================
-     BERGHOFF — LIEFERANT WERDEN
-     Gleiches Design-System wie index.html
-     ============================================== */
+  
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   img { display: block; max-width: 100%; }
@@ -59,8 +61,8 @@
   button { font-family: inherit; cursor: pointer; background: none; border: none; }
 
   :root {
-    --blue:   #009FE3;
-    --blue-d: #0080c0;
+    --blue:   #00A0E4;
+    --blue-d: #0081B8;
     --black:  #080808;
     --off:    #f5f5f5;
     --border: #e4e4e4;
@@ -101,7 +103,7 @@
   .btn-ghost-dark { color: var(--white); border: 2px solid rgba(255,255,255,.35); }
   .btn-ghost-dark:hover { border-color: var(--white); }
 
-  /* ── NAV ────────────────────────────────────── */
+  
   .nav {
     position: fixed; inset: 0 0 auto;
     height: var(--nav-h); z-index: 300;
@@ -156,7 +158,7 @@
   }
   .mobile-nav a:hover { color: var(--blue); }
 
-  /* ── HERO ───────────────────────────────────── */
+  
   .hero {
     position: relative; overflow: hidden;
     min-height: 0;
@@ -164,7 +166,7 @@
     padding: calc(var(--nav-h) + 2.5rem) var(--pad) 2.5rem;
     background: linear-gradient(135deg, #030d1f 0%, #041833 40%, #062448 70%, #0a3060 100%);
   }
-  /* Geometrisches Dekor-Muster */
+  
   .hero::before {
     content: '';
     position: absolute; inset: 0;
@@ -174,7 +176,7 @@
     background-size: 64px 64px;
     mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
   }
-  /* Blauer Glow oben rechts */
+  
   .hero::after {
     content: '';
     position: absolute;
@@ -200,7 +202,7 @@
   }
   .hero-body .ctas { display: flex; gap: .875rem; flex-wrap: wrap; }
 
-  /* ── SEKTIONEN ──────────────────────────────── */
+  
   section {
     padding: var(--sec) var(--pad);
     border-bottom: 1px solid var(--border);
@@ -223,7 +225,7 @@
     line-height: 1.8; max-width: 580px;
   }
 
-  /* ── USP-STREIFEN (3 Spalten) ───────────────── */
+  
   .usp-grid {
     display: grid; grid-template-columns: repeat(3, 1fr);
     border: 1px solid var(--border);
@@ -250,7 +252,7 @@
   }
   .usp-item p { font-size: .85rem; color: var(--muted); line-height: 1.75; }
 
-  /* ── ANFORDERUNGEN ──────────────────────────── */
+  
   .anf-grid {
     display: grid; grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
@@ -276,7 +278,7 @@
   }
   .anf-text p { font-size: .82rem; color: var(--muted); line-height: 1.65; }
 
-  /* ── QLTC ───────────────────────────────────── */
+  
   .qltc-grid {
     display: grid; grid-template-columns: repeat(4, 1fr);
     border: 1px solid rgba(255,255,255,.07);
@@ -308,12 +310,12 @@
   }
   .qltc-item p { font-size: .82rem; color: rgba(255,255,255,.4); line-height: 1.7; }
 
-  /* ── PROZESS-SCHRITTE ───────────────────────── */
+  
   .prozess-grid {
     display: grid; grid-template-columns: repeat(4, 1fr);
     gap: 0; position: relative;
   }
-  /* Verbindungslinie zwischen Steps */
+  
   .prozess-grid::before {
     content: ''; position: absolute;
     top: 1.4rem; left: calc(12.5% + .5rem); right: calc(12.5% + .5rem);
@@ -337,7 +339,7 @@
   }
   .prozess-schritt p { font-size: .8rem; color: var(--muted); line-height: 1.65; }
 
-  /* ── KONTAKT-FORMULAR + INFO ────────────────── */
+  
   .kontakt-layout {
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 5rem; align-items: start;
@@ -363,7 +365,7 @@
   .info-val a { color: var(--blue); transition: opacity var(--trans); }
   .info-val a:hover { opacity: .75; }
 
-  /* Hinweis-Box */
+  
   .hinweis {
     background: rgba(0,159,227,.05);
     border: 1px solid rgba(0,159,227,.18);
@@ -375,7 +377,7 @@
   .hinweis p { font-size: .82rem; color: var(--text); line-height: 1.65; }
   .hinweis p strong { color: var(--text); font-weight: 600; }
 
-  /* Formular */
+  
   .formular { display: flex; flex-direction: column; gap: 1rem; }
   .fg label {
     display: block; font-family: 'Sora', sans-serif;
@@ -403,7 +405,7 @@
   }
   .btn-submit:hover { background: var(--blue-d); }
 
-  /* ── FOOTER ─────────────────────────────────── */
+  
   footer {
     background: var(--black); color: rgba(255,255,255,.45);
     padding: 5rem var(--pad) 0;
@@ -452,8 +454,8 @@
   .ft-legal a { color: rgba(255,255,255,.22); transition: color var(--trans); }
   .ft-legal a:hover { color: rgba(255,255,255,.5); }
 
-  /* ── RESPONSIVE ─────────────────────────────── */
-  /* Mobile Nav – Kontakt-CTA */
+  
+  
   .mob-kontakt {
     display: block !important;
     margin-top: 1rem;
@@ -492,7 +494,7 @@
     .prozess-grid { grid-template-columns: 1fr; }
     .fg-row       { grid-template-columns: 1fr; }
     .ft-grid      { grid-template-columns: 1fr; }
-    /* Hero */
+    
     .hero-body h1 { font-size: clamp(1.9rem, 7vw, 3rem); }
     .hero-body p  { font-size: .9rem; }
     .hero-body .ctas { flex-direction: column; align-items: flex-start; }
@@ -509,7 +511,6 @@
 </head>
 <body>
 
-<!-- ── NAV ──────────────────────────────────────── -->
 <nav class="nav" id="nav">
   <a href="index.html" class="nav-logo">
     <img class="logo-light" src="images/logo/berghoff-logo-hell.png" alt="BERGHOFF GmbH">
@@ -551,10 +552,8 @@
   </div>
 </nav>
 
-
 <main>
 
-<!-- ── HERO ─────────────────────────────────────── -->
 <section class="hero" style="padding-bottom:5rem; border:none;">
   <div class="hero-bg"></div>
   <div class="hero-body">
@@ -575,8 +574,6 @@
   </div>
 </section>
 
-
-<!-- ── WARUM BERGHOFF ────────────────────────────── -->
 <section>
   <div class="sec-head">
     <span class="label" data-de="Ihre Vorteile" data-en="Your Benefits">Ihre Vorteile</span>
@@ -618,8 +615,6 @@
   </div>
 </section>
 
-
-<!-- ── ANFORDERUNGEN ─────────────────────────────── -->
 <section class="off" id="anforderungen">
   <div class="sec-head">
     <span class="label" data-de="Voraussetzungen" data-en="Prerequisites">Voraussetzungen</span>
@@ -734,8 +729,6 @@
   </div>
 </section>
 
-
-<!-- ── QLTC ──────────────────────────────────────── -->
 <section class="dark">
   <div class="sec-head">
     <span class="label">QLTC</span>
@@ -789,8 +782,6 @@
   </div>
 </section>
 
-
-<!-- ── PROZESS ───────────────────────────────────── -->
 <section class="off">
   <div class="sec-head">
     <span class="label" data-de="Bewerbungsprozess" data-en="Application process">Bewerbungsprozess</span>
@@ -840,12 +831,10 @@
   </div>
 </section>
 
-
-<!-- ── BEWERBUNGSFORMULAR ────────────────────────── -->
 <section id="bewerbung">
   <div class="kontakt-layout">
 
-    <!-- Info-Seite -->
+    
     <div>
       <div class="sec-head" style="margin-bottom:2rem;">
         <span class="label" data-de="Direktkontakt Einkauf" data-en="Direct procurement contact">Direktkontakt Einkauf</span>
@@ -897,7 +886,7 @@
       </div>
     </div>
 
-    <!-- Formular -->
+    
     <form class="formular" novalidate>
       <div class="fg-row">
         <div class="fg">
@@ -955,12 +944,10 @@
 
 </main>
 
-
-<!-- ── FOOTER ────────────────────────────────────── -->
 <footer>
   <div class="ft-grid">
 
-    <!-- Branding -->
+    
     <div>
       <div class="ft-logo">
         <img src="images/logo/berghoff-logo-hell.png" alt="BERGHOFF GmbH">
@@ -983,7 +970,7 @@
       </div>
     </div>
 
-    <!-- Navigation -->
+    
     <div>
       <h4 data-de="Navigation" data-en="Navigation">Navigation</h4>
       <ul class="ft-links">
@@ -997,7 +984,7 @@
       </ul>
     </div>
 
-    <!-- Branchen -->
+    
     <div>
       <h4 data-de="Branchen" data-en="Industries">Branchen</h4>
       <ul class="ft-links">
@@ -1010,7 +997,7 @@
       </ul>
     </div>
 
-    <!-- Hauptstandort -->
+    
     <div>
       <h4 data-de="Hauptstandort" data-en="Main Site">Hauptstandort</h4>
       <div class="ft-adresse">
@@ -1022,7 +1009,7 @@
       </div>
     </div>
 
-    <!-- Zweiter Standort + Rechtliches -->
+    
     <div>
       <h4 data-de="Zweiter Standort" data-en="Second Location">Zweiter Standort</h4>
       <div class="ft-adresse">
@@ -1051,7 +1038,6 @@
     </div>
   </div>
 </footer>
-
 
 <script>
 'use strict';

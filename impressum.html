@@ -8,7 +8,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="images/logo/berghoff-icon.png">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png?v=1.0" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=1.0" />
+  <link rel="shortcut icon" href="/favicon.ico?v=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1.0" />
+  <meta name="apple-mobile-web-app-title" content="BERGHOFF" />
+  <link rel="manifest" href="/site.webmanifest?v=1.0" />
   <link rel="canonical" href="https://berghoff.eu/impressum.html">
   <meta name="robots" content="noindex, follow">
 
@@ -20,8 +25,8 @@
   button { font-family: inherit; cursor: pointer; background: none; border: none; }
 
   :root {
-    --blue:   #009FE3;
-    --blue-d: #0080c0;
+    --blue:   #00A0E4;
+    --blue-d: #0081B8;
     --black:  #080808;
     --off:    #f5f5f5;
     --border: #e4e4e4;
@@ -44,7 +49,7 @@
   .btn-primary { background: var(--blue); color: var(--white); border: 2px solid var(--blue); }
   .btn-primary:hover { background: var(--blue-d); border-color: var(--blue-d); }
 
-  /* NAV */
+  
   .nav { position: fixed; inset: 0 0 auto; height: var(--nav-h); z-index: 300; background: rgba(255,255,255,.97); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); display: flex; align-items: center; padding: 0 var(--pad); justify-content: space-between; transition: box-shadow var(--trans); }
   .nav.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,.07); }
   .nav-logo .logo-light { display: none; }
@@ -71,7 +76,7 @@
   .mob-kontakt { display: block !important; margin-top: 1rem; background: var(--blue) !important; color: var(--white) !important; text-align: center; padding: .875rem 1rem !important; border-radius: 2px; border-bottom: none !important; font-size: 1rem !important; }
   .mob-kontakt:hover { background: var(--blue-d) !important; color: var(--white) !important; }
 
-  /* HERO */
+  
   .hero { position: relative; overflow: hidden; padding: calc(var(--nav-h) + 3rem) var(--pad) 3rem; background: linear-gradient(135deg, #030d1f 0%, #041833 40%, #062448 70%, #0a3060 100%); }
   .hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(0,159,227,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,159,227,.06) 1px, transparent 1px); background-size: 64px 64px; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%); }
   .hero::after { content: ''; position: absolute; top: -120px; right: -80px; width: 520px; height: 520px; background: radial-gradient(circle, rgba(0,159,227,.18) 0%, transparent 70%); pointer-events: none; }
@@ -80,7 +85,7 @@
   .hero-body h1 { font-family: 'Sora', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.05; letter-spacing: -.03em; color: var(--white); margin-bottom: 1rem; }
   .hero-body .rule { margin-top: .75rem; }
 
-  /* CONTENT */
+  
   .content { padding: var(--sec) var(--pad); max-width: 900px; }
   .imp-block { margin-bottom: 3rem; }
   .imp-block h2 { font-family: 'Sora', sans-serif; font-size: .85rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); margin-bottom: 1rem; padding-bottom: .5rem; border-bottom: 1px solid var(--border); }
@@ -88,7 +93,7 @@
   .imp-block a { color: var(--blue); }
   .imp-block a:hover { text-decoration: underline; }
 
-  /* FOOTER */
+  
   footer { background: var(--black); color: rgba(255,255,255,.55); padding: 4rem var(--pad) 2rem; }
   .ft-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 2.5rem; margin-bottom: 3rem; }
   .ft-brand p { font-size: .82rem; line-height: 1.75; margin: 1rem 0; max-width: 240px; }
@@ -121,7 +126,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="nav" id="nav">
   <a href="index.html" class="nav-logo">
     <img class="logo-dark"  src="images/logo/berghoff-logo-dunkel.png" alt="BERGHOFF">
@@ -153,7 +157,6 @@
   <a href="index.html#kontakt" class="mob-kontakt" data-de="Kontakt anfragen" data-en="Get in touch">Kontakt anfragen</a>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-body">
     <span class="label" data-de="Rechtliches" data-en="Legal">Rechtliches</span>
@@ -162,7 +165,6 @@
   </div>
 </section>
 
-<!-- CONTENT -->
 <div class="content">
 
   <div class="imp-block">
@@ -252,7 +254,6 @@
 
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="ft-grid">
     <div class="ft-brand">

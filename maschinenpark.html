@@ -8,10 +8,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="images/logo/berghoff-icon.png">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png?v=1.0" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=1.0" />
+  <link rel="shortcut icon" href="/favicon.ico?v=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1.0" />
+  <meta name="apple-mobile-web-app-title" content="BERGHOFF" />
+  <link rel="manifest" href="/site.webmanifest?v=1.0" />
   <link rel="canonical" href="https://berghoff.eu/maschinenpark.html">
 
-  <!-- Open Graph -->
+  
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://berghoff.eu/maschinenpark.html">
   <meta property="og:title"       content="CNC-Maschinenpark | 5-Achs-Fräsen, Drehen & Schleifen | BERGHOFF">
@@ -24,7 +29,7 @@
   <meta name="twitter:card"       content="summary_large_image">
   <meta name="twitter:image"      content="https://berghoff.eu/images/og/maschinenpark-og.jpg">
 
-  <!-- Schema.org -->
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -47,22 +52,19 @@
   </script>
 
   <style>
-  /* ==============================================
-     BERGHOFF — MASCHINENPARK
-     Clean Swiss · Desktop-first · #009FE3
-     ============================================== */
+  
 
-  /* RESET */
+  
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   img { display: block; max-width: 100%; }
   a { text-decoration: none; color: inherit; }
   ul { list-style: none; }
   button { font-family: inherit; cursor: pointer; background: none; border: none; }
 
-  /* TOKENS */
+  
   :root {
-    --blue:    #009FE3;
-    --blue-d:  #0080c0;
+    --blue:    #00A0E4;
+    --blue-d:  #0081B8;
     --black:   #080808;
     --off:     #f5f5f5;
     --border:  #e4e4e4;
@@ -85,7 +87,7 @@
     overflow-x: hidden;
   }
 
-  /* TYPO */
+  
   .label {
     font-family: 'Sora', sans-serif;
     font-size: 0.66rem; font-weight: 700;
@@ -94,7 +96,7 @@
   }
   .rule { width: 36px; height: 2px; background: var(--blue); margin-top: 1.1rem; }
 
-  /* BUTTONS */
+  
   .btn {
     display: inline-flex; align-items: center; gap: 0.4rem;
     font-family: 'Sora', sans-serif;
@@ -105,7 +107,7 @@
   .btn-primary { background: var(--blue); color: var(--white); border: 2px solid var(--blue); }
   .btn-primary:hover { background: var(--blue-d); border-color: var(--blue-d); }
 
-  /* ── NAV (always white — Unterseite) ──────────── */
+  
   .nav {
     position: fixed; inset: 0 0 auto;
     height: var(--nav-h); z-index: 300;
@@ -163,7 +165,7 @@
   .mobile-nav a:hover { color: var(--blue); }
   .mobile-nav .lang { margin-top: 2rem; }
 
-  /* ── PAGE HERO ─────────────────────────────────── */
+  
   .page-hero {
     padding: calc(var(--nav-h) + 5rem) var(--pad) 5rem;
     background: var(--black);
@@ -191,7 +193,7 @@
     color: rgba(255,255,255,.52); line-height: 1.8;
   }
 
-  /* ── SECTIONS ──────────────────────────────────── */
+  
   section {
     padding: var(--sec) var(--pad);
     border-bottom: 1px solid var(--border);
@@ -212,7 +214,7 @@
     max-width: 600px;
   }
 
-  /* ── KENNZAHLEN GRID ───────────────────────────── */
+  
   .stats-grid {
     display: grid; grid-template-columns: repeat(4, 1fr);
     border: 1px solid rgba(255,255,255,.07);
@@ -236,7 +238,7 @@
     font-size: .75rem; color: rgba(255,255,255,.38); margin-top: .25rem;
   }
 
-  /* ── MASCHINEN-KARTEN ──────────────────────────── */
+  
   .mach-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -278,7 +280,7 @@
   .mach-spec-key { color: var(--muted); }
   .mach-spec-val { color: var(--text); font-weight: 500; }
 
-  /* ── REINRAUM BOX ──────────────────────────────── */
+  
   .reinraum-box {
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 0; border: 1px solid var(--border);
@@ -316,7 +318,7 @@
   }
   .rs-lab { color: rgba(255,255,255,.5); }
 
-  /* ── REINIGUNG GRID ────────────────────────────── */
+  
   .reinigung-grid {
     display: grid; grid-template-columns: repeat(4, 1fr);
     gap: 1px; background: var(--border); border: 1px solid var(--border);
@@ -329,7 +331,7 @@
     background: var(--blue);
   }
 
-  /* ── CTA BANNER ────────────────────────────────── */
+  
   .cta-banner {
     background: var(--blue);
     padding: var(--sec) var(--pad);
@@ -348,7 +350,7 @@
   .btn-white { background: var(--white); color: var(--blue); border: 2px solid var(--white); }
   .btn-white:hover { background: transparent; color: var(--white); }
 
-  /* ── FOOTER ────────────────────────────────────── */
+  
   footer {
     background: var(--black); color: rgba(255,255,255,.45);
     padding: 5rem var(--pad) 0;
@@ -394,8 +396,8 @@
   .ft-legal a { color: rgba(255,255,255,.22); transition: color var(--trans); }
   .ft-legal a:hover { color: rgba(255,255,255,.5); }
 
-  /* ── RESPONSIVE ────────────────────────────────── */
-  /* Mobile Nav – Kontakt-CTA */
+  
+  
   .mob-kontakt {
     display: block !important;
     margin-top: 1rem;
@@ -429,7 +431,7 @@
     .nav-links, .nav-right .btn, .nav-right .lang { display: none; }
     .hamburger { display: flex; }
     .ft-grid { grid-template-columns: 1fr; }
-    /* Hero */
+    
     .hero-body h1 { font-size: clamp(1.9rem, 7vw, 3rem); }
     .sec-head { margin-bottom: 2rem; }
   }
@@ -445,9 +447,6 @@
 </head>
 <body>
 
-<!-- ════════════════════════════════════════
-     NAVIGATION
-     ════════════════════════════════════════ -->
 <nav class="nav" id="nav">
   <a href="index.html" class="nav-logo">
     <img src="images/logo/berghoff-logo-dunkel.png" alt="BERGHOFF GmbH">
@@ -490,12 +489,8 @@
   </div>
 </nav>
 
-
 <main>
 
-<!-- ════════════════════════════════════════
-     PAGE HERO
-     ════════════════════════════════════════ -->
 <section class="page-hero" style="border:none;">
   <div class="page-hero-inner">
     <span class="label" data-de="Technik & Kapazität" data-en="Technology & Capacity">Technik & Kapazität</span>
@@ -509,10 +504,6 @@
   </div>
 </section>
 
-
-<!-- ════════════════════════════════════════
-     KENNZAHLEN
-     ════════════════════════════════════════ -->
 <section class="dark" style="padding-top:0; padding-bottom:0; border-top:1px solid rgba(255,255,255,.06);">
   <div class="stats-grid">
     <div class="stat-item">
@@ -538,10 +529,6 @@
   </div>
 </section>
 
-
-<!-- ════════════════════════════════════════
-     5-ACHS-FRÄS-/DREHZENTREN
-     ════════════════════════════════════════ -->
 <section id="fraesen">
   <div class="sec-head">
     <span class="label" data-de="Bearbeitungstechnologie 01" data-en="Machining Technology 01">Bearbeitungstechnologie 01</span>
@@ -611,10 +598,6 @@
   </div>
 </section>
 
-
-<!-- ════════════════════════════════════════
-     5-ACHS-FRÄSZENTREN
-     ════════════════════════════════════════ -->
 <section class="off" id="fraeszentren">
   <div class="sec-head">
     <span class="label" data-de="Bearbeitungstechnologie 02" data-en="Machining Technology 02">Bearbeitungstechnologie 02</span>
@@ -720,10 +703,6 @@
   </div>
 </section>
 
-
-<!-- ════════════════════════════════════════
-     HORIZONTAL-FRÄSEN & DREHEN
-     ════════════════════════════════════════ -->
 <section id="drehen">
   <div class="sec-head">
     <span class="label" data-de="Bearbeitungstechnologie 03" data-en="Machining Technology 03">Bearbeitungstechnologie 03</span>
@@ -779,10 +758,6 @@
   </div>
 </section>
 
-
-<!-- ════════════════════════════════════════
-     KOORDINATENMESSTECHNIK
-     ════════════════════════════════════════ -->
 <section class="off" id="messtechnik">
   <div class="sec-head">
     <span class="label" data-de="Qualitätssicherung" data-en="Quality Assurance">Qualitätssicherung</span>
@@ -828,10 +803,6 @@
   </div>
 </section>
 
-
-<!-- ════════════════════════════════════════
-     REINIGUNG
-     ════════════════════════════════════════ -->
 <section id="reinigung">
   <div class="sec-head">
     <span class="label" data-de="Qualitätssicherung" data-en="Quality Assurance">Qualitätssicherung</span>
@@ -875,10 +846,6 @@
   </div>
 </section>
 
-
-<!-- ════════════════════════════════════════
-     REINRAUM
-     ════════════════════════════════════════ -->
 <section class="off" id="reinraum">
   <div class="reinraum-box">
     <div class="reinraum-bild">
@@ -916,10 +883,6 @@
   </div>
 </section>
 
-
-<!-- ════════════════════════════════════════
-     CTA
-     ════════════════════════════════════════ -->
 <section style="background:var(--off);padding:4rem var(--pad);text-align:center;border-top:1px solid var(--border);">
   <p style="font-family:'Sora',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;"
      data-de="Passende Branchen" data-en="Relevant Industries">Passende Branchen</p>
@@ -935,7 +898,7 @@
   <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
     <a href="branchen.html" class="btn btn-primary"
        data-de="Alle Branchen ansehen" data-en="View all industries">Alle Branchen ansehen</a>
-    <a href="ueber-berghoff.html" class="btn btn-ghost"
+    <a href="ueber-berghoff.html#zertifizierungen" class="btn btn-ghost"
        data-de="Zertifizierungen & Qualität" data-en="Certifications & Quality">Zertifizierungen &amp; Qualität</a>
   </div>
 </section>
@@ -952,14 +915,10 @@
 
 </main>
 
-
-<!-- ════════════════════════════════════════
-     FOOTER
-     ════════════════════════════════════════ -->
 <footer>
   <div class="ft-grid">
 
-    <!-- Branding -->
+    
     <div>
       <div class="ft-logo">
         <img src="images/logo/berghoff-logo-hell.png" alt="BERGHOFF GmbH">
@@ -982,7 +941,7 @@
       </div>
     </div>
 
-    <!-- Navigation -->
+    
     <div>
       <h4 data-de="Navigation" data-en="Navigation">Navigation</h4>
       <ul class="ft-links">
@@ -996,7 +955,7 @@
       </ul>
     </div>
 
-    <!-- Branchen -->
+    
     <div>
       <h4 data-de="Branchen" data-en="Industries">Branchen</h4>
       <ul class="ft-links">
@@ -1009,7 +968,7 @@
       </ul>
     </div>
 
-    <!-- Hauptstandort -->
+    
     <div>
       <h4 data-de="Hauptstandort" data-en="Main Site">Hauptstandort</h4>
       <div class="ft-adresse">
@@ -1021,7 +980,7 @@
       </div>
     </div>
 
-    <!-- Zweiter Standort + Rechtliches -->
+    
     <div>
       <h4 data-de="Zweiter Standort" data-en="Second Location">Zweiter Standort</h4>
       <div class="ft-adresse">
@@ -1052,10 +1011,6 @@
   </div>
 </footer>
 
-
-<!-- ════════════════════════════════════════
-     JAVASCRIPT
-     ════════════════════════════════════════ -->
 <script>
 'use strict';
 
@@ -1080,7 +1035,6 @@ document.querySelectorAll('.lang-btn').forEach(b => {
   b.addEventListener('click', () => setLang(b.dataset.l));
 });
 
-
 /* ── Hamburger / Mobile Nav ─────────────── */
 const hb  = document.getElementById('hb');
 const mob = document.getElementById('mob');
@@ -1096,7 +1050,6 @@ mob.querySelectorAll('a').forEach(a => {
     document.body.style.overflow = '';
   });
 });
-
 
 /* ── Smooth Scroll ───────────────────────── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {

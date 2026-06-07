@@ -8,7 +8,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="images/logo/berghoff-icon.png">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png?v=1.0" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=1.0" />
+  <link rel="shortcut icon" href="/favicon.ico?v=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1.0" />
+  <meta name="apple-mobile-web-app-title" content="BERGHOFF" />
+  <link rel="manifest" href="/site.webmanifest?v=1.0" />
   <link rel="canonical" href="https://berghoff.eu/agb.html">
   <meta name="robots" content="noindex, follow">
 
@@ -20,8 +25,8 @@
   button { font-family: inherit; cursor: pointer; background: none; border: none; }
 
   :root {
-    --blue:   #009FE3;
-    --blue-d: #0080c0;
+    --blue:   #00A0E4;
+    --blue-d: #0081B8;
     --black:  #080808;
     --off:    #f5f5f5;
     --border: #e4e4e4;
@@ -44,7 +49,7 @@
   .btn-primary { background: var(--blue); color: var(--white); border: 2px solid var(--blue); }
   .btn-primary:hover { background: var(--blue-d); border-color: var(--blue-d); }
 
-  /* NAV */
+  
   .nav { position: fixed; inset: 0 0 auto; height: var(--nav-h); z-index: 300; background: rgba(255,255,255,.97); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); display: flex; align-items: center; padding: 0 var(--pad); justify-content: space-between; transition: box-shadow var(--trans); }
   .nav.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,.07); }
   .nav-logo .logo-light { display: none; }
@@ -71,7 +76,7 @@
   .mob-kontakt:hover { background: var(--blue-d) !important; color: var(--white) !important; }
   .mobile-nav a:hover { color: var(--blue); }
 
-  /* HERO */
+  
   .hero { position: relative; overflow: hidden; padding: calc(var(--nav-h) + 3rem) var(--pad) 3rem; background: linear-gradient(135deg, #030d1f 0%, #041833 40%, #062448 70%, #0a3060 100%); }
   .hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(0,159,227,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,159,227,.06) 1px, transparent 1px); background-size: 64px 64px; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%); }
   .hero::after { content: ''; position: absolute; top: -120px; right: -80px; width: 520px; height: 520px; background: radial-gradient(circle, rgba(0,159,227,.18) 0%, transparent 70%); pointer-events: none; }
@@ -81,16 +86,16 @@
   .hero-body p { font-size: 1rem; color: rgba(255,255,255,.6); line-height: 1.8; margin-top: 1rem; max-width: 600px; }
   .hero-body .rule { margin-top: .75rem; }
 
-  /* CONTENT */
+  
   .content { padding: var(--sec) var(--pad); }
 
-  /* Section header */
+  
   .sec-label { font-family: 'Sora', sans-serif; font-size: .66rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--blue); display: block; margin-bottom: .6rem; }
   .sec-title { font-family: 'Sora', sans-serif; font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 700; letter-spacing: -.03em; color: var(--text); margin-bottom: .75rem; }
   .sec-rule { width: 36px; height: 2px; background: var(--blue); margin-bottom: 2.5rem; }
   .sec-desc { font-size: .95rem; color: var(--muted); line-height: 1.8; max-width: 640px; margin-bottom: 2.5rem; }
 
-  /* DOC CARDS */
+  
   .doc-group { margin-bottom: 5rem; }
   .doc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.25rem; }
   .doc-card {
@@ -124,10 +129,10 @@
   .doc-dl:hover { background: var(--blue); color: var(--white); }
   .doc-dl svg { width: 13px; height: 13px; }
 
-  /* Divider */
+  
   .section-divider { border: none; border-top: 1px solid var(--border); margin: 4rem 0; }
 
-  /* FOOTER */
+  
   footer { background: var(--black); color: rgba(255,255,255,.55); padding: 4rem var(--pad) 2rem; }
   .ft-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 2.5rem; margin-bottom: 3rem; }
   .ft-brand p { font-size: .82rem; line-height: 1.75; margin: 1rem 0; max-width: 240px; }
@@ -163,7 +168,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="nav" id="nav">
   <a href="index.html" class="nav-logo">
     <img class="logo-dark"  src="images/logo/berghoff-logo-dunkel.png" alt="BERGHOFF">
@@ -195,7 +199,6 @@
   <a href="index.html#kontakt" class="mob-kontakt" data-de="Kontakt anfragen" data-en="Get in touch">Kontakt anfragen</a>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-body">
     <span class="label" data-de="Rechtliches &amp; Downloads" data-en="Legal &amp; Downloads">Rechtliches &amp; Downloads</span>
@@ -208,10 +211,9 @@
   </div>
 </section>
 
-<!-- CONTENT -->
 <div class="content">
 
-  <!-- AGB -->
+  
   <div class="doc-group">
     <span class="sec-label" data-de="Allgemeine Geschäftsbedingungen" data-en="General Terms &amp; Conditions">Allgemeine Geschäftsbedingungen</span>
     <h2 class="sec-title" data-de="Liefer- &amp; Einkaufsbedingungen" data-en="Delivery &amp; Purchasing Conditions">Liefer- &amp; Einkaufsbedingungen</h2>
@@ -279,7 +281,7 @@
 
   <hr class="section-divider">
 
-  <!-- QUALITÄTSSICHERUNG -->
+  
   <div class="doc-group">
     <span class="sec-label" data-de="Qualitätsmanagement" data-en="Quality Management">Qualitätsmanagement</span>
     <h2 class="sec-title" data-de="Qualitätssicherungsanweisung für Lieferanten" data-en="Quality Assurance Instruction for Suppliers">Qualitätssicherungsanweisung für Lieferanten</h2>
@@ -319,7 +321,7 @@
 
   <hr class="section-divider">
 
-  <!-- ZERTIFIKATE -->
+  
   <div class="doc-group">
     <span class="sec-label" data-de="Zertifizierungen" data-en="Certifications">Zertifizierungen</span>
     <h2 class="sec-title" data-de="Zertifikate zum Download" data-en="Certificates for Download">Zertifikate zum Download</h2>
@@ -407,7 +409,6 @@
 
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="ft-grid">
     <div class="ft-brand">

@@ -9,12 +9,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="images/logo/berghoff-icon.png">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png?v=1.0" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=1.0" />
+  <link rel="shortcut icon" href="/favicon.ico?v=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1.0" />
+  <meta name="apple-mobile-web-app-title" content="BERGHOFF" />
+  <link rel="manifest" href="/site.webmanifest?v=1.0" />
   <link rel="canonical" href="https://berghoff.eu/">
-  <!-- Preload LCP image (Hero-Hintergrund) -->
-  <link rel="preload" as="image" href="images/og/logo-og.jpg" fetchpriority="high">
+  
+  <link rel="preload" as="image" href="images/fertigung/messmaschine.jpg" fetchpriority="high">
 
-  <!-- Open Graph -->
+  
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://berghoff.eu/">
   <meta property="og:title"       content="BERGHOFF GmbH | CNC-Präzisionsfertigung Aerospace & Halbleiter">
@@ -27,7 +32,7 @@
   <meta name="twitter:card"       content="summary_large_image">
   <meta name="twitter:image"      content="https://berghoff.eu/images/og/logo-og.jpg">
 
-  <!-- Schema.org -->
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -122,7 +127,7 @@
   }
   </script>
 
-  <!-- FAQPage Schema – für KI-Modelle und Google Rich Results -->
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -181,22 +186,19 @@
   </script>
 
   <style>
-  /* ==============================================
-     BERGHOFF — INDEX
-     Clean Swiss · Desktop-first · #009FE3
-     ============================================== */
+  
 
-  /* RESET */
+  
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   img { display: block; max-width: 100%; }
   a { text-decoration: none; color: inherit; }
   ul { list-style: none; }
   button { font-family: inherit; cursor: pointer; background: none; border: none; }
 
-  /* TOKENS */
+  
   :root {
-    --blue:    #009FE3;
-    --blue-d:  #0080c0;
+    --blue:    #00A0E4;
+    --blue-d:  #0081B8;
     --black:   #080808;
     --off:     #f5f5f5;
     --border:  #e4e4e4;
@@ -205,8 +207,8 @@
     --white:   #fff;
     --nav-h:   64px;
     --r:       2px;
-    --pad:     clamp(1.5rem, 7vw, 8rem);   /* horizontaler Seitenrand */
-    --sec:     6.5rem;                      /* vertikaler Sektionsabstand */
+    --pad:     clamp(1.5rem, 7vw, 8rem);   
+    --sec:     6.5rem;                      
     --trans:   220ms ease;
   }
 
@@ -219,7 +221,7 @@
     overflow-x: hidden;
   }
 
-  /* TYPO HELPERS */
+  
   .sora { font-family: 'Sora', sans-serif; }
   .label {
     font-family: 'Sora', sans-serif;
@@ -229,7 +231,7 @@
   }
   .rule { width: 36px; height: 2px; background: var(--blue); }
 
-  /* BUTTONS */
+  
   .btn {
     display: inline-flex; align-items: center; gap: 0.4rem;
     font-family: 'Sora', sans-serif;
@@ -244,7 +246,7 @@
   .btn-outline { color: var(--text); border: 2px solid var(--border); }
   .btn-outline:hover { border-color: var(--blue); color: var(--blue); }
 
-  /* ── NAV ───────────────────────────────────────── */
+  
   .nav {
     position: fixed; inset: 0 0 auto;
     height: var(--nav-h); z-index: 300;
@@ -262,7 +264,7 @@
     box-shadow: 0 2px 24px rgba(0,0,0,.07);
   }
 
-  /* Textfarben: weiß im transparenten Zustand, dunkel nach dem Scrollen */
+  
   .nav-links a { color: rgba(255,255,255,.8); }
   .nav-links a:hover, .nav-links a.active { color: var(--white); }
   .nav.scrolled .nav-links a { color: var(--muted); }
@@ -276,7 +278,7 @@
   .lang-sep { color: rgba(255,255,255,.3); }
   .nav.scrolled .lang-sep { color: var(--border); }
 
-  /* Logo: weiß transparent → schwarz scrolled */
+  
   .nav-logo .logo-dark { display: none; }
   .nav-logo .logo-light { display: block; }
   .nav.scrolled .nav-logo .logo-dark { display: block; }
@@ -314,7 +316,7 @@
   .hamburger.open span:nth-child(2) { opacity: 0; }
   .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-  /* Mobile menu */
+  
   .mobile-nav {
     display: none; position: fixed;
     top: var(--nav-h); inset: var(--nav-h) 0 0;
@@ -331,7 +333,7 @@
   .mobile-nav a:hover { color: var(--blue); }
   .mobile-nav .lang { margin-top: 2rem; }
 
-  /* ── HERO ──────────────────────────────────────── */
+  
   .hero {
     position: relative;
     min-height: 100vh;
@@ -393,7 +395,7 @@
   }
   .hero-ctas { display: flex; gap: .875rem; flex-wrap: wrap; }
 
-  /* Kennzahlenstreifen unter Hero */
+  
   .hero-strip {
     position: relative; z-index: 1;
     display: grid; grid-template-columns: repeat(4,1fr);
@@ -413,7 +415,7 @@
   .hs-val em { font-style: normal; color: var(--blue); }
   .hs-lab { font-size: 0.72rem; color: rgba(255,255,255,.42); margin-top: .35rem; }
 
-  /* ── SECTIONS ──────────────────────────────────── */
+  
   section {
     padding: var(--sec) var(--pad);
     border-bottom: 1px solid var(--border);
@@ -436,7 +438,7 @@
   }
   section.dark .sec-head p { color: rgba(255,255,255,.45); }
 
-  /* ── WHAT WE DO ────────────────────────────────── */
+  
   .cards-4 {
     display: grid; grid-template-columns: repeat(4,1fr);
     border: 1px solid var(--border);
@@ -472,7 +474,7 @@
   }
   .wwd-card p { font-size: .83rem; color: var(--muted); line-height: 1.75; }
 
-  /* ── WHO WE ARE ────────────────────────────────── */
+  
   .who-layout {
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 5rem; align-items: center;
@@ -515,7 +517,7 @@
   }
   .who-mehr:hover { border-color: var(--blue); }
 
-  /* ── FOCUS AREAS ───────────────────────────────── */
+  
   .focus-grid {
     display: grid; grid-template-columns: repeat(3,1fr);
     gap: 1.5rem;
@@ -554,7 +556,7 @@
   }
   .focus-card:hover .focus-arrow { opacity: 1; transform: translateX(0); }
 
-  /* ── NUMBERS ───────────────────────────────────── */
+  
   .numbers-grid {
     display: grid; grid-template-columns: repeat(4,1fr);
     border: 1px solid rgba(255,255,255,.07);
@@ -572,7 +574,7 @@
   .num-val em { font-style: normal; color: var(--blue); }
   .num-lab { font-size: .72rem; color: rgba(255,255,255,.38); margin-top: .6rem; letter-spacing: .06em; }
 
-  /* ── 3SVIP ─────────────────────────────────────── */
+  
   .svip-layout {
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 5rem; align-items: center;
@@ -602,7 +604,7 @@
   .step-t strong { display: block; font-size: .88rem; font-weight: 600; color: var(--text); margin-bottom: .2rem; }
   .step-t p { font-size: .79rem; color: var(--muted); line-height: 1.65; }
 
-  /* ── EXPLORE CARDS ─────────────────────────────── */
+  
   .explore-grid {
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
@@ -643,7 +645,7 @@
   }
   .ex-card:hover .ex-arrow { gap: .65rem; }
 
-  /* ── CONTACT CARDS ─────────────────────────────── */
+  
   .contact-grid {
     display: grid; grid-template-columns: repeat(3, minmax(0, 460px));
     gap: 1.5rem;
@@ -655,7 +657,7 @@
   }
   .con-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.08); }
 
-  /* Rundes Foto mit Padding-Bereich oben */
+  
   .con-photo-wrap {
     background: var(--off);
     padding: 2.5rem 2rem 0;
@@ -697,7 +699,7 @@
   .con-btn:hover { border-color: var(--blue); color: var(--blue); background: rgba(0,159,227,.04); }
   .con-btn svg { width: 14px; height: 14px; stroke: currentColor; flex-shrink: 0; }
 
-  /* ── MODAL ─────────────────────────────────────── */
+  
   .modal-backdrop {
     display: none; position: fixed; inset: 0; z-index: 900;
     background: rgba(8,8,8,.55); backdrop-filter: blur(4px);
@@ -779,7 +781,7 @@
   .modal-success h4 { font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: .5rem; }
   .modal-success p { font-size: .85rem; color: var(--muted); line-height: 1.7; }
 
-  /* ── FOOTER ────────────────────────────────────── */
+  
   footer {
     background: var(--black); color: rgba(255,255,255,.45);
     padding: 5rem var(--pad) 0;
@@ -828,9 +830,9 @@
   .ft-legal a { color: rgba(255,255,255,.22); transition: color var(--trans); }
   .ft-legal a:hover { color: rgba(255,255,255,.5); }
 
-  /* ── RESPONSIVE ────────────────────────────────── */
+  
 
-  /* Mobile Nav – Kontakt-CTA */
+  
   .mob-kontakt {
     display: block !important;
     margin-top: 1rem;
@@ -865,43 +867,43 @@
 
   @media (max-width: 768px) {
     :root { --pad: 1.25rem; --sec: 4rem; }
-    /* Nav: nur Logo + Hamburger */
+    
     .nav-links, .nav-right .btn, .nav-right .lang { display: none; }
     .hamburger { display: flex; }
-    /* Hero */
+    
     .hero h1 { font-size: clamp(1.5rem, 7.5vw, 3rem); }
     .hero-body { padding: 3rem var(--pad) 2.5rem; }
     .hero-sub { font-size: .9rem; }
     .hero-ctas { flex-direction: column; align-items: flex-start; }
-    /* Grids */
+    
     .focus-grid    { grid-template-columns: 1fr; }
     .contact-grid  { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; }
     .numbers-grid  { grid-template-columns: 1fr 1fr; }
     .ft-grid       { grid-template-columns: 1fr; }
     .who-badge     { bottom: 0; right: 0; }
-    /* Formular */
+    
     .form-row      { grid-template-columns: 1fr; }
-    /* sec-head */
+    
     .sec-head      { margin-bottom: 2.5rem; }
   }
 
   @media (max-width: 480px) {
     :root { --sec: 3rem; }
-    /* Nav-Hamburger-Abstand */
+    
     .nav { padding: 0 1rem; }
-    /* Hero Überschrift: langer Begriff passt auf kleine Screens */
+    
     .hero h1 { font-size: clamp(1.35rem, 8vw, 2rem); }
-    /* Hero Strip: 2×2 */
+    
     .hero-strip    { grid-template-columns: repeat(2,1fr); }
     .hs-item       { padding: 1.25rem 1rem; }
-    /* Leistungen: 1 Spalte */
+    
     .cards-4       { grid-template-columns: 1fr; }
     .wwd-card      { border-right: none; border-bottom: 1px solid var(--border); }
     .wwd-card:last-child { border-bottom: none; }
-    /* Zahlen */
+    
     .num-item      { padding: 2rem 1rem; }
     .num-val       { font-size: 2.25rem; }
-    /* Footer */
+    
     .ft-grid       { grid-template-columns: 1fr; }
     .ft-bottom     { flex-direction: column; align-items: flex-start; gap: .75rem; }
   }
@@ -909,9 +911,6 @@
 </head>
 <body>
 
-<!-- ════════════════════════════════════════
-     NAVIGATION
-     ════════════════════════════════════════ -->
 <nav class="nav" id="nav">
   <a href="index.html" class="nav-logo">
     <img class="logo-light" src="images/logo/berghoff-logo-hell.png" alt="BERGHOFF GmbH" width="140" height="20">
@@ -954,12 +953,8 @@
   </div>
 </nav>
 
-
 <main>
 
-<!-- ════════════════════════════════════════
-     HERO
-     ════════════════════════════════════════ -->
 <section class="hero" style="padding:0; border:none;">
   <div class="hero-bg"></div>
 
@@ -1003,10 +998,6 @@
   </div>
 </section>
 
-
-<!-- ════════════════════════════════════════
-     WHAT WE DO
-     ════════════════════════════════════════ -->
 <section id="leistungen">
   <div class="sec-head">
     <span class="label" data-de="Leistungen" data-en="Capabilities">Leistungen</span>
@@ -1019,9 +1010,9 @@
   </div>
 
   <div class="cards-4">
-    <!-- Karte 1 -->
+    
     <div class="wwd-card">
-      <i data-lucide="crosshair" class="wwd-icon" aria-hidden="true"></i>
+      <svg class="wwd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
       <div class="wwd-nr">01</div>
       <h3 data-de="Mechanische Bearbeitung" data-en="Precision Machining">Mechanische Bearbeitung</h3>
       <p data-de="5-Achs-Fräsen, Drehen, Schleifen, Erodieren. Toleranzen bis IT3. 60+ CNC-Anlagen. Ohne unsere Präzision keine Lithographie."
@@ -1029,9 +1020,9 @@
         5-Achs-Fräsen, Drehen, Schleifen, Erodieren. Toleranzen bis IT3. 60+ CNC-Anlagen. Ohne unsere Präzision keine Lithographie.
       </p>
     </div>
-    <!-- Karte 2 -->
+    
     <div class="wwd-card">
-      <i data-lucide="layers" class="wwd-icon" aria-hidden="true"></i>
+      <svg class="wwd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
       <div class="wwd-nr">02</div>
       <h3 data-de="Baugruppenmontage" data-en="Assembly">Baugruppenmontage</h3>
       <p data-de="Kein Bauteil, sondern ein funktionsfähiges System. Mechanisch, pneumatisch, hydraulisch. Fertig montiert, geprüft, dokumentiert."
@@ -1039,9 +1030,9 @@
         Kein Bauteil, sondern ein funktionsfähiges System. Mechanisch, pneumatisch, hydraulisch. Fertig montiert, geprüft, dokumentiert.
       </p>
     </div>
-    <!-- Karte 3 -->
+    
     <div class="wwd-card">
-      <i data-lucide="lightbulb" class="wwd-icon" aria-hidden="true"></i>
+      <svg class="wwd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
       <div class="wwd-nr">03</div>
       <h3 data-de="Entwicklungsbegleitung" data-en="Engineering Support">Entwicklungsbegleitung</h3>
       <p data-de="Design for Manufacturability, Cost Roadmap, Werkstoffberatung. Frühe Einbindung schafft Wettbewerbsvorteile und spart Kosten."
@@ -1049,9 +1040,9 @@
         Design for Manufacturability, Cost Roadmap, Werkstoffberatung. Frühe Einbindung schafft Wettbewerbsvorteile und spart Kosten.
       </p>
     </div>
-    <!-- Karte 4 -->
+    
     <div class="wwd-card">
-      <i data-lucide="network" class="wwd-icon" aria-hidden="true"></i>
+      <svg class="wwd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-4h14v4"/><path d="M12 12V8"/></svg>
       <div class="wwd-nr">04</div>
       <h3 data-de="Value Chain Management" data-en="Value Chain Management">Value Chain Management</h3>
       <p data-de="Beschaffung, Lagerung, Lieferung. Wir sind Ihr verlängerter Arm in der Wertschöpfungskette. Termingenau. Nach QLTC-Prinzip."
@@ -1062,10 +1053,6 @@
   </div>
 </section>
 
-
-<!-- ════════════════════════════════════════
-     WHO WE ARE
-     ════════════════════════════════════════ -->
 <section class="off" id="ueber">
   <div class="who-layout">
 
@@ -1107,10 +1094,6 @@
   </div>
 </section>
 
-
-<!-- ════════════════════════════════════════
-     FOCUS AREAS
-     ════════════════════════════════════════ -->
 <section class="dark" id="branchen">
   <div class="sec-head">
     <span class="label" data-de="Schlüsselbranchen" data-en="Key Industries">Schlüsselbranchen</span>
@@ -1216,10 +1199,6 @@
   </div>
 </section>
 
-
-<!-- ════════════════════════════════════════
-     BERGHOFF IN NUMBERS
-     ════════════════════════════════════════ -->
 <section class="dark" style="border-top:1px solid rgba(255,255,255,.06); padding-top:0; padding-bottom:0;">
   <div class="numbers-grid">
 
@@ -1254,10 +1233,6 @@
   </div>
 </section>
 
-
-<!-- ════════════════════════════════════════
-     3SVIP
-     ════════════════════════════════════════ -->
 <section class="off" id="svip">
   <div class="svip-layout">
 
@@ -1315,10 +1290,6 @@
   </div>
 </section>
 
-
-<!-- ════════════════════════════════════════
-     EXPLORE (2 KARTEN)
-     ════════════════════════════════════════ -->
 <section>
   <div class="sec-head">
     <span class="label" data-de="Mehr entdecken" data-en="Explore">Mehr entdecken</span>
@@ -1361,10 +1332,6 @@
   </div>
 </section>
 
-
-<!-- ════════════════════════════════════════
-     KONTAKT
-     ════════════════════════════════════════ -->
 <section class="off" id="kontakt">
   <div class="sec-head">
     <span class="label" data-de="Direktkontakt" data-en="Direct Contact">Direktkontakt</span>
@@ -1381,7 +1348,7 @@
 
   <div class="contact-grid">
 
-    <!-- Kontakt 1: Vertrieb -->
+    
     <div class="con-card">
       <div class="con-photo-wrap">
         <div class="con-photo">
@@ -1409,7 +1376,7 @@
       </div>
     </div>
 
-    <!-- Kontakt 2: Technik -->
+    
     <div class="con-card">
       <div class="con-photo-wrap">
         <div class="con-photo">
@@ -1437,7 +1404,7 @@
       </div>
     </div>
 
-    <!-- Kontakt 3: Qualität -->
+    
     <div class="con-card">
       <div class="con-photo-wrap">
         <div class="con-photo">
@@ -1470,14 +1437,10 @@
 
 </main>
 
-
-<!-- ════════════════════════════════════════
-     FOOTER
-     ════════════════════════════════════════ -->
 <footer>
   <div class="ft-grid">
 
-    <!-- Branding -->
+    
     <div>
       <div class="ft-logo">
         <img src="images/logo/berghoff-logo-hell.png" alt="BERGHOFF GmbH">
@@ -1500,7 +1463,7 @@
       </div>
     </div>
 
-    <!-- Navigation -->
+    
     <div>
       <h4 data-de="Navigation" data-en="Navigation">Navigation</h4>
       <ul class="ft-links">
@@ -1514,7 +1477,7 @@
       </ul>
     </div>
 
-    <!-- Branchen -->
+    
     <div>
       <h4 data-de="Branchen" data-en="Industries">Branchen</h4>
       <ul class="ft-links">
@@ -1527,7 +1490,7 @@
       </ul>
     </div>
 
-    <!-- Hauptstandort -->
+    
     <div>
       <h4 data-de="Hauptstandort" data-en="Main Site">Hauptstandort</h4>
       <div class="ft-adresse">
@@ -1539,7 +1502,7 @@
       </div>
     </div>
 
-    <!-- Zweiter Standort + Rechtliches -->
+    
     <div>
       <h4 data-de="Zweiter Standort" data-en="Second Location">Zweiter Standort</h4>
       <div class="ft-adresse">
@@ -1570,10 +1533,6 @@
   </div>
 </footer>
 
-
-<!-- ════════════════════════════════════════
-     JAVASCRIPT
-     ════════════════════════════════════════ -->
 <script>
 'use strict';
 
@@ -1607,13 +1566,11 @@ document.querySelectorAll('.lang-btn').forEach(b => {
   b.addEventListener('click', () => setLang(b.dataset.l));
 });
 
-
 /* ── Nav Scroll-Shadow ───────────────────────── */
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', scrollY > 16);
 }, { passive: true });
-
 
 /* ── Hamburger / Mobile Nav ──────────────────── */
 const hb  = document.getElementById('hb');
@@ -1630,7 +1587,6 @@ mob.querySelectorAll('a').forEach(a => {
     document.body.style.overflow = '';
   });
 });
-
 
 /* ── Hochzähl-Animation ──────────────────────── */
 function animateCounter(el) {
@@ -1661,7 +1617,6 @@ if (counters.length) {
   counters.forEach(c => obs.observe(c));
 }
 
-
 /* ── Smooth Scroll für Anker-Links ──────────── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
@@ -1674,16 +1629,11 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 </script>
 
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-<script>lucide.createIcons();</script>
 
-<!-- ════════════════════════════════════════
-     KONTAKT-MODAL
-     ════════════════════════════════════════ -->
 <div class="modal-backdrop" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="modal">
 
-    <!-- Formular-Ansicht -->
+    
     <div id="modalForm">
       <div class="modal-head">
         <div>
@@ -1736,7 +1686,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
                       placeholder="Beschreiben Sie kurz Ihr Anliegen oder Ihr Bauteil …"></textarea>
           </div>
 
-          <!-- DSGVO -->
+          
           <div class="form-dsgvo">
             <input type="checkbox" id="cf-dsgvo" name="dsgvo" required>
             <label for="cf-dsgvo" data-de="Ich habe die <a href='datenschutz.html' target='_blank'>Datenschutzerklärung</a> gelesen und bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert und verwendet werden. Die Einwilligung kann jederzeit widerrufen werden." data-en="I have read the <a href='datenschutz.html' target='_blank'>privacy policy</a> and agree that my data may be stored and used to process my enquiry. This consent can be withdrawn at any time.">
@@ -1750,7 +1700,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       </div>
     </div>
 
-    <!-- Erfolgs-Ansicht -->
+    
     <div class="modal-success" id="modalSuccess">
       <div class="modal-success-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4.5 12.75l6 6 9-13.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
