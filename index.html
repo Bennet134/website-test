@@ -503,10 +503,10 @@
   }
   .focus-card {
     display: block; border-radius: var(--r); overflow: hidden;
-    background: #111; border: 1px solid rgba(255,255,255,.05);
+    background: #f3f3f3; border: 1px solid var(--border);
     transition: transform .3s, box-shadow .3s;
   }
-  .focus-card:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(0,0,0,.45); }
+  .focus-card:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(0,0,0,.12); }
   .focus-img {
     position: relative; aspect-ratio: 16/10; overflow: hidden;
   }
@@ -524,9 +524,9 @@
   .focus-body { padding: 1.5rem 1.75rem 2rem; }
   .focus-body h3 {
     font-family: 'Sora', sans-serif; font-size: .97rem; font-weight: 700;
-    color: var(--white); margin-bottom: .45rem; line-height: 1.2;
+    color: var(--text); margin-bottom: .45rem; line-height: 1.2;
   }
-  .focus-body p { font-size: .8rem; color: rgba(255,255,255,.4); line-height: 1.65; }
+  .focus-body p { font-size: .8rem; color: var(--muted); line-height: 1.65; }
   .focus-arrow {
     display: inline-flex; align-items: center; gap: .35rem;
     margin-top: 1rem; font-family: 'Sora', sans-serif;
@@ -1047,7 +1047,7 @@
   </div>
 </section>
 
-<section class="dark" id="branchen">
+<section id="branchen">
   <div class="sec-head">
     <span class="label" data-de="Schlüsselbranchen" data-en="Key Industries">Schlüsselbranchen</span>
     <h2 data-de="Wir fertigen dort, wo Fehler keine Option sind."
