@@ -7,7 +7,7 @@
   <title>Datenschutz - BERGHOFF GmbH</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon-96x96.png?v=1.0" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg?v=1.0" />
   <link rel="shortcut icon" href="favicon.ico?v=1.0" />
@@ -41,11 +41,11 @@
   }
 
   html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  body { font-family: 'Open Sans', sans-serif; color: var(--text); background: var(--white); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
-  .label { font-family: 'Sora', sans-serif; font-size: .66rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--blue); }
+  .label { font-family: 'Roboto Condensed', sans-serif; font-size: .66rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--blue); }
   .rule  { width: 36px; height: 2px; background: var(--blue); }
-  .btn { display: inline-flex; align-items: center; gap: .4rem; font-family: 'Sora', sans-serif; font-size: .8rem; font-weight: 700; padding: .875rem 1.75rem; border-radius: var(--r); transition: all var(--trans); white-space: nowrap; }
+  .btn { display: inline-flex; align-items: center; gap: .4rem; font-family: 'Roboto Condensed', sans-serif; font-size: .8rem; font-weight: 700; padding: .875rem 1.75rem; border-radius: var(--r); transition: all var(--trans); white-space: nowrap; }
   .btn-primary { background: var(--blue); color: var(--white); border: 2px solid var(--blue); }
   .btn-primary:hover { background: var(--blue-d); border-color: var(--blue-d); }
 
@@ -60,7 +60,7 @@
   .nav-links a:hover, .nav-links a.active { color: var(--text); }
   .nav-right { display: flex; align-items: center; gap: 1.25rem; }
   .lang { display: flex; gap: 2px; align-items: center; }
-  .lang-btn { font-family: 'Sora', sans-serif; font-size: .7rem; font-weight: 700; letter-spacing: .08em; color: var(--muted); padding: .3rem .45rem; border-radius: 2px; transition: color var(--trans); }
+  .lang-btn { font-family: 'Roboto Condensed', sans-serif; font-size: .7rem; font-weight: 700; letter-spacing: .08em; color: var(--muted); padding: .3rem .45rem; border-radius: 2px; transition: color var(--trans); }
   .lang-btn.on { color: var(--blue); }
   .lang-btn:hover:not(.on) { color: var(--text); }
   .lang-sep { font-size: .7rem; color: var(--border); }
@@ -71,7 +71,7 @@
   .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
   .mobile-nav { display: none; position: fixed; top: var(--nav-h); inset: var(--nav-h) 0 0; background: var(--white); z-index: 299; flex-direction: column; padding: 2rem var(--pad); border-top: 1px solid var(--border); }
   .mobile-nav.open { display: flex; }
-  .mobile-nav a { font-family: 'Sora', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--text); padding: 1rem 0; border-bottom: 1px solid var(--border); transition: color var(--trans); }
+  .mobile-nav a { font-family: 'Roboto Condensed', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--text); padding: 1rem 0; border-bottom: 1px solid var(--border); transition: color var(--trans); }
   .mob-kontakt { display: block !important; margin-top: 1rem; background: var(--blue) !important; color: var(--white) !important; text-align: center; padding: .875rem 1rem !important; border-radius: 2px; border-bottom: none !important; font-size: 1rem !important; }
   .mob-kontakt:hover { background: var(--blue-d) !important; color: var(--white) !important; }
   .mobile-nav a:hover { color: var(--blue); }
@@ -82,15 +82,15 @@
   .hero::after { content: ''; position: absolute; top: -120px; right: -80px; width: 520px; height: 520px; background: radial-gradient(circle, rgba(0,159,227,.18) 0%, transparent 70%); pointer-events: none; }
   .hero-body { position: relative; z-index: 1; max-width: 760px; }
   .hero-body .label { display: block; margin-bottom: .75rem; }
-  .hero-body h1 { font-family: 'Sora', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.05; letter-spacing: -.03em; color: var(--white); margin-bottom: 1rem; }
+  .hero-body h1 { font-family: 'Roboto Condensed', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.05; letter-spacing: -.03em; color: var(--white); margin-bottom: 1rem; }
   .hero-body p { font-size: 1rem; color: rgba(255,255,255,.6); line-height: 1.8; margin-top: 1rem; max-width: 600px; }
   .hero-body .rule { margin-top: .75rem; }
 
   
   .content { padding: var(--sec) var(--pad); max-width: 900px; }
   .dsg-block { margin-bottom: 3rem; }
-  .dsg-block h2 { font-family: 'Sora', sans-serif; font-size: .85rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); margin-bottom: 1rem; padding-bottom: .5rem; border-bottom: 1px solid var(--border); }
-  .dsg-block h3 { font-family: 'Sora', sans-serif; font-size: .9rem; font-weight: 700; color: var(--text); margin: 1.5rem 0 .5rem; }
+  .dsg-block h2 { font-family: 'Roboto Condensed', sans-serif; font-size: .85rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); margin-bottom: 1rem; padding-bottom: .5rem; border-bottom: 1px solid var(--border); }
+  .dsg-block h3 { font-family: 'Roboto Condensed', sans-serif; font-size: .9rem; font-weight: 700; color: var(--text); margin: 1.5rem 0 .5rem; }
   .dsg-block p { font-size: .95rem; color: var(--text); line-height: 1.85; margin-bottom: .75rem; }
   .dsg-block address { font-style: normal; font-size: .95rem; color: var(--text); line-height: 1.85; }
   .dsg-block a { color: var(--blue); }
@@ -107,7 +107,7 @@
   .ft-socials a { display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(255,255,255,.12); transition: border-color var(--trans), background var(--trans); }
   .ft-socials a:hover { border-color: var(--blue); background: rgba(0,159,227,.1); }
   .ft-socials svg { width: 15px; height: 15px; fill: rgba(255,255,255,.6); }
-  .ft-col h4 { font-family: 'Sora', sans-serif; font-size: .66rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.25); margin-bottom: 1.1rem; }
+  .ft-col h4 { font-family: 'Roboto Condensed', sans-serif; font-size: .66rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.25); margin-bottom: 1.1rem; }
   .ft-col a, .ft-col p, .ft-col span { display: block; font-size: .82rem; color: rgba(255,255,255,.5); line-height: 1.7; transition: color var(--trans); }
   .ft-col a:hover { color: var(--white); }
   .ft-bottom { border-top: 1px solid rgba(255,255,255,.06); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: .78rem; }
