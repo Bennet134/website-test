@@ -395,27 +395,6 @@
   }
   .hero-ctas { display: flex; gap: .875rem; flex-wrap: wrap; }
 
-  
-  .hero-strip {
-    position: relative; z-index: 1;
-    display: grid; grid-template-columns: repeat(4,1fr);
-    background: #f3f3f3;
-    border-top: 1px solid rgba(0,0,0,.1);
-  }
-  .hs-item {
-    padding: 1.75rem var(--pad);
-    border-right: 1px solid rgba(0,0,0,.08);
-  }
-  .hs-item:last-child { border-right: none; }
-  .hs-val {
-    font-family: 'Sora', sans-serif;
-    font-size: 1.875rem; font-weight: 800; line-height: 1;
-    color: #000;
-  }
-  .hs-val em { font-style: normal; color: var(--blue); }
-  .hs-lab { font-size: 0.72rem; color: rgba(0,0,0,.55); margin-top: .35rem; }
-
-  
   section {
     padding: var(--sec) var(--pad);
     border-bottom: 1px solid var(--border);
@@ -856,10 +835,6 @@
     .num-item:nth-child(2) { border-right: none; }
     .num-item:nth-child(3),
     .num-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,.07); }
-    .hero-strip    { grid-template-columns: repeat(2,1fr); }
-    .hs-item:nth-child(2) { border-right: none; }
-    .hs-item:nth-child(3),
-    .hs-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,.08); }
     .who-layout, .svip-layout { grid-template-columns: 1fr; gap: 3rem; }
     .explore-grid  { grid-template-columns: 1fr; }
     .ft-grid       { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
@@ -893,10 +868,7 @@
     .nav { padding: 0 1rem; }
     
     .hero h1 { font-size: clamp(1.35rem, 8vw, 2rem); }
-    
-    .hero-strip    { grid-template-columns: repeat(2,1fr); }
-    .hs-item       { padding: 1.25rem 1rem; }
-    
+
     .cards-4       { grid-template-columns: 1fr; }
     .wwd-card      { border-right: none; border-bottom: 1px solid var(--border); }
     .wwd-card:last-child { border-bottom: none; }
@@ -975,25 +947,6 @@
          data-de="Jetzt anfragen" data-en="Get in touch">Jetzt anfragen</a>
       <a href="#leistungen" class="btn btn-ghost-dark"
          data-de="Leistungen" data-en="Our Capabilities">Leistungen</a>
-    </div>
-  </div>
-
-  <div class="hero-strip">
-    <div class="hs-item">
-      <div class="hs-val">42</div>
-      <div class="hs-lab" data-de="Jahre Erfahrung" data-en="Years Experience">Jahre Erfahrung</div>
-    </div>
-    <div class="hs-item">
-      <div class="hs-val">130</div>
-      <div class="hs-lab" data-de="Mitarbeiter" data-en="Employees">Mitarbeiter</div>
-    </div>
-    <div class="hs-item">
-      <div class="hs-val"><em>&lt;</em>4</div>
-      <div class="hs-lab" data-de="Wochen zum Prototyp" data-en="Weeks to Prototype">Wochen zum Prototyp</div>
-    </div>
-    <div class="hs-item">
-      <div class="hs-val">6</div>
-      <div class="hs-lab" data-de="Schlüsselbranchen" data-en="Key Industries">Schlüsselbranchen</div>
     </div>
   </div>
 </section>
