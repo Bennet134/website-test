@@ -349,11 +349,11 @@
   .hero-bg::after {
     content: ''; position: absolute; inset: 0;
     background: linear-gradient(
-      135deg,
-      rgba(0,5,20,.97) 0%,
-      rgba(0,20,60,.95) 35%,
-      rgba(0,40,100,.92) 65%,
-      rgba(0,60,130,.88) 100%
+      to right,
+      rgba(0,5,20,.95) 0%,
+      rgba(0,12,38,.85) 30%,
+      rgba(0,25,65,.45) 65%,
+      rgba(0,40,100,0) 100%
     );
   }
 
@@ -399,21 +399,21 @@
   .hero-strip {
     position: relative; z-index: 1;
     display: grid; grid-template-columns: repeat(4,1fr);
-    background: rgba(8,8,8,.65); backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255,255,255,.1);
+    background: #f3f3f3;
+    border-top: 1px solid rgba(0,0,0,.1);
   }
   .hs-item {
     padding: 1.75rem var(--pad);
-    border-right: 1px solid rgba(255,255,255,.08);
+    border-right: 1px solid rgba(0,0,0,.08);
   }
   .hs-item:last-child { border-right: none; }
   .hs-val {
     font-family: 'Sora', sans-serif;
     font-size: 1.875rem; font-weight: 800; line-height: 1;
-    color: var(--white);
+    color: #000;
   }
   .hs-val em { font-style: normal; color: var(--blue); }
-  .hs-lab { font-size: 0.72rem; color: rgba(255,255,255,.42); margin-top: .35rem; }
+  .hs-lab { font-size: 0.72rem; color: rgba(0,0,0,.55); margin-top: .35rem; }
 
   
   section {
