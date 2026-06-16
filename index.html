@@ -538,20 +538,20 @@
   
   .numbers-grid {
     display: grid; grid-template-columns: repeat(4,1fr);
-    border: 1px solid rgba(255,255,255,.07);
+    gap: 1.25rem; margin-top: 3.5rem;
   }
   .num-item {
-    padding: 3.5rem 2.5rem; text-align: center;
-    border-right: 1px solid rgba(255,255,255,.07);
+    padding: 2.75rem 2rem; text-align: center;
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: var(--r);
   }
-  .num-item:last-child { border-right: none; }
   .num-val {
     font-family: 'Sora', sans-serif;
     font-size: clamp(2.5rem, 5vw, 4.25rem);
-    font-weight: 800; line-height: 1; color: var(--white);
+    font-weight: 800; line-height: 1; color: var(--text);
   }
   .num-val em { font-style: normal; color: var(--blue); }
-  .num-lab { font-size: .72rem; color: rgba(255,255,255,.38); margin-top: .6rem; letter-spacing: .06em; }
+  .num-lab { font-size: .72rem; color: var(--muted); margin-top: .6rem; letter-spacing: .06em; }
 
   
   .svip-layout {
@@ -832,9 +832,6 @@
     .wwd-card:nth-child(2) { border-bottom: 1px solid var(--border); }
     .focus-grid    { grid-template-columns: repeat(2,1fr); }
     .numbers-grid  { grid-template-columns: repeat(2,1fr); }
-    .num-item:nth-child(2) { border-right: none; }
-    .num-item:nth-child(3),
-    .num-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,.07); }
     .who-layout, .svip-layout { grid-template-columns: 1fr; gap: 3rem; }
     .explore-grid  { grid-template-columns: 1fr; }
     .ft-grid       { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
@@ -1045,6 +1042,38 @@
     </div>
 
   </div>
+
+  <div class="numbers-grid">
+
+    <div class="num-item">
+      <div class="num-val">
+        <span class="counter" data-target="40">0</span><em>+</em>
+      </div>
+      <div class="num-lab" data-de="Jahre Erfahrung" data-en="Years Experience">Jahre Erfahrung</div>
+    </div>
+
+    <div class="num-item">
+      <div class="num-val">
+        <span class="counter" data-target="130">0</span>
+      </div>
+      <div class="num-lab" data-de="Mitarbeiter" data-en="Employees">Mitarbeiter</div>
+    </div>
+
+    <div class="num-item">
+      <div class="num-val">
+        <span class="counter" data-target="6">0</span>
+      </div>
+      <div class="num-lab" data-de="Schlüsselbranchen" data-en="Key Industries">Schlüsselbranchen</div>
+    </div>
+
+    <div class="num-item">
+      <div class="num-val">
+        <span class="counter" data-target="1">0</span>
+      </div>
+      <div class="num-lab" data-de="Anspruch" data-en="Standard">Anspruch</div>
+    </div>
+
+  </div>
 </section>
 
 <section id="branchen">
@@ -1148,40 +1177,6 @@
         <div class="focus-arrow" data-de="Mehr erfahren →" data-en="Learn more →">Mehr erfahren →</div>
       </div>
     </a>
-
-  </div>
-</section>
-
-<section class="dark" style="border-top:1px solid rgba(255,255,255,.06); padding-top:0; padding-bottom:0;">
-  <div class="numbers-grid">
-
-    <div class="num-item">
-      <div class="num-val">
-        <span class="counter" data-target="40">0</span><em>+</em>
-      </div>
-      <div class="num-lab" data-de="Jahre Erfahrung" data-en="Years Experience">Jahre Erfahrung</div>
-    </div>
-
-    <div class="num-item">
-      <div class="num-val">
-        <span class="counter" data-target="130">0</span>
-      </div>
-      <div class="num-lab" data-de="Mitarbeiter" data-en="Employees">Mitarbeiter</div>
-    </div>
-
-    <div class="num-item">
-      <div class="num-val">
-        <span class="counter" data-target="6">0</span>
-      </div>
-      <div class="num-lab" data-de="Schlüsselbranchen" data-en="Key Industries">Schlüsselbranchen</div>
-    </div>
-
-    <div class="num-item">
-      <div class="num-val">
-        <span class="counter" data-target="1">0</span>
-      </div>
-      <div class="num-lab" data-de="Anspruch" data-en="Standard">Anspruch</div>
-    </div>
 
   </div>
 </section>
