@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#091120">
-  <meta name="description" content="CNC-Präzisionsteile für Aerospace, Halbleiter & Medizintechnik. 5-Achs-Fräsen, Drehen, Schleifen, Erodieren. EN 9100 & ISO 9001 zertifiziert. Familienunternehmen seit 1984.">
-  <title>BERGHOFF GmbH | CNC-Präzisionsfertigung Aerospace & Halbleiter</title>
+  <meta name="description" content="BERGHOFF ist Ihr Wertschöpfungskettenpartner für CNC-Präzisionsfertigung, Baugruppenmontage, Reinraumfertigung und Value Chain Management – seit 1984. EN 9100 & ISO 9001 zertifiziert.">
+  <title>BERGHOFF | CNC-Präzisionsfertigung & Baugruppen für Hightech-Industrien</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -22,8 +22,8 @@
   
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://berghoff.eu/">
-  <meta property="og:title"       content="BERGHOFF GmbH | CNC-Präzisionsfertigung Aerospace & Halbleiter">
-  <meta property="og:description" content="CNC-Präzisionsteile für Aerospace, Halbleiter & Medizintechnik. 5-Achs-Fräsen, Drehen, Schleifen, Erodieren. EN 9100 & ISO 9001 zertifiziert. Seit 1984.">
+  <meta property="og:title"       content="BERGHOFF | CNC-Präzisionsfertigung & Baugruppen für Hightech-Industrien">
+  <meta property="og:description" content="Ihr Wertschöpfungskettenpartner für CNC-Präzisionsfertigung, Baugruppenmontage, Reinraumfertigung und Value Chain Management – seit 1984.">
   <meta property="og:image"       content="https://berghoff.eu/images/og/logo-og.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -117,11 +117,18 @@
         "@type": "WebPage",
         "@id": "https://berghoff.eu/#webpage",
         "url": "https://berghoff.eu/",
-        "name": "BERGHOFF GmbH | CNC-Präzisionsfertigung Aerospace & Halbleiter",
-        "description": "CNC-Präzisionsteile für Aerospace, Halbleiter & Medizintechnik. 5-Achs-Fräsen, Drehen, Schleifen, Erodieren. EN 9100 & ISO 9001 zertifiziert. Seit 1984.",
+        "name": "BERGHOFF | CNC-Präzisionsfertigung & Baugruppen für Hightech-Industrien",
+        "description": "Ihr Wertschöpfungskettenpartner für CNC-Präzisionsfertigung, Baugruppenmontage, Reinraumfertigung und Value Chain Management – seit 1984. EN 9100 & ISO 9001 zertifiziert.",
         "isPartOf": { "@id": "https://berghoff.eu/#website" },
         "about": { "@id": "https://berghoff.eu/#organization" },
         "inLanguage": ["de", "en"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://berghoff.eu/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://berghoff.eu/" }
+        ]
       }
     ]
   }
@@ -394,28 +401,6 @@
     color: rgba(255,255,255,.62); line-height: 1.8;
     max-width: 560px; margin-bottom: 2.75rem;
   }
-  .hero-ql {
-    position: absolute; bottom: 0; left: 0; right: 0;
-    display: flex; z-index: 1;
-  }
-  .hero-ql-item {
-    flex: 1; padding: 1.25rem 1.75rem;
-    display: flex; align-items: center;
-    background: rgba(5,10,25,.55);
-    border-left: 3px solid var(--blue);
-    border-right: 1px solid rgba(255,255,255,.07);
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: .95rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
-    color: rgba(255,255,255,.9);
-    transition: background var(--trans), color var(--trans);
-  }
-  .hero-ql-item:last-child { border-right: none; }
-  .hero-ql-item:hover { background: rgba(0,160,228,.28); color: var(--white); }
-  @media (max-width: 600px) {
-    .hero-ql { flex-direction: column; }
-    .hero-ql-item { border-left: none; border-top: 3px solid var(--blue); border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); }
-  }
-
   section {
     padding: var(--sec) var(--pad);
     border-bottom: 1px solid var(--border);
@@ -775,8 +760,8 @@
     padding: 5rem var(--pad) 0;
   }
   .ft-grid {
-    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-    gap: 3rem; padding-bottom: 4rem;
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1.3fr 1fr;
+    gap: 2.5rem; padding-bottom: 4rem;
     border-bottom: 1px solid rgba(255,255,255,.07);
   }
   .ft-logo img { height: 22px; width: auto; margin-bottom: 1.25rem; }
@@ -843,7 +828,7 @@
     .numbers-grid  { grid-template-columns: repeat(2,1fr); }
     .who-layout, .svip-layout { grid-template-columns: 1fr; gap: 3rem; }
     .explore-grid  { grid-template-columns: 1fr; }
-    .ft-grid       { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    .ft-grid       { grid-template-columns: 1fr 1fr 1fr; gap: 2.5rem; }
   }
 
   @media (max-width: 768px) {
@@ -883,6 +868,110 @@
     
     .ft-grid       { grid-template-columns: 1fr; }
     .ft-bottom     { flex-direction: column; align-items: flex-start; gap: .75rem; }
+  }
+
+  /* ── Hero-Ergänzungen (SEO-Subline, Bullets, CTAs) ── */
+  .hero h1 .hero-keyword {
+    display: block;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: clamp(1rem, 1.9vw, 1.55rem);
+    font-weight: 700; letter-spacing: -.01em; line-height: 1.25;
+    color: rgba(255,255,255,.92); margin-top: 1.1rem;
+  }
+  .hero-bullets {
+    display: flex; flex-direction: column; gap: .65rem;
+    margin: 0 0 2.25rem; max-width: 600px;
+  }
+  .hero-bullets li {
+    display: flex; gap: .7rem; align-items: flex-start;
+    font-size: clamp(.9rem, 1.2vw, 1rem); color: rgba(255,255,255,.82); line-height: 1.5;
+  }
+  .hero-bullets li svg { flex-shrink: 0; width: 18px; height: 18px; stroke: var(--blue); margin-top: .15rem; }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  /* ── Quicklink-Leiste unter dem Hero ── */
+  .quicklinks { background: var(--black); padding: 1.6rem var(--pad); border-bottom: 1px solid transparent; }
+  .quicklinks-inner { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
+  .quicklinks-label {
+    font-family: 'Roboto Condensed', sans-serif; font-size: .7rem; font-weight: 700;
+    letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-right: .4rem;
+  }
+  .ql-link {
+    display: inline-flex; align-items: center;
+    font-family: 'Roboto Condensed', sans-serif; font-size: .82rem; font-weight: 700; letter-spacing: .03em;
+    color: rgba(255,255,255,.85); padding: .5rem .9rem; border-radius: var(--r);
+    border: 1px solid rgba(255,255,255,.14); border-left: 3px solid var(--blue);
+    transition: background var(--trans), color var(--trans);
+  }
+  .ql-link:hover { background: rgba(0,160,228,.18); color: var(--white); }
+
+  /* ── Trust / Proof-Kacheln ── */
+  .trust-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; margin-bottom: 2.5rem; }
+  .trust-card {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1.5rem; border: 1px solid var(--border); border-radius: var(--r);
+    background: var(--white); transition: border-color var(--trans), box-shadow var(--trans);
+  }
+  .trust-card:hover { border-color: var(--blue); box-shadow: 0 6px 24px rgba(0,0,0,.06); }
+  .trust-icon { flex-shrink: 0; width: 36px; height: 36px; }
+  .trust-icon svg { width: 36px; height: 36px; stroke: var(--blue); }
+  .trust-card h3 { font-family:'Roboto Condensed',sans-serif; font-size:1.05rem; font-weight:700; color:var(--text); margin-bottom:.2rem; line-height:1.2; }
+  .trust-card p { font-size:.85rem; color:var(--muted); line-height:1.5; }
+  .trust-hint {
+    font-size:.9rem; color:var(--muted); line-height:1.6; margin-bottom:1.75rem;
+    padding:1rem 1.25rem; background:var(--off); border-left:3px solid var(--blue); border-radius:var(--r); max-width:780px;
+  }
+  .btn-row { display:flex; gap:1rem; flex-wrap:wrap; }
+
+  /* ── Zertifikate-Kacheln ── */
+  .cert-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.25rem; margin-bottom:2.5rem; }
+  .cert-card {
+    text-align:center; padding:2rem 1.25rem; border:1px solid var(--border);
+    border-radius:var(--r); background:var(--white); transition:transform .3s, box-shadow .3s;
+  }
+  .cert-card:hover { transform:translateY(-3px); box-shadow:0 10px 30px rgba(0,0,0,.08); }
+  .cert-badge {
+    width:54px; height:54px; margin:0 auto 1rem; border-radius:50%;
+    background:rgba(0,160,228,.1); display:flex; align-items:center; justify-content:center;
+  }
+  .cert-badge svg { width:26px; height:26px; stroke:var(--blue); }
+  .cert-card h3 { font-family:'Roboto Condensed',sans-serif; font-size:1.05rem; font-weight:700; color:var(--text); margin-bottom:.3rem; }
+  .cert-card p { font-size:.8rem; color:var(--muted); line-height:1.5; }
+
+  /* ── Maschinenpark-Teaser ── */
+  .mp-teaser { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+  .mp-teaser-text h2 { font-family:'Roboto Condensed',sans-serif; font-size:clamp(1.9rem,3vw,2.5rem); font-weight:700; letter-spacing:-.03em; line-height:1.1; color:var(--white); margin-bottom:1rem; }
+  .mp-teaser-text .rule { margin-bottom:1.5rem; }
+  .mp-teaser-text > p { font-size:1.05rem; color:rgba(255,255,255,.55); line-height:1.7; margin-bottom:2rem; }
+  .mp-chips { display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:2rem; }
+  .mp-chip {
+    font-family:'Roboto Condensed',sans-serif; font-size:.8rem; font-weight:700; letter-spacing:.03em;
+    color:rgba(255,255,255,.85); padding:.5rem .9rem; border-radius:var(--r);
+    border:1px solid rgba(255,255,255,.14); border-left:3px solid var(--blue);
+  }
+  .mp-teaser-media img { width:100%; border-radius:var(--r); aspect-ratio:4/3; object-fit:cover; }
+
+  /* ── Branchen-CTA pro Kachel ── */
+  .focus-cta {
+    display:inline-flex; align-items:center; gap:.35rem; margin-top:1rem;
+    font-family:'Roboto Condensed',sans-serif; font-size:.82rem; font-weight:700; color:var(--blue);
+    transition: gap var(--trans);
+  }
+  .focus-card:hover .focus-cta { gap:.6rem; }
+
+  /* ── Kontakt-Entscheidungshilfe ── */
+  .kontakt-helper { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-bottom:2.5rem; max-width:1040px; }
+  .helper-item { padding:1.25rem 1.5rem; border:1px solid var(--border); border-radius:var(--r); background:var(--white); }
+  .helper-q { font-family:'Roboto Condensed',sans-serif; font-size:.95rem; font-weight:700; color:var(--text); margin-bottom:.35rem; }
+  .helper-a { font-size:.82rem; color:var(--blue); font-weight:600; }
+
+  @media (max-width: 1100px) {
+    .trust-grid, .cert-grid { grid-template-columns: repeat(2,1fr); }
+    .mp-teaser { grid-template-columns:1fr; gap:2.5rem; }
+    .kontakt-helper { grid-template-columns:1fr; }
+  }
+  @media (max-width: 600px) {
+    .trust-grid, .cert-grid { grid-template-columns:1fr; }
   }
   </style>
 </head>
@@ -939,34 +1028,73 @@
     <h1>
       Pure Performance.<br>
       <span data-de="Absolute Precision." data-en="Absolute Precision.">Absolute Precision.</span>
+      <span class="hero-keyword"
+            data-de="CNC-Präzisionsfertigung für Hightech-Industrien"
+            data-en="CNC precision manufacturing for high-tech industries">
+        CNC-Präzisionsfertigung für Hightech-Industrien
+      </span>
     </h1>
 
     <p class="hero-sub"
-       data-de="Seit über 40 Jahren vertrauen führende Hightech-Unternehmen der BERGHOFF bei der Planung und Fertigung hochkomplexer Bauteile, Baugruppen und Module."
-       data-en="For over 40 years, leading high-tech companies have trusted BERGHOFF with the planning and manufacturing of highly complex components, assemblies and modules.">
-      Seit über 40 Jahren vertrauen führende Hightech-Unternehmen der BERGHOFF bei der Planung und Fertigung hochkomplexer Bauteile, Baugruppen und Module.
+       data-de="CNC-Präzisionsfertigung, Baugruppenmontage und Value Chain Management für anspruchsvolle Hightech-Industrien."
+       data-en="CNC precision manufacturing, assembly and value chain management for demanding high-tech industries.">
+      CNC-Präzisionsfertigung, Baugruppenmontage und Value Chain Management für anspruchsvolle Hightech-Industrien.
     </p>
 
-  </div>
+    <ul class="hero-bullets">
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>
+        <span data-de="Präzisionsbauteile und komplexe Baugruppen aus einer Hand"
+              data-en="Precision parts and complex assemblies from a single source">Präzisionsbauteile und komplexe Baugruppen aus einer Hand</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>
+        <span data-de="Prozesssicherheit von der Planung bis zur Serienlieferung"
+              data-en="Process reliability from planning to series delivery">Prozesssicherheit von der Planung bis zur Serienlieferung</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.75l6 6 9-13.5"/></svg>
+        <span data-de="Erfahrung seit 1984 für Branchen, in denen Fehler keine Option sind"
+              data-en="Experience since 1984 for industries where failure is not an option">Erfahrung seit 1984 für Branchen, in denen Fehler keine Option sind</span>
+      </li>
+    </ul>
 
-  <div class="hero-ql">
-    <a href="branchen.html#halbleiter" class="hero-ql-item"
-       data-de="Halbleiterindustrie" data-en="Semiconductor">Halbleiterindustrie</a>
-    <a href="maschinenpark.html#reinraum" class="hero-ql-item"
-       data-de="Reinraum ISO-6" data-en="ISO-6 Cleanroom">Reinraum ISO-6</a>
-    <a href="ueber-berghoff.html#zertifizierungen" class="hero-ql-item"
-       data-de="Zertifikate" data-en="Certificates">Zertifikate</a>
+    <div class="hero-ctas">
+      <a href="#kontakt" class="btn btn-primary"
+         data-de="Projekt anfragen" data-en="Request a project">Projekt anfragen</a>
+      <a href="maschinenpark.html" class="btn btn-ghost-dark"
+         data-de="Maschinenpark ansehen" data-en="View machine park">Maschinenpark ansehen</a>
+    </div>
+
   </div>
 </section>
+
+<nav class="quicklinks" aria-label="Direkteinstieg">
+  <div class="quicklinks-inner">
+    <span class="quicklinks-label" data-de="Direkteinstieg" data-en="Quick links">Direkteinstieg</span>
+    <a href="leistungen/cnc-praezisionsfertigung/" class="ql-link" data-de="CNC-Präzisionsfertigung" data-en="CNC precision machining">CNC-Präzisionsfertigung</a>
+    <a href="leistungen/5-achs-fraesen/" class="ql-link" data-de="5-Achs-Fräsen" data-en="5-axis milling">5-Achs-Fräsen</a>
+    <a href="leistungen/cnc-drehen/" class="ql-link" data-de="CNC-Drehen" data-en="CNC turning">CNC-Drehen</a>
+    <a href="leistungen/baugruppenmontage/" class="ql-link" data-de="Baugruppenmontage" data-en="Assembly">Baugruppenmontage</a>
+    <a href="maschinenpark.html#reinraum" class="ql-link" data-de="Reinraum ISO-6" data-en="ISO-6 cleanroom">Reinraum ISO-6</a>
+    <a href="leistungen/qualitaetssicherung/" class="ql-link" data-de="Qualitätssicherung" data-en="Quality assurance">Qualitätssicherung</a>
+    <a href="branchen.html#halbleiter" class="ql-link" data-de="Halbleiterindustrie" data-en="Semiconductor">Halbleiterindustrie</a>
+    <a href="branchen.html#aerospace" class="ql-link" data-de="Aerospace / EN 9100" data-en="Aerospace / EN 9100">Aerospace / EN 9100</a>
+    <a href="maschinenpark.html" class="ql-link" data-de="Maschinenpark" data-en="Machine park">Maschinenpark</a>
+    <a href="#zertifikate" class="ql-link" data-de="Zertifikate" data-en="Certificates">Zertifikate</a>
+    <a href="#kontakt" class="ql-link" data-de="Ansprechpartner" data-en="Contacts">Ansprechpartner</a>
+  </div>
+</nav>
 
 <section id="leistungen">
   <div class="sec-head">
     <span class="label" data-de="Leistungen" data-en="Capabilities">Leistungen</span>
-    <h2 data-de="Ihr Wertschöpfungs&shy;kettenpartner." data-en="Your value chain partner.">Ihr Wertschöpfungs&shy;kettenpartner.</h2>
+    <h2 data-de="CNC-Präzisionsfertigung und mechanische Komplettlösungen"
+        data-en="CNC precision manufacturing and complete mechanical solutions">CNC-Präzisionsfertigung und mechanische Komplettlösungen</h2>
     <div class="rule"></div>
-    <p data-de="Wir übernehmen die Arbeit. Von der ersten Idee bis zur Serienlieferung. Sie behalten den Fokus."
-       data-en="We take on the work. From the first idea to series delivery. You keep the focus.">
-      Wir übernehmen die Arbeit. Von der ersten Idee bis zur Serienlieferung. Sie behalten den Fokus.
+    <p data-de="BERGHOFF verbindet mechanische Bearbeitung, Baugruppenmontage, Entwicklungsbegleitung und Value Chain Management zu einem durchgängigen Prozess für komplexe Hightech-Bauteile."
+       data-en="BERGHOFF combines machining, assembly, engineering support and value chain management into one continuous process for complex high-tech components.">
+      BERGHOFF verbindet mechanische Bearbeitung, Baugruppenmontage, Entwicklungsbegleitung und Value Chain Management zu einem durchgängigen Prozess für komplexe Hightech-Bauteile.
     </p>
   </div>
 
@@ -974,38 +1102,46 @@
     
     <div class="wwd-card">
       <svg class="wwd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-      <h3 data-de="Mechanische Bearbeitung" data-en="Precision Machining">Mechanische Bearbeitung</h3>
-      <p data-de="5-Achs-Fräsen, Drehen, Schleifen, Erodieren. Toleranzen bis IT3. 60+ CNC-Anlagen. Ohne unsere Präzision keine Lithographie."
-         data-en="5-axis milling, turning, grinding, EDM. Tolerances to IT3. 60+ CNC systems. No lithography without our precision.">
-        5-Achs-Fräsen, Drehen, Schleifen, Erodieren. Toleranzen bis IT3. 60+ CNC-Anlagen. Ohne unsere Präzision keine Lithographie.
+      <h3 data-de="CNC-Präzisionsfertigung" data-en="CNC Precision Machining">CNC-Präzisionsfertigung</h3>
+      <p data-de="5-Achs-Fräsen, CNC-Drehen, Schleifen und Erodieren für komplexe Metallbauteile mit hohen Anforderungen an Toleranz, Oberfläche und Prozesssicherheit."
+         data-en="5-axis milling, CNC turning, grinding and EDM for complex metal parts with high demands on tolerance, surface and process reliability.">
+        5-Achs-Fräsen, CNC-Drehen, Schleifen und Erodieren für komplexe Metallbauteile mit hohen Anforderungen an Toleranz, Oberfläche und Prozesssicherheit.
       </p>
+      <a href="leistungen/cnc-praezisionsfertigung/" class="who-mehr" style="margin-top:1rem;"
+         data-de="Mehr zur CNC-Präzisionsfertigung →" data-en="More on CNC precision machining →">Mehr zur CNC-Präzisionsfertigung →</a>
     </div>
     
     <div class="wwd-card">
       <svg class="wwd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
       <h3 data-de="Baugruppenmontage" data-en="Assembly">Baugruppenmontage</h3>
-      <p data-de="Kein Bauteil, sondern ein funktionsfähiges System. Mechanisch, pneumatisch, hydraulisch. Fertig montiert, geprüft, dokumentiert."
-         data-en="Not a part, but a functional system. Mechanical, pneumatic, hydraulic. Fully assembled, tested, documented.">
-        Kein Bauteil, sondern ein funktionsfähiges System. Mechanisch, pneumatisch, hydraulisch. Fertig montiert, geprüft, dokumentiert.
+      <p data-de="Mechanische, pneumatische und hydraulische Baugruppen – fertig montiert, geprüft, dokumentiert und bereit für die Integration in Ihr System."
+         data-en="Mechanical, pneumatic and hydraulic assemblies – fully assembled, tested, documented and ready for integration into your system.">
+        Mechanische, pneumatische und hydraulische Baugruppen – fertig montiert, geprüft, dokumentiert und bereit für die Integration in Ihr System.
       </p>
+      <a href="leistungen/baugruppenmontage/" class="who-mehr" style="margin-top:1rem;"
+         data-de="Mehr zur Baugruppenmontage →" data-en="More on assembly →">Mehr zur Baugruppenmontage →</a>
     </div>
     
     <div class="wwd-card">
       <svg class="wwd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
-      <h3 data-de="Entwicklungsbegleitung" data-en="Engineering Support">Entwicklungsbegleitung</h3>
-      <p data-de="Design for Manufacturability, Cost Roadmap, Werkstoffberatung. Frühe Einbindung schafft Wettbewerbsvorteile und spart Kosten."
-         data-en="Design for Manufacturability, cost roadmap, materials consulting. Early involvement creates competitive advantages and saves cost.">
-        Design for Manufacturability, Cost Roadmap, Werkstoffberatung. Frühe Einbindung schafft Wettbewerbsvorteile und spart Kosten.
+      <h3 data-de="Entwicklungsbegleitung & DFM" data-en="Engineering Support & DFM">Entwicklungsbegleitung & DFM</h3>
+      <p data-de="Design for Manufacturing, Werkstoffberatung und frühe Machbarkeitsprüfung reduzieren Kosten, Risiken und Durchlaufzeiten bereits vor Serienstart."
+         data-en="Design for Manufacturing, materials consulting and early feasibility checks reduce cost, risk and lead time before series production.">
+        Design for Manufacturing, Werkstoffberatung und frühe Machbarkeitsprüfung reduzieren Kosten, Risiken und Durchlaufzeiten bereits vor Serienstart.
       </p>
+      <a href="#kontakt" class="who-mehr" style="margin-top:1rem;"
+         data-de="Machbarkeit gemeinsam klären →" data-en="Clarify feasibility together →">Machbarkeit gemeinsam klären →</a>
     </div>
     
     <div class="wwd-card">
       <svg class="wwd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-4h14v4"/><path d="M12 12V8"/></svg>
       <h3 data-de="Value Chain Management" data-en="Value Chain Management">Value Chain Management</h3>
-      <p data-de="Beschaffung, Lagerung, Lieferung. Wir sind Ihr verlängerter Arm in der Wertschöpfungskette. Termingenau. Nach QLTC-Prinzip."
-         data-en="Procurement, warehousing, delivery. We are your extended arm in the value chain. On time. By QLTC principles.">
-        Beschaffung, Lagerung, Lieferung. Wir sind Ihr verlängerter Arm in der Wertschöpfungskette. Termingenau. Nach QLTC-Prinzip.
+      <p data-de="Beschaffung, Lagerung, Fertigung, Qualitätssicherung und Lieferung aus einer Hand – termingenau, dokumentiert und auf QLTC optimiert."
+         data-en="Procurement, warehousing, manufacturing, quality assurance and delivery from a single source – on time, documented and optimised for QLTC.">
+        Beschaffung, Lagerung, Fertigung, Qualitätssicherung und Lieferung aus einer Hand – termingenau, dokumentiert und auf QLTC optimiert.
       </p>
+      <a href="lieferant.html" class="who-mehr" style="margin-top:1rem;"
+         data-de="Wertschöpfungskette & Lieferanten →" data-en="Value chain & suppliers →">Wertschöpfungskette & Lieferanten →</a>
     </div>
   </div>
 </section>
@@ -1092,11 +1228,11 @@
       </div>
       <div class="focus-body">
         <h3 data-de="Halbleiterindustrie" data-en="Semiconductor">Halbleiterindustrie</h3>
-        <p data-de="Toleranzen im µm-Bereich für EUV-Lithographie, Waferhandling und Vakuumsysteme."
-           data-en="Tolerances in the µm range for EUV lithography, wafer handling and vacuum systems.">
-          Toleranzen im µm-Bereich für EUV-Lithographie, Waferhandling und Vakuumsysteme.
+        <p data-de="Präzisionskomponenten für EUV-Lithographie, Waferhandling, Vakuumsysteme und Reinraumanwendungen – mit hohen Anforderungen an Toleranz, Sauberkeit und Dokumentation."
+           data-en="Precision components for EUV lithography, wafer handling, vacuum systems and cleanroom applications – with high demands on tolerance, cleanliness and documentation.">
+          Präzisionskomponenten für EUV-Lithographie, Waferhandling, Vakuumsysteme und Reinraumanwendungen – mit hohen Anforderungen an Toleranz, Sauberkeit und Dokumentation.
         </p>
-        <div class="focus-arrow" data-de="Mehr erfahren →" data-en="Learn more →">Mehr erfahren →</div>
+        <div class="focus-cta" data-de="Halbleiter-Kompetenz ansehen →" data-en="View semiconductor expertise →">Halbleiter-Kompetenz ansehen →</div>
       </div>
     </a>
 
@@ -1107,11 +1243,11 @@
       </div>
       <div class="focus-body">
         <h3 data-de="Aerospace" data-en="Aerospace">Aerospace</h3>
-        <p data-de="EN 9100 zertifiziert. Flugkritische Strukturbauteile aus Titan, Inconel und Aluminiumlegierungen."
-           data-en="EN 9100 certified. Flight-critical structural components from titanium, Inconel and aluminium alloys.">
-          EN 9100 zertifiziert. Flugkritische Strukturbauteile aus Titan, Inconel und Aluminiumlegierungen.
+        <p data-de="EN-9100-orientierte Fertigung komplexer Struktur- und Präzisionsbauteile aus Titan, Inconel und Aluminiumlegierungen – inklusive Rückverfolgbarkeit und Qualitätssicherung."
+           data-en="EN 9100-oriented manufacturing of complex structural and precision parts from titanium, Inconel and aluminium alloys – including traceability and quality assurance.">
+          EN-9100-orientierte Fertigung komplexer Struktur- und Präzisionsbauteile aus Titan, Inconel und Aluminiumlegierungen – inklusive Rückverfolgbarkeit und Qualitätssicherung.
         </p>
-        <div class="focus-arrow" data-de="Mehr erfahren →" data-en="Learn more →">Mehr erfahren →</div>
+        <div class="focus-cta" data-de="Aerospace-Fertigung ansehen →" data-en="View aerospace manufacturing →">Aerospace-Fertigung ansehen →</div>
       </div>
     </a>
 
@@ -1126,7 +1262,7 @@
            data-en="Customised batch sizes. Complex housings and precision components for demanding applications.">
           Maßgeschneiderte Losgrößen. Komplexe Gehäuse und Präzisionskomponenten für anspruchsvolle Anwendungen.
         </p>
-        <div class="focus-arrow" data-de="Mehr erfahren →" data-en="Learn more →">Mehr erfahren →</div>
+        <div class="focus-cta" data-de="Pumpen- & Extruder-Komponenten ansehen →" data-en="View pump & extruder components →">Pumpen- & Extruder-Komponenten ansehen →</div>
       </div>
     </a>
 
@@ -1141,7 +1277,7 @@
            data-en="Turbines, generators, wind power. High-performance components up to 1,000°C+.">
           Turbinen, Generatoren, Windkraft. Hochbelastbare Komponenten bis 1.000°C+.
         </p>
-        <div class="focus-arrow" data-de="Mehr erfahren →" data-en="Learn more →">Mehr erfahren →</div>
+        <div class="focus-cta" data-de="Fertigung für Energiebranche ansehen →" data-en="View energy manufacturing →">Fertigung für Energiebranche ansehen →</div>
       </div>
     </a>
 
@@ -1156,7 +1292,7 @@
            data-en="Pressure-resistant precision parts for exploration and production. Latest technology, sustainable approach.">
           Druckbelastbare Präzisionsteile für Exploration und Förderung. Neueste Technologie, nachhaltiger Ansatz.
         </p>
-        <div class="focus-arrow" data-de="Mehr erfahren →" data-en="Learn more →">Mehr erfahren →</div>
+        <div class="focus-cta" data-de="Öl-&-Gas-Komponenten ansehen →" data-en="View oil & gas components →">Öl-&-Gas-Komponenten ansehen →</div>
       </div>
     </a>
 
@@ -1171,10 +1307,40 @@
            data-en="ISO 13485. Ra down to 0.2 µm. ISO-6 cleanroom. MRI, surgical robotics, implants.">
           ISO 13485. Ra bis 0,2 µm. Reinraum ISO-6. MRT, OP-Robotik, Implantate.
         </p>
-        <div class="focus-arrow" data-de="Mehr erfahren →" data-en="Learn more →">Mehr erfahren →</div>
+        <div class="focus-cta" data-de="Medizintechnik-Kompetenz ansehen →" data-en="View medical technology expertise →">Medizintechnik-Kompetenz ansehen →</div>
       </div>
     </a>
 
+  </div>
+</section>
+
+<section class="dark" id="maschinenpark-teaser">
+  <div class="mp-teaser">
+    <div class="mp-teaser-text">
+      <span class="label" data-de="Technologie" data-en="Technology">Technologie</span>
+      <h2 data-de="Maschinenpark für komplexe Präzisionsbauteile"
+          data-en="Machine park for complex precision parts">Maschinenpark für komplexe Präzisionsbauteile</h2>
+      <div class="rule"></div>
+      <p data-de="Mit über 60 CNC-Anlagen, 5-Achs-Bearbeitung, Drehtechnik, Schleifen, Erodieren und moderner Messtechnik fertigt BERGHOFF anspruchsvolle Einzelteile, Serienbauteile und Baugruppen."
+         data-en="With over 60 CNC systems, 5-axis machining, turning, grinding, EDM and modern measuring technology, BERGHOFF manufactures demanding single parts, series components and assemblies.">
+        Mit über 60 CNC-Anlagen, 5-Achs-Bearbeitung, Drehtechnik, Schleifen, Erodieren und moderner Messtechnik fertigt BERGHOFF anspruchsvolle Einzelteile, Serienbauteile und Baugruppen.
+      </p>
+      <div class="mp-chips">
+        <span class="mp-chip" data-de="5-Achs-Fräsen" data-en="5-axis milling">5-Achs-Fräsen</span>
+        <span class="mp-chip" data-de="CNC-Drehen" data-en="CNC turning">CNC-Drehen</span>
+        <span class="mp-chip" data-de="Schleifen" data-en="Grinding">Schleifen</span>
+        <span class="mp-chip" data-de="Erodieren" data-en="EDM">Erodieren</span>
+        <span class="mp-chip" data-de="Koordinatenmesstechnik" data-en="Coordinate metrology">Koordinatenmesstechnik</span>
+        <span class="mp-chip" data-de="Reinraumnahe Prozesse" data-en="Cleanroom-grade processes">Reinraumnahe Prozesse</span>
+        <span class="mp-chip" data-de="Baugruppenmontage" data-en="Assembly">Baugruppenmontage</span>
+      </div>
+      <a href="maschinenpark.html" class="btn btn-primary"
+         data-de="Maschinenpark ansehen" data-en="View machine park">Maschinenpark ansehen</a>
+    </div>
+    <div class="mp-teaser-media">
+      <img src="images/fertigung/messmaschine.jpg"
+           alt="CNC-Maschinenpark bei BERGHOFF – 5-Achs-Bearbeitung und Koordinatenmesstechnik" loading="lazy">
+    </div>
   </div>
 </section>
 
@@ -1188,24 +1354,24 @@
     </div>
 
     <div class="svip-text">
-      <span class="label">3SVIP®</span>
-      <h2 data-de="Unser Prozess. Ihre Sicherheit."
-          data-en="Our process. Your security.">
-        Unser Prozess. Ihre Sicherheit.
+      <span class="label" data-de="3SVIP® · 3-Step Vertical Integration Process" data-en="3SVIP® · 3-Step Vertical Integration Process">3SVIP® · 3-Step Vertical Integration Process</span>
+      <h2 data-de="Strukturierter Prozess für komplexe Fertigungsprojekte"
+          data-en="A structured process for complex manufacturing projects">
+        Strukturierter Prozess für komplexe Fertigungsprojekte
       </h2>
       <div class="rule"></div>
-      <p data-de="Der 3-Step Vertical Integration Process ist unser bewährtes Framework für komplexe Fertigungsprojekte – strukturiert, transparent, auf QLTC optimiert."
-         data-en="The 3-Step Vertical Integration Process is our proven framework for complex manufacturing projects – structured, transparent, optimised for QLTC.">
-        Der 3-Step Vertical Integration Process ist unser bewährtes Framework für komplexe Fertigungsprojekte – strukturiert, transparent, auf QLTC optimiert.
+      <p data-de="Von der ersten technischen Analyse bis zur Serienlieferung begleitet BERGHOFF komplexe Fertigungsprojekte mit einem klaren, transparenten und auf QLTC optimierten Prozess."
+         data-en="From the first technical analysis to series delivery, BERGHOFF guides complex manufacturing projects with a clear, transparent process optimised for QLTC.">
+        Von der ersten technischen Analyse bis zur Serienlieferung begleitet BERGHOFF komplexe Fertigungsprojekte mit einem klaren, transparenten und auf QLTC optimierten Prozess.
       </p>
       <div class="steps">
         <div class="step">
           <div class="step-n">1</div>
           <div class="step-t">
             <strong data-de="Analyse & Planung" data-en="Analysis & Planning">Analyse & Planung</strong>
-            <p data-de="Anforderungsanalyse, Machbarkeitsprüfung, klare Meilensteine. Gemeinsam von Beginn an."
-               data-en="Requirements analysis, feasibility check, clear milestones. Together from day one.">
-              Anforderungsanalyse, Machbarkeitsprüfung, klare Meilensteine. Gemeinsam von Beginn an.
+            <p data-de="Anforderungsanalyse, technische Machbarkeitsprüfung, Werkstoff- und Fertigungsberatung sowie klare Meilensteine ab Projektstart."
+               data-en="Requirements analysis, technical feasibility check, materials and manufacturing consulting plus clear milestones from project start.">
+              Anforderungsanalyse, technische Machbarkeitsprüfung, Werkstoff- und Fertigungsberatung sowie klare Meilensteine ab Projektstart.
             </p>
           </div>
         </div>
@@ -1213,9 +1379,9 @@
           <div class="step-n">2</div>
           <div class="step-t">
             <strong data-de="Fertigung & Qualitätssicherung" data-en="Manufacturing & Quality Assurance">Fertigung & Qualitätssicherung</strong>
-            <p data-de="Präzisionsfertigung auf state-of-the-art CNC-Anlagen. Lückenlose Prüfung und ISO-konforme Dokumentation."
-               data-en="Precision manufacturing on state-of-the-art CNC systems. Comprehensive inspection and ISO-compliant documentation.">
-              Präzisionsfertigung auf state-of-the-art CNC-Anlagen. Lückenlose Prüfung und ISO-konforme Dokumentation.
+            <p data-de="Präzisionsfertigung auf modernen CNC-Anlagen, prozessbegleitende Prüfung, Dokumentation und Qualitätssicherung nach definierten Anforderungen."
+               data-en="Precision manufacturing on modern CNC systems, in-process inspection, documentation and quality assurance to defined requirements.">
+              Präzisionsfertigung auf modernen CNC-Anlagen, prozessbegleitende Prüfung, Dokumentation und Qualitätssicherung nach definierten Anforderungen.
             </p>
           </div>
         </div>
@@ -1223,15 +1389,128 @@
           <div class="step-n">3</div>
           <div class="step-t">
             <strong data-de="Lieferung & Supply Chain" data-en="Delivery & Supply Chain">Lieferung & Supply Chain</strong>
-            <p data-de="Termingerechte Lieferung, Lagerhaltung, proaktives SCM. Maximale Versorgungssicherheit."
-               data-en="On-time delivery, warehousing, proactive SCM. Maximum supply security.">
-              Termingerechte Lieferung, Lagerhaltung, proaktives SCM. Maximale Versorgungssicherheit.
+            <p data-de="Termingerechte Lieferung, Lagerkonzepte, proaktive Kommunikation und Versorgungssicherheit für Serien- und Projektgeschäft."
+               data-en="On-time delivery, warehousing concepts, proactive communication and supply security for series and project business.">
+              Termingerechte Lieferung, Lagerkonzepte, proaktive Kommunikation und Versorgungssicherheit für Serien- und Projektgeschäft.
             </p>
           </div>
         </div>
       </div>
+
+      <p style="margin-top:1.5rem;font-size:.9rem;color:var(--muted);line-height:1.6;"
+         data-de="<strong>QLTC</strong> steht für Quality, Logistics, Technology, Cost – die vier zentralen Bewertungskriterien strategischer Einkaufsentscheidungen."
+         data-en="<strong>QLTC</strong> stands for Quality, Logistics, Technology, Cost – the four core evaluation criteria of strategic purchasing decisions.">
+        <strong>QLTC</strong> steht für Quality, Logistics, Technology, Cost – die vier zentralen Bewertungskriterien strategischer Einkaufsentscheidungen.
+      </p>
     </div>
 
+  </div>
+</section>
+
+<section id="trust">
+  <div class="sec-head">
+    <span class="label" data-de="Vertrauen" data-en="Trust">Vertrauen</span>
+    <h2 data-de="Warum strategische Einkäufer mit BERGHOFF arbeiten"
+        data-en="Why strategic buyers work with BERGHOFF">Warum strategische Einkäufer mit BERGHOFF arbeiten</h2>
+    <div class="rule"></div>
+  </div>
+
+  <div class="trust-grid">
+    <div class="trust-card">
+      <span class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg></span>
+      <div>
+        <h3 data-de="Familienunternehmen seit 1984" data-en="Family business since 1984">Familienunternehmen seit 1984</h3>
+        <p data-de="Inhabergeführt, langfristig orientiert und über Jahrzehnte verlässlich." data-en="Owner-managed, long-term oriented and reliable for decades.">Inhabergeführt, langfristig orientiert und über Jahrzehnte verlässlich.</p>
+      </div>
+    </div>
+    <div class="trust-card">
+      <span class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+      <div>
+        <h3 data-de="130 Mitarbeitende" data-en="130 employees">130 Mitarbeitende</h3>
+        <p data-de="Erfahrene Fertigungs-, Qualitäts- und Engineering-Teams an zwei Standorten." data-en="Experienced manufacturing, quality and engineering teams at two sites.">Erfahrene Fertigungs-, Qualitäts- und Engineering-Teams an zwei Standorten.</p>
+      </div>
+    </div>
+    <div class="trust-card">
+      <span class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
+      <div>
+        <h3 data-de="60+ CNC-Anlagen" data-en="60+ CNC systems">60+ CNC-Anlagen</h3>
+        <p data-de="Moderner Maschinenpark für Einzelteile, Serien und komplexe Baugruppen." data-en="Modern machine park for single parts, series and complex assemblies.">Moderner Maschinenpark für Einzelteile, Serien und komplexe Baugruppen.</p>
+      </div>
+    </div>
+    <div class="trust-card">
+      <span class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+      <div>
+        <h3 data-de="Reinraum ISO-6" data-en="ISO-6 cleanroom">Reinraum ISO-6</h3>
+        <p data-de="Reinraumnahe Fertigung für sensible Halbleiter- und Medizintechnik-Komponenten." data-en="Cleanroom-grade manufacturing for sensitive semiconductor and medical parts.">Reinraumnahe Fertigung für sensible Halbleiter- und Medizintechnik-Komponenten.</p>
+      </div>
+    </div>
+    <div class="trust-card">
+      <span class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/></svg></span>
+      <div>
+        <h3 data-de="Halbleiter & Aerospace" data-en="Semiconductor & aerospace">Halbleiter & Aerospace</h3>
+        <p data-de="Erprobte Erfahrung in Branchen mit höchsten Anforderungen an Toleranz und Dokumentation." data-en="Proven experience in industries with the highest demands on tolerance and documentation.">Erprobte Erfahrung in Branchen mit höchsten Anforderungen an Toleranz und Dokumentation.</p>
+      </div>
+    </div>
+    <div class="trust-card">
+      <span class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+      <div>
+        <h3 data-de="Persönliche Ansprechpartner" data-en="Personal contacts">Persönliche Ansprechpartner</h3>
+        <p data-de="Feste Ansprechpartner statt anonymer Prozesse – von der Anfrage bis zur Serie." data-en="Dedicated contacts instead of anonymous processes – from enquiry to series.">Feste Ansprechpartner statt anonymer Prozesse – von der Anfrage bis zur Serie.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="trust-hint"
+     data-de="Zertifikate, Maschinenliste und technische Details stellen wir Ihnen auf Anfrage oder im Downloadbereich zur Verfügung."
+     data-en="We provide certificates, machine lists and technical details on request or in the download area.">
+    Zertifikate, Maschinenliste und technische Details stellen wir Ihnen auf Anfrage oder im Downloadbereich zur Verfügung.
+  </p>
+
+  <div class="btn-row">
+    <a href="#zertifikate" class="btn btn-primary" data-de="Zertifikate ansehen" data-en="View certificates">Zertifikate ansehen</a>
+    <a href="#kontakt" class="btn btn-outline" data-de="Technische Anfrage stellen" data-en="Make a technical enquiry">Technische Anfrage stellen</a>
+  </div>
+</section>
+
+<section class="off" id="zertifikate">
+  <div class="sec-head">
+    <span class="label" data-de="Qualität" data-en="Quality">Qualität</span>
+    <h2 data-de="Zertifikate und Qualitätsstandards" data-en="Certificates and quality standards">Zertifikate und Qualitätsstandards</h2>
+    <div class="rule"></div>
+    <p data-de="Für anspruchsvolle Industrien sind dokumentierte Prozesse, Rückverfolgbarkeit und geprüfte Qualität entscheidend. BERGHOFF erfüllt relevante Qualitätsanforderungen für komplexe Fertigungsprojekte."
+       data-en="For demanding industries, documented processes, traceability and verified quality are decisive. BERGHOFF meets the relevant quality requirements for complex manufacturing projects.">
+      Für anspruchsvolle Industrien sind dokumentierte Prozesse, Rückverfolgbarkeit und geprüfte Qualität entscheidend. BERGHOFF erfüllt relevante Qualitätsanforderungen für komplexe Fertigungsprojekte.
+    </p>
+  </div>
+
+  <div class="cert-grid">
+    <div class="cert-card">
+      <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 22l5-3 5 3-1.21-8.11"/></svg></div>
+      <h3>ISO 9001:2015</h3>
+      <p data-de="Zertifiziertes Qualitätsmanagementsystem." data-en="Certified quality management system.">Zertifiziertes Qualitätsmanagementsystem.</p>
+    </div>
+    <div class="cert-card">
+      <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 22l5-3 5 3-1.21-8.11"/></svg></div>
+      <h3>EN 9100:2018</h3>
+      <p data-de="Qualitätsnorm für Luft- und Raumfahrt." data-en="Quality standard for aerospace.">Qualitätsnorm für Luft- und Raumfahrt.</p>
+    </div>
+    <div class="cert-card">
+      <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+      <h3>Reinraum ISO-6</h3>
+      <p data-de="Reinraumnahe Fertigung für sensible Bauteile." data-en="Cleanroom-grade manufacturing for sensitive parts.">Reinraumnahe Fertigung für sensible Bauteile.</p>
+    </div>
+    <div class="cert-card">
+      <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></div>
+      <h3>Rolls-Royce Approved</h3>
+      <p data-de="Freigegebener Lieferant (Approved Supplier)." data-en="Approved Supplier status.">Freigegebener Lieferant (Approved Supplier).</p>
+    </div>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn-primary" onclick="openModal('Matthias Platte', 'Qualitätsmanagement & IT', 'qualitaet@berghoff.eu')"
+            data-de="Zertifikate anfragen" data-en="Request certificates">Zertifikate anfragen</button>
+    <a href="ueber-berghoff.html#zertifizierungen" class="btn btn-outline"
+       data-de="Mehr zu unserer Qualität" data-en="More on our quality">Mehr zu unserer Qualität</a>
   </div>
 </section>
 
@@ -1280,15 +1559,30 @@
 <section class="off" id="kontakt">
   <div class="sec-head">
     <span class="label" data-de="Direktkontakt" data-en="Direct Contact">Direktkontakt</span>
-    <h2 data-de="Die richtigen Ansprechpartner. Direkt."
-        data-en="The right contacts. Direct.">
-      Die richtigen Ansprechpartner. Direkt.
+    <h2 data-de="Direkt zum richtigen Ansprechpartner"
+        data-en="Straight to the right contact">
+      Direkt zum richtigen Ansprechpartner
     </h2>
     <div class="rule"></div>
-    <p data-de="Direkt, persönlich, auf Augenhöhe. Unser Team antwortet innerhalb von 24 Stunden."
-       data-en="Direct, personal, at eye level. Our team responds within 24 hours.">
-      Direkt, persönlich, auf Augenhöhe. Unser Team antwortet innerhalb von 24 Stunden.
+    <p data-de="Ob technische Anfrage, Lieferantenqualifizierung oder Projektbesprechung – unser Team verbindet Sie direkt mit dem passenden Ansprechpartner."
+       data-en="Whether a technical enquiry, supplier qualification or project discussion – our team connects you directly with the right contact.">
+      Ob technische Anfrage, Lieferantenqualifizierung oder Projektbesprechung – unser Team verbindet Sie direkt mit dem passenden Ansprechpartner.
     </p>
+  </div>
+
+  <div class="kontakt-helper">
+    <div class="helper-item">
+      <div class="helper-q" data-de="Neue Projektanfrage?" data-en="New project enquiry?">Neue Projektanfrage?</div>
+      <div class="helper-a" data-de="→ Vertrieb kontaktieren" data-en="→ Contact Sales">→ Vertrieb kontaktieren</div>
+    </div>
+    <div class="helper-item">
+      <div class="helper-q" data-de="Technische Machbarkeit klären?" data-en="Clarify technical feasibility?">Technische Machbarkeit klären?</div>
+      <div class="helper-a" data-de="→ Technische Leitung kontaktieren" data-en="→ Contact Technical Director">→ Technische Leitung kontaktieren</div>
+    </div>
+    <div class="helper-item">
+      <div class="helper-q" data-de="Qualität, Zertifikate oder Audit?" data-en="Quality, certificates or audit?">Qualität, Zertifikate oder Audit?</div>
+      <div class="helper-a" data-de="→ Qualitätsmanagement kontaktieren" data-en="→ Contact Quality Management">→ Qualitätsmanagement kontaktieren</div>
+    </div>
   </div>
 
   <div class="contact-grid">
@@ -1314,9 +1608,9 @@
       </div>
       <div class="con-btn-wrap">
         <button class="con-btn" onclick="openModal('Jörg Merx', 'Vertrieb & Marketing', 'vertrieb@berghoff.eu')"
-                data-de="Nachricht schreiben" data-en="Send a message">
+                data-de="Projektanfrage senden" data-en="Send project enquiry">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" stroke="currentColor"/></svg>
-          Nachricht schreiben
+          Projektanfrage senden
         </button>
       </div>
     </div>
@@ -1342,9 +1636,9 @@
       </div>
       <div class="con-btn-wrap">
         <button class="con-btn" onclick="openModal('Dirk Hildebrandt', 'Technische Leitung', 'technik@berghoff.eu')"
-                data-de="Nachricht schreiben" data-en="Send a message">
+                data-de="Technische Frage stellen" data-en="Ask a technical question">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" stroke="currentColor"/></svg>
-          Nachricht schreiben
+          Technische Frage stellen
         </button>
       </div>
     </div>
@@ -1370,9 +1664,9 @@
       </div>
       <div class="con-btn-wrap">
         <button class="con-btn" onclick="openModal('Matthias Platte', 'Qualitätsmanagement & IT', 'qualitaet@berghoff.eu')"
-                data-de="Nachricht schreiben" data-en="Send a message">
+                data-de="Qualität & Zertifikate anfragen" data-en="Request quality & certificates">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" stroke="currentColor"/></svg>
-          Nachricht schreiben
+          Qualität & Zertifikate anfragen
         </button>
       </div>
     </div>
@@ -1408,25 +1702,38 @@
       </div>
     </div>
 
-    
+
     <div>
-      <h4 data-de="Navigation" data-en="Navigation">Navigation</h4>
+      <h4 data-de="Unternehmen" data-en="Company">Unternehmen</h4>
       <ul class="ft-links">
-        <li><a href="index.html"          data-de="Startseite"       data-en="Home">Startseite</a></li>
-        <li><a href="ueber-berghoff.html" data-de="Über BERGHOFF"    data-en="About BERGHOFF">Über BERGHOFF</a></li>
-        <li><a href="branchen.html"       data-de="Branchen"         data-en="Industries">Branchen</a></li>
-        <li><a href="maschinenpark.html"  data-de="Maschinenpark"    data-en="Machinery">Maschinenpark</a></li>
-        <li><a href="lieferant.html"      data-de="Lieferant werden" data-en="Become a Supplier">Lieferant werden</a></li>
+        <li><a href="ueber-berghoff.html"          data-de="Über BERGHOFF"    data-en="About BERGHOFF">Über BERGHOFF</a></li>
+        <li><a href="ueber-berghoff.html#geschichte" data-de="Geschichte"     data-en="History">Geschichte</a></li>
+        <li><a href="ueber-berghoff.html#standorte"  data-de="Standorte"      data-en="Locations">Standorte</a></li>
         <li><a href="https://karriere.berghoff.eu" target="_blank" rel="noopener"
                data-de="Karriere ↗" data-en="Careers ↗">Karriere ↗</a></li>
+        <li><a href="lieferant.html"      data-de="Lieferant werden" data-en="Become a Supplier">Lieferant werden</a></li>
       </ul>
     </div>
 
-    
+
+    <div>
+      <h4 data-de="Leistungen" data-en="Capabilities">Leistungen</h4>
+      <ul class="ft-links">
+        <li><a href="leistungen/cnc-praezisionsfertigung/" data-de="CNC-Präzisionsfertigung" data-en="CNC precision machining">CNC-Präzisionsfertigung</a></li>
+        <li><a href="leistungen/5-achs-fraesen/" data-de="5-Achs-Fräsen" data-en="5-axis milling">5-Achs-Fräsen</a></li>
+        <li><a href="leistungen/cnc-drehen/" data-de="CNC-Drehen" data-en="CNC turning">CNC-Drehen</a></li>
+        <li><a href="leistungen/baugruppenmontage/" data-de="Baugruppenmontage" data-en="Assembly">Baugruppenmontage</a></li>
+        <li><a href="leistungen/reinraumfertigung/" data-de="Reinraumfertigung" data-en="Cleanroom manufacturing">Reinraumfertigung</a></li>
+        <li><a href="leistungen/qualitaetssicherung/" data-de="Qualitätssicherung" data-en="Quality assurance">Qualitätssicherung</a></li>
+        <li><a href="maschinenpark.html" data-de="Maschinenpark" data-en="Machine park">Maschinenpark</a></li>
+      </ul>
+    </div>
+
+
     <div>
       <h4 data-de="Branchen" data-en="Industries">Branchen</h4>
       <ul class="ft-links">
-        <li><a href="branchen.html#halbleiter" data-de="Halbleiter"      data-en="Semiconductor">Halbleiter</a></li>
+        <li><a href="branchen.html#halbleiter" data-de="Halbleiterindustrie" data-en="Semiconductor">Halbleiterindustrie</a></li>
         <li><a href="branchen.html#aerospace"  data-de="Aerospace"       data-en="Aerospace">Aerospace</a></li>
         <li><a href="branchen.html#medizin"    data-de="Medizintechnik"  data-en="Medical">Medizintechnik</a></li>
         <li><a href="branchen.html#energie"    data-de="Energie"         data-en="Energy">Energie</a></li>
@@ -1435,28 +1742,30 @@
       </ul>
     </div>
 
-    
+
     <div>
-      <h4 data-de="Hauptstandort" data-en="Main Site">Hauptstandort</h4>
+      <h4 data-de="Kontakt" data-en="Contact">Kontakt</h4>
       <div class="ft-adresse">
-        <strong>BERGHOFF GmbH</strong>
+        <strong data-de="Hauptstandort" data-en="Main site">Hauptstandort</strong>
         Langenheid 1<br>
         57489 Drolshagen<br>
         <a href="tel:+4927632127900">+49 2763 21279-0</a><br>
         <a href="mailto:info@berghoff.eu">info@berghoff.eu</a>
       </div>
-    </div>
-
-    
-    <div>
-      <h4 data-de="Zweiter Standort" data-en="Second Location">Zweiter Standort</h4>
-      <div class="ft-adresse">
-        <strong>BERGHOFF GmbH</strong>
+      <div class="ft-adresse" style="margin-top:1.25rem;">
+        <strong data-de="Zweiter Standort" data-en="Second location">Zweiter Standort</strong>
         Im Ruttenberge 6<br>
         57482 Wenden<br>
-        <a href="tel:+4927629874 0">+49 2762 98740</a>
+        <a href="tel:+492762987400">+49 2762 98740</a>
       </div>
-      <h4 style="margin-top:1.75rem;" data-de="Rechtliches" data-en="Legal">Rechtliches</h4>
+      <ul class="ft-links" style="margin-top:1.25rem;">
+        <li><a href="#kontakt" data-de="Ansprechpartner" data-en="Contacts">Ansprechpartner</a></li>
+      </ul>
+    </div>
+
+
+    <div>
+      <h4 data-de="Rechtliches" data-en="Legal">Rechtliches</h4>
       <ul class="ft-links">
         <li><a href="impressum.html"   data-de="Impressum"   data-en="Imprint">Impressum</a></li>
         <li><a href="datenschutz.html" data-de="Datenschutz" data-en="Privacy Policy">Datenschutz</a></li>
