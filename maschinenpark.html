@@ -287,7 +287,7 @@
     overflow: hidden;
   }
   .reinraum-bild { position: relative; overflow: hidden; }
-  .reinraum-bild img { width: 100%; height: 100%; object-fit: contain; display: block; background: #f0f0f0; }
+  .reinraum-bild img { width: 100%; height: 100%; object-fit: contain; display: block; background: var(--white); }
   .reinraum-badge {
     position: absolute; top: 1.25rem; left: 1.25rem;
     background: var(--blue); color: #fff;
@@ -297,17 +297,17 @@
   }
   .reinraum-inhalt {
     padding: 3rem 2.5rem;
-    background: var(--black);
+    background: var(--white);
     display: flex; flex-direction: column; justify-content: center;
   }
   .reinraum-inhalt .label { color: var(--blue); margin-bottom: .75rem; display: block; }
   .reinraum-inhalt h2 {
     font-family: 'Roboto Condensed', sans-serif; font-size: clamp(1.4rem, 2.5vw, 2rem);
     font-weight: 800; line-height: 1.1; letter-spacing: -.03em;
-    color: #fff; margin-bottom: 1.1rem;
+    color: var(--text); margin-bottom: 1.1rem;
   }
   .reinraum-inhalt p {
-    font-size: .88rem; color: rgba(255,255,255,.55);
+    font-size: .88rem; color: var(--muted);
     line-height: 1.8; margin-bottom: 1.5rem;
   }
   .reinraum-specs { display: flex; flex-direction: column; gap: .5rem; margin-bottom: 2rem; }
@@ -316,7 +316,7 @@
     font-family: 'Roboto Condensed', sans-serif; font-weight: 700;
     color: var(--blue); min-width: 70px; flex-shrink: 0;
   }
-  .rs-lab { color: rgba(255,255,255,.5); }
+  .rs-lab { color: var(--muted); }
 
   
   .reinigung-grid {
@@ -825,7 +825,7 @@
 <section class="off" id="reinraum">
   <div class="reinraum-box">
     <div class="reinraum-bild">
-      <img src="images/fertigung/reinraum.jpg"
+      <img src="images/fertigung/reinraum-bg.png"
            alt="BERGHOFF ISO-6-Reinraum für Halbleiter- und Medizintechnik-Fertigung" loading="lazy">
     </div>
     <div class="reinraum-inhalt">
