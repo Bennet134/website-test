@@ -281,11 +281,11 @@
   
   .qltc-grid {
     display: grid; grid-template-columns: repeat(4, 1fr);
-    border: 1px solid rgba(255,255,255,.07);
+    border: 1px solid var(--border);
   }
   .qltc-item {
     padding: 3rem 2rem;
-    border-right: 1px solid rgba(255,255,255,.07);
+    border-right: 1px solid var(--border);
     position: relative;
   }
   .qltc-item:last-child { border-right: none; }
@@ -301,14 +301,14 @@
   .qltc-word {
     font-family: 'Roboto Condensed', sans-serif;
     font-size: .62rem; font-weight: 700; letter-spacing: .16em;
-    color: rgba(255,255,255,.35); text-transform: uppercase;
+    color: var(--muted); text-transform: uppercase;
     margin-bottom: 1.25rem;
   }
   .qltc-item h3 {
     font-family: 'Roboto Condensed', sans-serif; font-size: .9rem; font-weight: 700;
-    color: var(--white); margin-bottom: .5rem;
+    color: var(--text); margin-bottom: .5rem;
   }
-  .qltc-item p { font-size: .82rem; color: rgba(255,255,255,.4); line-height: 1.7; }
+  .qltc-item p { font-size: .82rem; color: var(--muted); line-height: 1.7; }
 
   
   .prozess-grid {
@@ -476,7 +476,7 @@
     .qltc-grid    { grid-template-columns: repeat(2, 1fr); }
     .qltc-item:nth-child(2) { border-right: none; }
     .qltc-item:nth-child(3),
-    .qltc-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,.07); }
+    .qltc-item:nth-child(4) { border-top: 1px solid var(--border); }
     .prozess-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
     .prozess-grid::before { display: none; }
     .anf-grid     { grid-template-columns: 1fr; }
@@ -489,7 +489,7 @@
     .nav-links, .nav-right .btn, .nav-right .lang { display: none; }
     .hamburger    { display: flex; }
     .qltc-grid    { grid-template-columns: 1fr; }
-    .qltc-item    { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); }
+    .qltc-item    { border-right: none; border-bottom: 1px solid var(--border); }
     .qltc-item:last-child { border-bottom: none; }
     .prozess-grid { grid-template-columns: 1fr; }
     .fg-row       { grid-template-columns: 1fr; }
@@ -729,7 +729,7 @@
   </div>
 </section>
 
-<section class="dark">
+<section class="off">
   <div class="sec-head">
     <span class="label">QLTC</span>
     <h2 data-de="Vier Dimensionen. Ein Standard." data-en="Four dimensions. One standard.">
